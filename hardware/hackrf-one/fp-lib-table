@@ -1,4 +1,5 @@
 (fp_lib_table
   (lib (name hackrf)(type Legacy)(uri ${KIPRJMOD}/../kicad/hackrf.mod)(options "")(descr ""))
   (lib (name gsg-modules)(type KiCad)(uri ${KIPRJMOD}/../gsg-kicad-lib/gsg-modules.pretty)(options "")(descr ""))
+  (lib (name hackrf-one)(type KiCad)(uri ${KIPRJMOD}/hackrf-one.pretty)(options "")(descr ""))
 )
