@@ -83,6 +83,8 @@ C:\your\build\prefix\bin> lib /machine:x64 /def:libfftw3-3.def
 ```
 Then move the generated .lib files to your prefix lib folder.  Also rename them to get rid of the "lib" prefix, e.g. `fftw3-3.lib`.
 
+For MSVC you will also need one additional dependency, [pthreads-win32](http://mirrors.kernel.org/sourceware/pthreads-win32/pthreads-w32-2-9-1-release.zip).  Download that and extract the headers and `pthreadVC2.lib` from the prebuilts folder inside the zip.
+
 ```
 c:\hackrf\host\build> cmake ../ -G "Visual Studio 14 2015 Win64" -DCMAKE_PREFIX_PATH=C:/your/build/prefix -DCMAKE_INSTALL_PREFIX=C:/your/install/prefix
 ```

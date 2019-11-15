@@ -18,6 +18,7 @@ install:
   - curl -fsS -o "C:\fftw-3.3.5.zip" "ftp://ftp.fftw.org/pub/fftw/fftw-3.3.5-dll64.zip"
   - 7z x -y "C:\fftw-3.3.5.zip" -o"C:\fftw"
   - cd c:\fftw
+  - ps: lib /machine:x64 /def:libfftw3-3.def
   - ps: lib /machine:x64 /def:libfftw3f-3.def
   # ARM GCC for firmware builds
   # - appveyor DownloadFile "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/gcc-arm-none-eabi-6-2017-q2-update-win32.zip" -FileName "C:\gcc-arm-none-eabi-win32.zip"
@@ -35,7 +36,8 @@ build_script:
     -DTHREADS_PTHREADS_WIN32_LIBRARY=c:\pthreads\Pre-built.2\lib\x64\pthreadVC2.lib \
     -DPKG_CONFIG_EXECUTABLE="C:\pkg-config\bin\pkg-config.exe" \
     -DFFTW_INCLUDES=C:\fftw \
-    -DFFTW_LIBRARIES=C:\fftw\libfftw3f-3.lib \
+    -DFFTW_LIBRARY_SERIAL=C:\fftw\libfftw3-3.lib \
+    -DFFTWF_LIBRARY_SERIAL=C:\fftw\libfftw3f-3.lib \
     ..
   - msbuild HackRF.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
   # Firmware
