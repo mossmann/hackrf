@@ -44,6 +44,7 @@ typedef int bool;
 
 #ifdef _WIN32
 #include <windows.h>
+#include <winsock.h>
 
 #ifdef _MSC_VER
 
