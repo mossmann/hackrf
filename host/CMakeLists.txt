@@ -84,7 +84,16 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC")
 	set(THREADS_USE_PTHREADS_WIN32 TRUE)
 endif()
 find_package(Threads REQUIRED)
-import_libraries(pthread LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
+
+if(EXISTS "${THREADS_PTHREADS_INCLUDE_DIR}")
+	import_libraries(pthread LIBRARIES ${CMAKE_THREAD_LIBS_INIT} INCLUDES ${THREADS_PTHREADS_INCLUDE_DIR})
+else()
+	# no include dir
+	import_libraries(pthread LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
+endif()
+
+# libm
+find_package(Math REQUIRED)
 
 # Options
 # -----------------------------------------------------

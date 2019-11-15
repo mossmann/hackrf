@@ -34,7 +34,7 @@ SET(TOOLS
 	hackrf_operacake
 )
 
-set(TOOLS_LINK_LIBS m fftw3 hackrf)
+set(TOOLS_LINK_LIBS ${Math_LIBRARY} fftw3 hackrf)
 
 if(MSVC)
 	# use getopt support library
