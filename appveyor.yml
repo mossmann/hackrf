@@ -35,7 +35,7 @@ build_script:
     -DTHREADS_PTHREADS_INCLUDE_DIR=c:\pthreads\Pre-built.2\include \
     -DTHREADS_PTHREADS_WIN32_LIBRARY=c:\pthreads\Pre-built.2\lib\x64\pthreadVC2.lib \
     -DPKG_CONFIG_EXECUTABLE="C:\pkg-config\bin\pkg-config.exe" \
-    -DFFTW_INCLUDES=C:\fftw \
+    -DFFTW_INCLUDES_SERIAL=C:\fftw \
     -DFFTW_LIBRARY_SERIAL=C:\fftw\libfftw3-3.lib \
     -DFFTWF_LIBRARY_SERIAL=C:\fftw\libfftw3f-3.lib \
     ..

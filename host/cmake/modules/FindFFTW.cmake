@@ -2,11 +2,12 @@
 # Find the native FFTW includes and library
 # Components:
 #	MPI Fortran SinglePrecision QuadPrecision
-#  FFTW_COMPILE_OPTIONS - Compile options to apply when using fftw
-#  FFTW_INCLUDES        - where to find fftw3.h
-#  FFTW_LIBRARIES	    - List of libraries when using FFTW.
-#  FFTW_FOUND           - True if FFTW found.
-#  FFTW_IS_SHARED       - True if FFTW is being linked as a shared library
+#  FFTW_COMPILE_OPTIONS   - Compile options to apply when using fftw
+#  FFTW_INCLUDES          - where to find fftw3.h
+#  FFTW_LIBRARIES	      - List of libraries when using FFTW.
+#  FFTW_FOUND             - True if FFTW found.
+#  FFTW_IS_SHARED         - True if FFTW is being linked as a shared library
+#  FFTW_<Component>_FOUND - Whether the given component was found.
 #
 # Note that on some systems, FFTW splits itself into multiple libraries,
 # single precision (fftwf), double precision (fftw), and quad precision (fftwl).
@@ -122,7 +123,7 @@ endfunction(fftw_check_library)
 find_path (FFTW_INCLUDES_SERIAL fftw3.h)
 
 set(FFTW_INCLUDES ${FFTW_INCLUDES_SERIAL})
-list(APPEND FFTW_REQUIRED_VARIABLES)
+list(APPEND FFTW_REQUIRED_VARIABLES FFTW_INCLUDES_SERIAL)
 
 # serial libraries
 # --------------------------------------------------------------------
@@ -240,9 +241,10 @@ if("${FFTW_FIND_COMPONENTS}" MATCHES "MPI")
 
 	if(FFTW_MPI_WORKS)
 		set(FFTW_MPI_FOUND TRUE)
-		if(FFTW_FIND_REQUIRED_MPI)
-			list(APPEND FFTW_REQUIRED_VARIABLES FFTW_LIBRARY_MPI FFTW_INCLUDES_MPI FFTW_MPI_WORKS)
-		endif()
+	endif()
+
+	if(FFTW_FIND_REQUIRED_MPI)
+		list(APPEND FFTW_REQUIRED_VARIABLES FFTW_LIBRARY_MPI FFTW_INCLUDES_MPI FFTW_MPI_WORKS)
 	endif()
 
 	if("${FFTW_FIND_COMPONENTS}" MATCHES "SinglePrecision")
