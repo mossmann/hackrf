@@ -31,6 +31,12 @@ elseif("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC")
 	# disable verbose security warnings
 	add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
 
+	# enable M_PI
+	add_definitions(-D_USE_MATH_DEFINES=1)
+
+	# disable deprecated API headers
+	add_definitions(-DWIN32_LEAN_AND_MEAN)
+
 elseif("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "AppleClang")
 
 	set(CMAKE_C_FLAGS_RELEASE "-O3")
@@ -43,7 +49,7 @@ endif()
 
 # language standard
 set(CMAKE_C_STANDARD 99)
-set(CMAKE_C_EXTENSIONS FALSE)
+set(CMAKE_C_EXTENSIONS TRUE) # for M_PI
 
 # endianness
 include(TestBigEndian)
@@ -51,6 +57,11 @@ test_big_endian(BIGENDIAN)
 if(BIGENDIAN)
 	 add_definitions(-DHACKRF_BIG_ENDIAN)
 endif()
+
+# RPATH
+# (set to point to lib dir in install prefix)
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # Find dependencies
 # -----------------------------------------------------

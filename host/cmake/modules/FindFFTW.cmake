@@ -41,7 +41,7 @@ macro(fftw_find_precision COMPONENT PREC LIBNAMES CHECK_FUNCTION TYPE)
 	endif()
 
 	# first find the library
-	find_library(FFTW${PREC}_LIBRARY_${TYPE} NAMES fftw3f-3)
+	find_library(FFTW${PREC}_LIBRARY_${TYPE} NAMES ${LIBNAMES})
 
 	if(EXISTS "${FFTW${PREC}_LIBRARY_${TYPE}}")
 
