@@ -14,13 +14,14 @@
 # By default FindFFTW will find only the standard double precision variant.
 # To guarantee that you get the other variants, request the relevant components.
 #
+# Why is there a "Fortran" component you ask?  It's because some systems lack the Fortran headers (e.g. fftw3.f03)
+#
 # when using components:
 #   FFTW_INCLUDES_SERIAL   - include path for FFTW serial
 #	FFTW_LIBRARIES_SERIAL  - library for use of fftw from C and Fortran
 #	FFTW_INCLUDES_MPI      - include path for FFTW MPI
 #	FFTW_LIBRARIES_MPI 	   - extra FFTW library to use MPI
 #
-# Why is there a "Fortran" component you ask?  It's because some systems lack the Fortran headers (e.g. fftw3.f03)
 
 if (FFTW_FOUND)
   # Already in cache, be silent
