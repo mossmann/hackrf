@@ -84,7 +84,7 @@ C:\your\build\prefix\bin> lib /machine:x64 /def:libfftw3-3.def
 Then move the generated .lib files to your prefix lib folder.  Also rename them to get rid of the "lib" prefix, e.g. `fftw3-3.lib`.
 
 ```
-c:\hackrf\host\build> cmake ../ -G "Visual Studio 14 2015 Win64" -DCMAKE_PREFIX_PATH=C:/your/build/prefix 
+c:\hackrf\host\build> cmake ../ -G "Visual Studio 14 2015 Win64" -DCMAKE_PREFIX_PATH=C:/your/build/prefix -DCMAKE_INSTALL_PREFIX=C:/your/install/prefix
 ```
 
 CMake will produce a solution file named `HackRF.sln` and a series of

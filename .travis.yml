@@ -32,6 +32,7 @@ addons:
 
   homebrew:
     taps: armmbed/formulae
+    update: true
     packages:
        - fftw
        - arm-none-eabi-gcc
