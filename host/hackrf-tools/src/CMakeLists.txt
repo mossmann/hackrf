@@ -21,12 +21,7 @@
 
 # Based heavily upon the libftdi cmake setup.
 
-set(INSTALL_DEFAULT_BINDIR "bin" CACHE STRING "Appended to CMAKE_INSTALL_PREFIX")
 
-find_package(FFTW REQUIRED)
-include_directories(${FFTW_INCLUDES})
-get_filename_component(FFTW_LIBRARY_DIRS ${FFTW_LIBRARIES} DIRECTORY)
-link_directories(${FFTW_LIBRARY_DIRS})
 
 SET(TOOLS
 	hackrf_transfer
@@ -39,23 +34,14 @@ SET(TOOLS
 	hackrf_operacake
 )
 
+set(TOOLS_LINK_LIBS m fftw3 hackrf)
+
 if(MSVC)
+	# use getopt support library
 	add_library(libgetopt_static STATIC
 	    ../getopt/getopt.c
 	)
-	LIST(APPEND TOOLS_LINK_LIBS ${FFTW_LIBRARIES})
-else()
-    LIST(APPEND TOOLS_LINK_LIBS m fftw3f)
-endif()
 
-if(NOT libhackrf_SOURCE_DIR)
-	include_directories(${LIBHACKRF_INCLUDE_DIR})
-	LIST(APPEND TOOLS_LINK_LIBS ${LIBHACKRF_LIBRARIES})
-else()
-	LIST(APPEND TOOLS_LINK_LIBS hackrf)
-endif()
-
-if(MSVC)
 	LIST(APPEND TOOLS_LINK_LIBS libgetopt_static)
 endif()
 

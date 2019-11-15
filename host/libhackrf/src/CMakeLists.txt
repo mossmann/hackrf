@@ -23,59 +23,50 @@
 # Based heavily upon the libftdi cmake setup.
 
 # Targets
-set(c_sources ${CMAKE_CURRENT_SOURCE_DIR}/hackrf.c CACHE INTERNAL "List of C sources")
-set(c_headers ${CMAKE_CURRENT_SOURCE_DIR}/hackrf.h CACHE INTERNAL "List of C headers")
+set(LIBHACKRF_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/hackrf.c)
+set(LIBHACKRF_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/hackrf.h)
 
 # Dynamic library
-add_library(hackrf SHARED ${c_sources})
-set_target_properties(hackrf PROPERTIES VERSION ${MAJOR_VERSION}.${MINOR_VERSION}.0 SOVERSION 0)
+add_library(hackrf SHARED ${LIBHACKRF_SOURCES})
+set_target_properties(hackrf PROPERTIES VERSION ${libhackrf_VERSION} SOVERSION 0)
 
 # Static library
-add_library(hackrf-static STATIC ${c_sources})
-if(MSVC)
+add_library(hackrf-static STATIC ${LIBHACKRF_SOURCES})
+if("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC")
+  # avoid .lib files with identical names
 	set_target_properties(hackrf-static PROPERTIES OUTPUT_NAME "hackrf_static")
 else()
 	set_target_properties(hackrf-static PROPERTIES OUTPUT_NAME "hackrf")
 endif()
 
+# prevent cleaning one target from cleaning the other
 set_target_properties(hackrf PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 set_target_properties(hackrf-static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 
 # Dependencies
-target_link_libraries(hackrf ${LIBUSB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
-   
-# For cygwin just force UNIX OFF and WIN32 ON
-if( ${CYGWIN} )
-  SET(UNIX OFF)
-  SET(WIN32 ON)
-endif( ${CYGWIN} )
+target_link_libraries(hackrf libusb pthread)
+target_link_libraries(hackrf-static libusb pthread)
 
-if( ${UNIX} )
-   install(TARGETS hackrf
-           LIBRARY DESTINATION lib${LIB_SUFFIX}
-           COMPONENT sharedlibs
-           )
-   install(TARGETS hackrf-static
-           ARCHIVE DESTINATION lib${LIB_SUFFIX}
-           COMPONENT staticlibs
-           )
-   install(FILES ${c_headers}
-           DESTINATION include/${PROJECT_NAME}
-           COMPONENT headers
-           )
-endif( ${UNIX} )
+# add DLL flag to dynamic version
+target_compile_definitions(hackrf PUBLIC hackrf_DLL)
 
-if( ${WIN32} )
-   install(TARGETS hackrf
-           DESTINATION bin
-           COMPONENT sharedlibs
-           )
-   install(TARGETS hackrf-static
-           DESTINATION bin
-           COMPONENT staticlibs
-           )
-   install(FILES ${c_headers}
-           DESTINATION include/${PROJECT_NAME}
-           COMPONENT headers
-           )
-endif( ${WIN32} )
+# add interface include directories
+target_include_directories(hackrf PUBLIC .)
+target_include_directories(hackrf-static PUBLIC .)
+
+# install DLL to bin and link library to lib
+install(TARGETS hackrf
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib
+         COMPONENT sharedlibs
+         )
+install(TARGETS hackrf-static
+       DESTINATION bin
+       COMPONENT staticlibs
+       )
+install(FILES ${LIBHACKRF_HEADERS}
+       DESTINATION include/${PROJECT_NAME}
+       COMPONENT headers
+       )
+
+
