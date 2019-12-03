@@ -25,9 +25,7 @@ ENDIF(NOT WIN32)
 FIND_PATH(LIBHACKRF_INCLUDE_DIR
   NAMES hackrf.h
   HINTS $ENV{LIBHACKRF_DIR}/include ${PC_LIBHACKRF_INCLUDEDIR}
-  PATHS /usr/local/include/libhackrf /usr/include/libhackrf /usr/local/include
-  /usr/include 
-  /opt/local/include/libhackrf
+  PATH_SUFFIXES libhackrf
 )
 
 set(libhackrf_library_names hackrf)
