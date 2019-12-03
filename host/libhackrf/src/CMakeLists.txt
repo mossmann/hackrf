@@ -48,7 +48,7 @@ target_link_libraries(hackrf libusb pthread)
 target_link_libraries(hackrf-static libusb pthread)
 
 # add DLL flag to dynamic version
-target_compile_definitions(hackrf PUBLIC hackrf_DLL)
+target_compile_definitions(hackrf-static PUBLIC hackrf_STATIC)
 
 # add interface include directories
 target_include_directories(hackrf PUBLIC .)
