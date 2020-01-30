@@ -262,7 +262,7 @@ if("${FFTW_FIND_COMPONENTS}" MATCHES "MPI")
 		set(FFTW_FORTRAN_MPI_HEADER "${FFTW_INCLUDES_MPI}/fftw3-mpi.f03")
 		
 		# reevaluate our life choices
-		if(EXISTS "${FFTW_FORTRAN_HEADER}")
+		if(EXISTS "${FFTW_FORTRAN_MPI_HEADER}")
 			set(FFTW_Fortran_FOUND TRUE)
 		else()
 			set(FFTW_Fortran_FOUND FALSE)
