@@ -434,7 +434,7 @@ int tx_callback(hackrf_transfer* transfer) {
 	if( fd != NULL )
 	{
 		byte_count += transfer->valid_length;
-		bytes_to_read = transfer->valid_length;
+		bytes_to_read = transfer->buffer_length;
 		if (limit_num_samples) {
 			if (bytes_to_read >= bytes_to_xfer) {
 				/*
@@ -465,7 +465,7 @@ int tx_callback(hackrf_transfer* transfer) {
 	} else if (transceiver_mode == TRANSCEIVER_MODE_SS) {
 		/* Transmit continuous wave with specific amplitude */
 		byte_count += transfer->valid_length;
-		bytes_to_read = transfer->valid_length;
+		bytes_to_read = transfer->buffer_length;
 		if (limit_num_samples) {
 			if (bytes_to_read >= bytes_to_xfer) {
 				bytes_to_read = bytes_to_xfer;

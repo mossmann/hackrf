@@ -234,6 +234,7 @@ usb_request_status_t usb_vendor_request_set_freq_explicit(
 
 static volatile transceiver_mode_t _transceiver_mode = TRANSCEIVER_MODE_OFF;
 static volatile hw_sync_mode_t _hw_sync_mode = HW_SYNC_MODE_OFF;
+static volatile bool _should_prepare_buffer_for_tx_or_rx = false;
 
 void set_hw_sync_mode(const hw_sync_mode_t new_hw_sync_mode) {
 	_hw_sync_mode = new_hw_sync_mode;
@@ -273,9 +274,15 @@ void set_transceiver_mode(const transceiver_mode_t new_transceiver_mode) {
 		activate_best_clock_source();
 
         hw_sync_enable(_hw_sync_mode);
-
-		baseband_streaming_enable(&sgpio_config);
 	}
+
+	_should_prepare_buffer_for_tx_or_rx = true;
+}
+
+bool should_prepare_buffer_for_tx_or_rx(void) {
+	bool ret = _should_prepare_buffer_for_tx_or_rx;
+	_should_prepare_buffer_for_tx_or_rx = false;
+	return ret;
 }
 
 usb_request_status_t usb_vendor_request_set_transceiver_mode(

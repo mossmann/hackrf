@@ -196,6 +196,49 @@ static void m0_rom_to_ram() {
 	}
 }
 
+void initial_tx_buffer_fill_completed(void* user_data, unsigned int transferred) {
+	(void)user_data;
+	(void)transferred;
+
+	// Now we have filled the first half of the transfer buffer we reset the buffer offset to zero
+	// so that we will transmit from the start of the buffer and to trigger the transfer of the
+	// second half of the buffer.
+	usb_bulk_buffer_offset = 0;
+
+	// The SGPIO output is double buffered. Therefore we must write two samples to the SGPIO
+	// registers so that the value at the SGPIO pins when streaming starts is our first sample.
+	for (int i = 0; i < 2; i++) {
+		SGPIO_CLR_STATUS_1 = (1 << SGPIO_SLICE_A);
+
+		uint32_t* const p = (uint32_t*)&usb_bulk_buffer[usb_bulk_buffer_offset];
+		__asm__(
+			"ldr r0, [%[p], #0]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #44]\n\t"
+			"ldr r0, [%[p], #4]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #20]\n\t"
+			"ldr r0, [%[p], #8]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #40]\n\t"
+			"ldr r0, [%[p], #12]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #8]\n\t"
+			"ldr r0, [%[p], #16]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #36]\n\t"
+			"ldr r0, [%[p], #20]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #16]\n\t"
+			"ldr r0, [%[p], #24]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #32]\n\t"
+			"ldr r0, [%[p], #28]\n\t"
+			"str r0, [%[SGPIO_REG_SS], #0]\n\t"
+			:
+			: [SGPIO_REG_SS] "l" (SGPIO_PORT_BASE + 0x100),
+			[p] "l" (p)
+			: "r0"
+		);
+		usb_bulk_buffer_offset += 32;
+	}
+
+	baseband_streaming_enable(&sgpio_config);
+}
+
 int main(void) {
 	bool operacake_allow_gpio;
 	pin_setup();
@@ -264,6 +307,30 @@ int main(void) {
 		if (start_sweep_mode) {
 			start_sweep_mode = false;
 			sweep_mode();
+		}
+
+		if (should_prepare_buffer_for_tx_or_rx()) {
+			if (transceiver_mode() == TRANSCEIVER_MODE_RX) {
+				// In receive mode we reset buffer positions so the first samples we receive are
+				// captured samples and not stale ones already in the buffer.
+				// As the SGPIO is double buffered it will produce two buffers worth of junk before
+				// the first captured sample.
+				usb_bulk_buffer_offset = 0x4000 - 64;
+				phase = 1;
+				baseband_streaming_enable(&sgpio_config);
+			} else if (transceiver_mode() == TRANSCEIVER_MODE_TX) {
+				// In transmit mode we fill the buffers over USB before we start streaming so that
+				// we only transmit user provided samples. This is especially useful in hardware
+				// triggered mode so that we transmit valid samples as soon as the trigger occurs.
+				usb_bulk_buffer_offset = 0x4000;
+				phase = 0;
+				usb_transfer_schedule_block(
+					&usb_endpoint_bulk_out,
+					&usb_bulk_buffer[0x0000],
+					0x4000,
+					initial_tx_buffer_fill_completed, NULL
+					);
+			}
 		}
 
 		// Set up IN transfer of buffer 0.

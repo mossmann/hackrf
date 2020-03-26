@@ -103,6 +103,11 @@ typedef enum {
 	HACKRF_HW_SYNC_MODE_ON = 1,
 } hackrf_hw_sync_mode;
 
+typedef enum {
+	HACKRF_TRANSFER_DIRECTION_IN = 0,
+	HACKRF_TRANSFER_DIRECTION_OUT = 1,
+} hackrf_transfer_direction;
+
 #define TRANSFER_COUNT 4
 #define TRANSFER_BUFFER_SIZE 262144
 #define USB_MAX_SERIAL_LENGTH 32
@@ -113,6 +118,7 @@ struct hackrf_device {
 	hackrf_sample_block_cb_fn callback;
 	volatile bool transfer_thread_started; /* volatile shared between threads (read only) */
 	pthread_t transfer_thread;
+	volatile hackrf_transfer_direction transfer_direction; /* volatile shared between threads (read only) */
 	volatile bool streaming; /* volatile shared between threads (read only) */
 	void* rx_ctx;
 	void* tx_ctx;
@@ -247,11 +253,21 @@ static int allocate_transfers(hackrf_device* const device)
 
 static int prepare_transfers(
 	hackrf_device* device,
-	const uint_fast8_t endpoint_address,
 	libusb_transfer_cb_fn callback)
 {
 	int error;
 	uint32_t transfer_index;
+	uint_fast8_t endpoint_address;
+
+	if( device->transfer_direction == HACKRF_TRANSFER_DIRECTION_IN )
+	{
+		endpoint_address = LIBUSB_ENDPOINT_IN | 1;
+	} else if( device->transfer_direction == HACKRF_TRANSFER_DIRECTION_OUT ) {
+		endpoint_address = LIBUSB_ENDPOINT_OUT | 2;
+	} else {
+		return HACKRF_ERROR_OTHER;
+	}
+
 	if( device->transfers != NULL )
 	{
 		for(transfer_index=0; transfer_index<TRANSFER_COUNT; transfer_index++)
@@ -259,11 +275,39 @@ static int prepare_transfers(
 			device->transfers[transfer_index]->endpoint = endpoint_address;
 			device->transfers[transfer_index]->callback = callback;
 
-			error = libusb_submit_transfer(device->transfers[transfer_index]);
-			if( error != 0 )
-			{
-				last_libusb_error = error;
-				return HACKRF_ERROR_LIBUSB;
+			if ((endpoint_address & LIBUSB_ENDPOINT_OUT) == LIBUSB_ENDPOINT_OUT) {
+				// If we are transmitting then we fill the first buffers to be
+				// sent to the HackRF from the data callback as otherwise the
+				// HackRF will receive four transfers of zeros.
+				// For an OUT transfer `actual_length` will contain the number
+				// of bytes successfully transferred when the callback is made.
+				// It does not contain the size of the buffer to be filled.
+				// However, `valid_length` is commonly used in other HackRF
+				// code as the buffer length so we ensure that is the case here.
+				hackrf_transfer transfer = {
+					.device = device,
+					.buffer = device->transfers[transfer_index]->buffer,
+					.buffer_length = device->transfers[transfer_index]->length,
+					.valid_length = device->transfers[transfer_index]->actual_length,
+					.rx_ctx = device->rx_ctx,
+					.tx_ctx = device->tx_ctx
+				};
+
+				if (device->callback(&transfer) == 0) {
+					error = libusb_submit_transfer(device->transfers[transfer_index]);
+					if (error != 0) {
+						last_libusb_error = error;
+						return HACKRF_ERROR_LIBUSB;
+					}
+				} else {
+					return HACKRF_ERROR_LIBUSB;
+				}
+			} else {
+				error = libusb_submit_transfer(device->transfers[transfer_index]);
+				if (error != 0) {
+					last_libusb_error = error;
+					return HACKRF_ERROR_LIBUSB;
+				}
 			}
 		}
 		return HACKRF_SUCCESS;
@@ -1474,24 +1518,6 @@ int ADDCALL hackrf_set_antenna_enable(hackrf_device* device, const uint8_t value
 	}
 }
 
-static void* transfer_threadproc(void* arg)
-{
-	hackrf_device* device = (hackrf_device*)arg;
-	int error;
-	struct timeval timeout = { 0, 500000 };
-
-	while( (device->streaming) && (device->do_exit == false) )
-	{
-		error = libusb_handle_events_timeout(g_libusb_context, &timeout);
-		if( (error != 0) && (error != LIBUSB_ERROR_INTERRUPTED) )
-		{
-			device->streaming = false;
-		}
-	}
-
-	return NULL;
-}
-
 static void LIBUSB_CALL hackrf_libusb_transfer_callback(struct libusb_transfer* usb_transfer)
 {
 	hackrf_device* device = (hackrf_device*)usb_transfer->user_data;
@@ -1528,6 +1554,30 @@ static void LIBUSB_CALL hackrf_libusb_transfer_callback(struct libusb_transfer* 
 	}
 }
 
+static void* transfer_threadproc(void* arg)
+{
+	hackrf_device* device = (hackrf_device*)arg;
+	int error, result;
+	struct timeval timeout = { 0, 500000 };
+
+	result = prepare_transfers(device, hackrf_libusb_transfer_callback);
+	if( result != HACKRF_SUCCESS )
+	{
+		device->streaming = false;
+	}
+
+	while( (device->streaming) && (device->do_exit == false) )
+	{
+		error = libusb_handle_events_timeout(g_libusb_context, &timeout);
+		if( (error != 0) && (error != LIBUSB_ERROR_INTERRUPTED) )
+		{
+			device->streaming = false;
+		}
+	}
+
+	return NULL;
+}
+
 static int kill_transfer_thread(hackrf_device* device)
 {
 	void* value;
@@ -1553,33 +1603,23 @@ static int kill_transfer_thread(hackrf_device* device)
 }
 
 static int create_transfer_thread(hackrf_device* device,
-	const uint8_t endpoint_address,
+	hackrf_transfer_direction transfer_direction,
 		hackrf_sample_block_cb_fn callback)
 {
 	int result;
 	
 	if( device->transfer_thread_started == false )
 	{
-		device->streaming = false;
-		device->do_exit = false;
-
-		result = prepare_transfers(
-			device, endpoint_address,
-			hackrf_libusb_transfer_callback
-		);
-
-		if( result != HACKRF_SUCCESS )
-		{
-			return result;
-		}
-
 		device->streaming = true;
+		device->do_exit = false;
 		device->callback = callback;
+		device->transfer_direction = transfer_direction;
 		result = pthread_create(&device->transfer_thread, 0, transfer_threadproc, device);
 		if( result == 0 )
 		{
 			device->transfer_thread_started = true;
 		}else {
+			device->streaming = false;
 			return HACKRF_ERROR_THREAD;
 		}
 	} else {
@@ -1617,12 +1657,11 @@ int ADDCALL hackrf_is_streaming(hackrf_device* device)
 int ADDCALL hackrf_start_rx(hackrf_device* device, hackrf_sample_block_cb_fn callback, void* rx_ctx)
 {
 	int result;
-	const uint8_t endpoint_address = LIBUSB_ENDPOINT_IN | 1;
 	result = hackrf_set_transceiver_mode(device, HACKRF_TRANSCEIVER_MODE_RECEIVE);
 	if( result == HACKRF_SUCCESS )
 	{
 		device->rx_ctx = rx_ctx;
-		result = create_transfer_thread(device, endpoint_address, callback);
+		result = create_transfer_thread(device, HACKRF_TRANSFER_DIRECTION_IN, callback);
 	}
 	return result;
 }
@@ -1641,12 +1680,11 @@ int ADDCALL hackrf_stop_rx(hackrf_device* device)
 int ADDCALL hackrf_start_tx(hackrf_device* device, hackrf_sample_block_cb_fn callback, void* tx_ctx)
 {
 	int result;
-	const uint8_t endpoint_address = LIBUSB_ENDPOINT_OUT | 2;
 	result = hackrf_set_transceiver_mode(device, HACKRF_TRANSCEIVER_MODE_TRANSMIT);
 	if( result == HACKRF_SUCCESS )
 	{
 		device->tx_ctx = tx_ctx;
-		result = create_transfer_thread(device, endpoint_address, callback);
+		result = create_transfer_thread(device, HACKRF_TRANSFER_DIRECTION_OUT, callback);
 	}
 	return result;
 }
