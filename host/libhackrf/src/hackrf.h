@@ -193,7 +193,8 @@ extern ADDAPI int ADDCALL hackrf_set_freq_explicit(hackrf_device* device,
 		const uint64_t if_freq_hz, const uint64_t lo_freq_hz,
 		const enum rf_path_filter path);
 
-/* 2-20Mhz - either as a fraction, i.e. freq 20000000hz divider 2 -> 10Mhz or as plain old 10000000hz (double) */
+/* currently 8-20Mhz - either as a fraction, i.e. freq 20000000hz divider 2 -> 10Mhz or as plain old 10000000hz (double)
+	preferred rates are 8, 10, 12.5, 16, 20Mhz due to less jitter */
 extern ADDAPI int ADDCALL hackrf_set_sample_rate_manual(hackrf_device* device, const uint32_t freq_hz, const uint32_t divider);
 extern ADDAPI int ADDCALL hackrf_set_sample_rate(hackrf_device* device, const double freq_hz);
 
@@ -253,12 +254,6 @@ extern ADDAPI int ADDCALL hackrf_set_clkout_enable(hackrf_device* device, const 
 extern ADDAPI int ADDCALL hackrf_operacake_gpio_test(hackrf_device* device,
                                                      uint8_t address,
 													 uint16_t* test_result);
-#ifdef HACKRF_ISSUE_609_IS_FIXED
-extern ADDAPI int ADDCALL hackrf_cpld_checksum(hackrf_device* device,
-											   uint32_t* crc);
-#endif /* HACKRF_ISSUE_609_IS_FIXED */
-
-extern ADDAPI int ADDCALL hackrf_set_ui_enable(hackrf_device* device, const uint8_t value);
 
 #ifdef __cplusplus
 } // __cplusplus defined.

@@ -22,7 +22,7 @@
 
 #include "tuning.h"
 
-#include "hackrf_ui.h"
+#include "hackrf-ui.h"
 
 #include <hackrf_core.h>
 #include <mixer.h>
@@ -115,10 +115,8 @@ bool set_freq(const uint64_t freq)
 	max2837_set_mode(&max2837, prior_max2837_mode);
 	if( success ) {
 		freq_cache = freq;
-		hackrf_ui()->set_frequency(freq);
-#ifdef HACKRF_ONE
+		hackrf_ui_setFrequency(freq);
 		operacake_set_range(freq_mhz);
-#endif
 	}
 	return success;
 }

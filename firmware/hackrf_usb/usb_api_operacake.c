@@ -22,7 +22,6 @@
 #include "usb_api_operacake.h"
 #include "usb_queue.h"
 
-#include <stddef.h>
 #include <operacake.h>
 
 usb_request_status_t usb_vendor_request_operacake_get_boards(

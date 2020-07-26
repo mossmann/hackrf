@@ -9,7 +9,6 @@ matrix:
 
     - os: osx
       compiler: clang
-      osx_image: xcode10.3
 
 env:
   global:
@@ -31,10 +30,10 @@ addons:
       - python-yaml
 
   homebrew:
-    taps: armmbed/formulae
+    taps: PX4/homebrew-px4
     packages:
        - fftw
-       - arm-none-eabi-gcc
+       - gcc-arm-none-eabi
        - dfu-util
 
 before_install:

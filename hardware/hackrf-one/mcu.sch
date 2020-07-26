@@ -1,36 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:hackrf
+EESchema Schematic File Version 4
 LIBS:hackrf-one-cache
-EELAYER 25 0
+EELAYER 29 0
 EELAYER END
 $Descr User 17000 11000
 encoding utf-8
@@ -49,7 +19,7 @@ Cortex Debug\nConnector\n(10 pin 50 mil)
 Text Notes 4150 9050 0    40   ~ 0
 U23 starts up on this 12 MHz\ncrystal. This makes it possible\nto use USB0 DFU boot mode.\nIt should be possible to switch\nto GP_CLKIN provided by the\nclock generator IC (MCL_CLK)\nif desired.
 $Comp
-L C C125
+L hackrf-one-rescue:C C125
 U 1 1 505E9E4C
 P 14300 950
 AR Path="/505E9E4C" Ref="C125"  Part="1" 
@@ -133,7 +103,7 @@ USART0
 Text Notes 2150 9500 0    40   ~ 0
 Boot selection:
 $Comp
-L C C158
+L hackrf-one-rescue:C C158
 U 1 1 5052A211
 P 5000 9900
 AR Path="/5052A211" Ref="C158"  Part="1" 
@@ -149,7 +119,7 @@ F 6 "CAP CER 18PF 50V 5% NP0 0402" H 5000 9900 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_2 P8
+L hackrf-one-rescue:CONN_2 P8
 U 1 1 5048CFC5
 P 16050 3150
 F 0 "P8" V 16000 3150 40  0000 C CNN
@@ -165,7 +135,7 @@ REG_OUT1
 Text Label 14700 700  0    40   ~ 0
 REG_OUT2
 $Comp
-L CONN_2 P1
+L hackrf-one-rescue:CONN_2 P1
 U 1 1 5048CF4D
 P 16050 1150
 F 0 "P1" V 16000 1150 40  0000 C CNN
@@ -177,7 +147,7 @@ F 4 "DNP" H 16050 1350 60  0000 C CNN "Note"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R7
+L hackrf-one-rescue:R R7
 U 1 1 504786E0
 P 1350 9200
 AR Path="/504786E0" Ref="R7"  Part="1" 
@@ -197,7 +167,7 @@ Default boot configuration is SPIFI.\nPress SW1 during reset to switch to\nUSB0 
 Text GLabel 8750 7750 3    40   Input ~ 0
 SGPIO_CLK
 $Comp
-L CONN_1 P24
+L hackrf-one-rescue:CONN_1 P24
 U 1 1 5045736F
 P 4050 5800
 F 0 "P24" H 4130 5800 40  0000 L CNN
@@ -209,7 +179,7 @@ F 4 "DNP" H 4050 5800 60  0001 C CNN "Note"
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_1 P23
+L hackrf-one-rescue:CONN_1 P23
 U 1 1 5045734C
 P 1850 5700
 F 0 "P23" H 1930 5700 40  0000 L CNN
@@ -221,7 +191,7 @@ F 4 "DNP" H 1850 5700 60  0001 C CNN "Note"
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_10X2 P30
+L hackrf-one-rescue:CONN_10X2 P30
 U 1 1 504571A2
 P 10400 7900
 F 0 "P30" H 10400 8350 60  0000 C CNN
@@ -331,7 +301,7 @@ DD9
 Text Label 2750 7850 0    40   ~ 0
 GPIO3_8
 $Comp
-L GND #PWR0189
+L hackrf-one-rescue:GND #PWR0189
 U 1 1 5043D25E
 P 15250 3450
 AR Path="/5043D25E" Ref="#PWR0189"  Part="1" 
@@ -344,7 +314,7 @@ F 3 "" H 15250 3450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0190
+L hackrf-one-rescue:GND #PWR0190
 U 1 1 5043D25A
 P 15050 3450
 AR Path="/5043D25A" Ref="#PWR0190"  Part="1" 
@@ -357,7 +327,7 @@ F 3 "" H 15050 3450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_2 P3
+L hackrf-one-rescue:CONN_2 P3
 U 1 1 5043D24D
 P 15150 3000
 F 0 "P3" V 15100 3000 40  0000 C CNN
@@ -371,7 +341,7 @@ $EndComp
 Text GLabel 5250 7750 3    40   Input ~ 0
 !VAA_ENABLE
 $Comp
-L GND #PWR0191
+L hackrf-one-rescue:GND #PWR0191
 U 1 1 5043C581
 P 1600 10100
 AR Path="/5043C581" Ref="#PWR0191"  Part="1" 
@@ -388,7 +358,7 @@ P1_2
 Text Label 1850 10400 0    40   ~ 0
 P1_1
 $Comp
-L VCC #PWR0192
+L hackrf-one-rescue:VCC #PWR0192
 U 1 1 5043C57A
 P 2750 10400
 F 0 "#PWR0192" H 2750 10500 30  0001 C CNN
@@ -399,7 +369,7 @@ F 3 "" H 2750 10400 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0193
+L hackrf-one-rescue:GND #PWR0193
 U 1 1 5043C554
 P 1350 9450
 AR Path="/5043C554" Ref="#PWR0193"  Part="1" 
@@ -412,7 +382,7 @@ F 3 "" H 1350 9450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0194
+L hackrf-one-rescue:VCC #PWR0194
 U 1 1 5043C553
 P 2150 8950
 F 0 "#PWR0194" H 2150 9050 30  0001 C CNN
@@ -425,7 +395,7 @@ $EndComp
 Text Label 750  8950 0    40   ~ 0
 P2_8
 $Comp
-L R R59
+L hackrf-one-rescue:R R59
 U 1 1 503F9A36
 P 10550 3950
 AR Path="/503F9A36" Ref="R59"  Part="1" 
@@ -441,7 +411,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 10550 3950 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R54
+L hackrf-one-rescue:R R54
 U 1 1 503F9A10
 P 15900 1850
 AR Path="/503F9A10" Ref="R54"  Part="1" 
@@ -457,7 +427,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 15900 1850 60  0001 C CNN "Description"
 	1    0    0    1   
 $EndComp
 $Comp
-L R R52
+L hackrf-one-rescue:R R52
 U 1 1 503F9A07
 P 15300 1800
 AR Path="/503F9A07" Ref="R52"  Part="1" 
@@ -473,7 +443,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 15300 1800 60  0001 C CNN "Description"
 	0    1    -1   0   
 $EndComp
 $Comp
-L R R51
+L hackrf-one-rescue:R R51
 U 1 1 503F99F3
 P 13400 1600
 AR Path="/503F99F3" Ref="R51"  Part="1" 
@@ -489,7 +459,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 13400 1600 60  0001 C CNN "Description"
 	0    1    -1   0   
 $EndComp
 $Comp
-L R R49
+L hackrf-one-rescue:R R49
 U 1 1 503F999F
 P 1700 8150
 AR Path="/503F999F" Ref="R49"  Part="1" 
@@ -505,7 +475,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 1700 8150 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R48
+L hackrf-one-rescue:R R48
 U 1 1 503F9989
 P 6650 1150
 AR Path="/503F9989" Ref="R48"  Part="1" 
@@ -521,7 +491,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 6650 1150 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R66
+L hackrf-one-rescue:R R66
 U 1 1 503F997B
 P 2500 5250
 AR Path="/503F997B" Ref="R66"  Part="1" 
@@ -537,7 +507,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 2500 5250 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R64
+L hackrf-one-rescue:R R64
 U 1 1 503F997A
 P 2300 5250
 AR Path="/503F997A" Ref="R64"  Part="1" 
@@ -553,7 +523,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 2300 5250 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R63
+L hackrf-one-rescue:R R63
 U 1 1 503F996A
 P 2100 5250
 AR Path="/503F996A" Ref="R63"  Part="1" 
@@ -569,7 +539,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 2100 5250 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R93
+L hackrf-one-rescue:R R93
 U 1 1 503F9958
 P 1450 9800
 AR Path="/503F9958" Ref="R93"  Part="1" 
@@ -585,7 +555,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 1450 9800 60  0001 C CNN "Description"
 	0    -1   1    0   
 $EndComp
 $Comp
-L R R68
+L hackrf-one-rescue:R R68
 U 1 1 503F9945
 P 1350 10100
 AR Path="/503F9945" Ref="R68"  Part="1" 
@@ -601,7 +571,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 1350 10100 60  0001 C CNN "Description"
 	0    -1   1    0   
 $EndComp
 $Comp
-L R R100
+L hackrf-one-rescue:R R100
 U 1 1 503F98AF
 P 11200 10400
 AR Path="/503F98AF" Ref="R100"  Part="1" 
@@ -617,7 +587,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 11200 10400 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R99
+L hackrf-one-rescue:R R99
 U 1 1 503F98AD
 P 11200 10200
 AR Path="/503F98AD" Ref="R99"  Part="1" 
@@ -633,7 +603,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 11200 10200 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R98
+L hackrf-one-rescue:R R98
 U 1 1 503F98AC
 P 11200 10000
 AR Path="/503F98AC" Ref="R98"  Part="1" 
@@ -649,7 +619,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 11200 10000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R96
+L hackrf-one-rescue:R R96
 U 1 1 503F989E
 P 11200 9600
 AR Path="/503F989E" Ref="R96"  Part="1" 
@@ -665,7 +635,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 11200 9600 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R91
+L hackrf-one-rescue:R R91
 U 1 1 503F9897
 P 11200 9400
 AR Path="/503F9897" Ref="R91"  Part="1" 
@@ -681,7 +651,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 11200 9400 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R90
+L hackrf-one-rescue:R R90
 U 1 1 503F987B
 P 11200 9200
 AR Path="/503F987B" Ref="R90"  Part="1" 
@@ -697,7 +667,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 11200 9200 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R89
+L hackrf-one-rescue:R R89
 U 1 1 503F9879
 P 11200 9000
 AR Path="/503F9879" Ref="R89"  Part="1" 
@@ -713,7 +683,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 11200 9000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R88
+L hackrf-one-rescue:R R88
 U 1 1 503F9878
 P 9800 10400
 AR Path="/503F9878" Ref="R88"  Part="1" 
@@ -729,7 +699,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 10400 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R87
+L hackrf-one-rescue:R R87
 U 1 1 503F9875
 P 9800 10200
 AR Path="/503F9875" Ref="R87"  Part="1" 
@@ -745,7 +715,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 10200 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R86
+L hackrf-one-rescue:R R86
 U 1 1 503F9874
 P 9800 10000
 AR Path="/503F9874" Ref="R86"  Part="1" 
@@ -761,7 +731,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 10000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R81
+L hackrf-one-rescue:R R81
 U 1 1 503F985B
 P 9800 9800
 AR Path="/503F985B" Ref="R81"  Part="1" 
@@ -777,7 +747,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 9800 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R80
+L hackrf-one-rescue:R R80
 U 1 1 503F985A
 P 9800 9600
 AR Path="/503F985A" Ref="R80"  Part="1" 
@@ -793,7 +763,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 9600 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R79
+L hackrf-one-rescue:R R79
 U 1 1 503F9858
 P 9800 9400
 AR Path="/503F9858" Ref="R79"  Part="1" 
@@ -809,7 +779,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 9400 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R78
+L hackrf-one-rescue:R R78
 U 1 1 503F9856
 P 9800 9200
 AR Path="/503F9856" Ref="R78"  Part="1" 
@@ -825,7 +795,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 9200 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R77
+L hackrf-one-rescue:R R77
 U 1 1 503F983E
 P 9800 9000
 AR Path="/503F983E" Ref="R77"  Part="1" 
@@ -841,7 +811,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 9800 9000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R46
+L hackrf-one-rescue:R R46
 U 1 1 503F8429
 P 13300 700
 AR Path="/503F8429" Ref="R46"  Part="1" 
@@ -857,7 +827,7 @@ F 6 "RES TF 1/16W 162K OHM 1% 0402" H 13300 700 60  0001 C CNN "Description"
 	0    -1   1    0   
 $EndComp
 $Comp
-L R R75
+L hackrf-one-rescue:R R75
 U 1 1 503C51A8
 P 1600 6600
 AR Path="/503C51A8" Ref="R75"  Part="1" 
@@ -873,7 +843,7 @@ F 6 "RES TF 1/16W 470 OHM 5% 0402" H 1600 6600 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R72
+L hackrf-one-rescue:R R72
 U 1 1 503C519A
 P 700 6600
 AR Path="/503C519A" Ref="R72"  Part="1" 
@@ -889,7 +859,7 @@ F 6 "RES TF 1/16W 470 OHM 5% 0402" H 700 6600 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R67
+L hackrf-one-rescue:R R67
 U 1 1 503C4ECA
 P 2500 10400
 AR Path="/503C4ECA" Ref="R67"  Part="1" 
@@ -905,7 +875,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 2500 10400 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L C C156
+L hackrf-one-rescue:C C156
 U 1 1 503C4CBC
 P 5550 9900
 AR Path="/503C4CBC" Ref="C156"  Part="1" 
@@ -922,7 +892,7 @@ F 7 "DNP" V 5850 9900 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C148
+L hackrf-one-rescue:C C148
 U 1 1 503C4C68
 P 13750 4050
 AR Path="/503C4C68" Ref="C148"  Part="1" 
@@ -938,7 +908,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 13750 4050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C149
+L hackrf-one-rescue:C C149
 U 1 1 503C4C67
 P 14050 4050
 AR Path="/503C4C67" Ref="C149"  Part="1" 
@@ -954,7 +924,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 14050 4050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C150
+L hackrf-one-rescue:C C150
 U 1 1 503C4C65
 P 14350 4050
 AR Path="/503C4C65" Ref="C150"  Part="1" 
@@ -970,7 +940,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 14350 4050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C151
+L hackrf-one-rescue:C C151
 U 1 1 503C4C64
 P 15400 4050
 AR Path="/503C4C64" Ref="C151"  Part="1" 
@@ -986,7 +956,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 15400 4050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C152
+L hackrf-one-rescue:C C152
 U 1 1 503C4C63
 P 15700 4050
 AR Path="/503C4C63" Ref="C152"  Part="1" 
@@ -1002,7 +972,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 15700 4050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C153
+L hackrf-one-rescue:C C153
 U 1 1 503C4C62
 P 14650 4050
 AR Path="/503C4C62" Ref="C153"  Part="1" 
@@ -1018,7 +988,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 14650 4050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C154
+L hackrf-one-rescue:C C154
 U 1 1 503C4C50
 P 14950 4050
 AR Path="/503C4C50" Ref="C154"  Part="1" 
@@ -1034,7 +1004,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 14950 4050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C144
+L hackrf-one-rescue:C C144
 U 1 1 503C4C30
 P 10450 1850
 AR Path="/503C4C30" Ref="C144"  Part="1" 
@@ -1050,7 +1020,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 10450 1850 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C142
+L hackrf-one-rescue:C C142
 U 1 1 503C4C2C
 P 4750 950
 AR Path="/503C4C2C" Ref="C142"  Part="1" 
@@ -1066,7 +1036,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 4750 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C141
+L hackrf-one-rescue:C C141
 U 1 1 503C4C2A
 P 4450 950
 AR Path="/503C4C2A" Ref="C141"  Part="1" 
@@ -1082,7 +1052,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 4450 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C140
+L hackrf-one-rescue:C C140
 U 1 1 503C4C29
 P 4150 950
 AR Path="/503C4C29" Ref="C140"  Part="1" 
@@ -1098,7 +1068,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 4150 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C139
+L hackrf-one-rescue:C C139
 U 1 1 503C4C28
 P 3850 950
 AR Path="/503C4C28" Ref="C139"  Part="1" 
@@ -1114,7 +1084,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 3850 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C138
+L hackrf-one-rescue:C C138
 U 1 1 503C4C27
 P 3550 950
 AR Path="/503C4C27" Ref="C138"  Part="1" 
@@ -1130,7 +1100,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 3550 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C137
+L hackrf-one-rescue:C C137
 U 1 1 503C4C25
 P 3250 950
 AR Path="/503C4C25" Ref="C137"  Part="1" 
@@ -1146,7 +1116,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 3250 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C136
+L hackrf-one-rescue:C C136
 U 1 1 503C4C24
 P 6200 1200
 AR Path="/503C4C24" Ref="C136"  Part="1" 
@@ -1162,7 +1132,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 6200 1200 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C135
+L hackrf-one-rescue:C C135
 U 1 1 503C4C23
 P 2950 950
 AR Path="/503C4C23" Ref="C135"  Part="1" 
@@ -1178,7 +1148,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 2950 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C134
+L hackrf-one-rescue:C C134
 U 1 1 503C4C21
 P 2650 950
 AR Path="/503C4C21" Ref="C134"  Part="1" 
@@ -1194,7 +1164,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 2650 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C133
+L hackrf-one-rescue:C C133
 U 1 1 503C4C1F
 P 2350 950
 AR Path="/503C4C1F" Ref="C133"  Part="1" 
@@ -1210,7 +1180,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 2350 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C132
+L hackrf-one-rescue:C C132
 U 1 1 503C4C1E
 P 2050 950
 AR Path="/503C4C1E" Ref="C132"  Part="1" 
@@ -1226,7 +1196,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 2050 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C131
+L hackrf-one-rescue:C C131
 U 1 1 503C4C1D
 P 1750 950
 AR Path="/503C4C1D" Ref="C131"  Part="1" 
@@ -1242,7 +1212,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 1750 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C130
+L hackrf-one-rescue:C C130
 U 1 1 503C4C1C
 P 1450 950
 AR Path="/503C4C1C" Ref="C130"  Part="1" 
@@ -1258,7 +1228,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 1450 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C129
+L hackrf-one-rescue:C C129
 U 1 1 503C4C12
 P 1150 950
 AR Path="/503C4C12" Ref="C129"  Part="1" 
@@ -1274,7 +1244,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 1150 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C128
+L hackrf-one-rescue:C C128
 U 1 1 503C4BE3
 P 850 950
 AR Path="/503C4BE3" Ref="C128"  Part="1" 
@@ -1290,7 +1260,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 850 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C147
+L hackrf-one-rescue:C C147
 U 1 1 503C4B67
 P 12900 1950
 AR Path="/503C4B67" Ref="C147"  Part="1" 
@@ -1340,7 +1310,7 @@ SGPIO13
 Text Label 9350 9000 0    40   ~ 0
 SGPIO9
 $Comp
-L VCC #PWR0195
+L hackrf-one-rescue:VCC #PWR0195
 U 1 1 503717B7
 P 15700 8150
 F 0 "#PWR0195" H 15700 8250 30  0001 C CNN
@@ -1353,7 +1323,7 @@ $EndComp
 Text Label 1100 9800 0    40   ~ 0
 P2_9
 $Comp
-L GND #PWR0196
+L hackrf-one-rescue:GND #PWR0196
 U 1 1 503713EA
 P 1700 9800
 AR Path="/503713EA" Ref="#PWR0196"  Part="1" 
@@ -1370,7 +1340,7 @@ XTAL2
 Text Label 4000 9650 0    40   ~ 0
 XTAL1
 $Comp
-L GND #PWR0197
+L hackrf-one-rescue:GND #PWR0197
 U 1 1 50370EE5
 P 5000 10150
 AR Path="/50370EE5" Ref="#PWR0197"  Part="1" 
@@ -1383,7 +1353,7 @@ F 3 "" H 5000 10150 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0198
+L hackrf-one-rescue:GND #PWR0198
 U 1 1 50370EE4
 P 4200 10150
 AR Path="/50370EE4" Ref="#PWR0198"  Part="1" 
@@ -1396,7 +1366,7 @@ F 3 "" H 4200 10150 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C157
+L hackrf-one-rescue:C C157
 U 1 1 50370ED5
 P 4200 9900
 AR Path="/50370ED5" Ref="C157"  Part="1" 
@@ -1412,7 +1382,7 @@ F 6 "CAP CER 18PF 50V 5% NP0 0402" H 4200 9900 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0199
+L hackrf-one-rescue:GND #PWR0199
 U 1 1 50370EC9
 P 4700 10050
 AR Path="/50370EC9" Ref="#PWR0199"  Part="1" 
@@ -1425,7 +1395,7 @@ F 3 "" H 4700 10050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0200
+L hackrf-one-rescue:GND #PWR0200
 U 1 1 50370EC7
 P 4500 10050
 AR Path="/50370EC7" Ref="#PWR0200"  Part="1" 
@@ -1438,7 +1408,7 @@ F 3 "" H 4500 10050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GSG-XTAL4PIN X2
+L hackrf-one-rescue:GSG-XTAL4PIN X2
 U 1 1 50370E89
 P 4600 9650
 F 0 "X2" H 4600 9800 60  0000 C CNN
@@ -1464,7 +1434,7 @@ SPIFI_SCK
 Text Label 7750 1400 1    40   ~ 0
 SPIFI_SIO3
 $Comp
-L VCC #PWR0201
+L hackrf-one-rescue:VCC #PWR0201
 U 1 1 4F8712D4
 P 12600 4850
 F 0 "#PWR0201" H 12600 4950 30  0001 C CNN
@@ -1475,7 +1445,7 @@ F 3 "" H 12600 4850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0202
+L hackrf-one-rescue:VCC #PWR0202
 U 1 1 4F8712C6
 P 13600 4850
 F 0 "#PWR0202" H 13600 4950 30  0001 C CNN
@@ -1496,7 +1466,7 @@ LED2
 Text Label 700  6200 3    40   ~ 0
 LED1
 $Comp
-L VCC #PWR0203
+L hackrf-one-rescue:VCC #PWR0203
 U 1 1 4F83C294
 P 1600 6300
 F 0 "#PWR0203" H 1600 6400 30  0001 C CNN
@@ -1507,7 +1477,7 @@ F 3 "" H 1600 6300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D5
+L hackrf-one-rescue:LED D5
 U 1 1 4F83C276
 P 1000 7000
 AR Path="/4F83C276" Ref="D5"  Part="1" 
@@ -1523,7 +1493,7 @@ F 6 "LED YELLOW CLEAR RT ANG 0805" H 1000 7000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0204
+L hackrf-one-rescue:GND #PWR0204
 U 1 1 4F83C274
 P 1900 7250
 AR Path="/4F83C274" Ref="#PWR0204"  Part="1" 
@@ -1538,7 +1508,7 @@ $EndComp
 Text Label 1900 6200 3    40   ~ 0
 EN1V8
 $Comp
-L GND #PWR0205
+L hackrf-one-rescue:GND #PWR0205
 U 1 1 4F83C1E2
 P 700 7250
 AR Path="/4F83C1E2" Ref="#PWR0205"  Part="1" 
@@ -1551,7 +1521,7 @@ F 3 "" H 700 7250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D8
+L hackrf-one-rescue:LED D8
 U 1 1 4F83C1E0
 P 1900 7000
 AR Path="/4F83C1E0" Ref="D8"  Part="1" 
@@ -1567,7 +1537,7 @@ F 6 "LED YELLOW CLEAR RT ANG 0805" H 1900 7000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L LED D4
+L hackrf-one-rescue:LED D4
 U 1 1 4F83C1DF
 P 700 7000
 AR Path="/4F83C1DF" Ref="D4"  Part="1" 
@@ -1583,7 +1553,7 @@ F 6 "LED GREEN CLEAR RT ANG 0805" H 700 7000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0206
+L hackrf-one-rescue:GND #PWR0206
 U 1 1 4F83C1DD
 P 1000 7250
 AR Path="/4F83C1DD" Ref="#PWR0206"  Part="1" 
@@ -1596,7 +1566,7 @@ F 3 "" H 1000 7250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0207
+L hackrf-one-rescue:GND #PWR0207
 U 1 1 4F83C1D8
 P 1600 7250
 AR Path="/4F83C1D8" Ref="#PWR0207"  Part="1" 
@@ -1609,7 +1579,7 @@ F 3 "" H 1600 7250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D7
+L hackrf-one-rescue:LED D7
 U 1 1 4F83C1D6
 P 1600 7000
 AR Path="/4F83C1D6" Ref="D7"  Part="1" 
@@ -1625,7 +1595,7 @@ F 6 "LED GREEN CLEAR RT ANG 0805" H 1600 7000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L LED D6
+L hackrf-one-rescue:LED D6
 U 1 1 4F83C1A7
 P 1300 7000
 AR Path="/4F83C1A7" Ref="D6"  Part="1" 
@@ -1641,7 +1611,7 @@ F 6 "LED SUPR RED CLR RT ANG 0805" H 1300 7000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0208
+L hackrf-one-rescue:GND #PWR0208
 U 1 1 4F83C1A5
 P 1300 7250
 AR Path="/4F83C1A5" Ref="#PWR0208"  Part="1" 
@@ -1654,7 +1624,7 @@ F 3 "" H 1300 7250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0209
+L hackrf-one-rescue:GND #PWR0209
 U 1 1 4F83C11C
 P 12800 3900
 AR Path="/4F83C11C" Ref="#PWR0209"  Part="1" 
@@ -1667,7 +1637,7 @@ F 3 "" H 12800 3900 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VCC #PWR0210
+L hackrf-one-rescue:VCC #PWR0210
 U 1 1 4F83C110
 P 11100 3600
 F 0 "#PWR0210" H 11100 3700 30  0001 C CNN
@@ -1690,7 +1660,7 @@ I2S0_RX_SDA
 Text Label 8250 1650 3    40   ~ 0
 I2S0_RX_WS
 $Comp
-L GND #PWR0211
+L hackrf-one-rescue:GND #PWR0211
 U 1 1 4F83AF62
 P 1800 3000
 AR Path="/4F83AF62" Ref="#PWR0211"  Part="1" 
@@ -1733,7 +1703,7 @@ GPIO3_10
 Text Label 4150 7850 2    40   ~ 0
 GPIO3_9
 $Comp
-L CONN_11X2 P20
+L hackrf-one-rescue:CONN_11X2 P20
 U 1 1 4F838167
 P 3450 8150
 F 0 "P20" H 3450 8450 60  0000 C CNN
@@ -1761,7 +1731,7 @@ GPIO3_9
 Text Label 8650 1750 3    40   ~ 0
 GPIO3_8
 $Comp
-L VCC #PWR0212
+L hackrf-one-rescue:VCC #PWR0212
 U 1 1 4F837E2D
 P 7100 8650
 F 0 "#PWR0212" H 7100 8750 30  0001 C CNN
@@ -1772,7 +1742,7 @@ F 3 "" H 7100 8650 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0213
+L hackrf-one-rescue:GND #PWR0213
 U 1 1 4F837E27
 P 8500 9150
 AR Path="/4F837E27" Ref="#PWR0213"  Part="1" 
@@ -1803,7 +1773,7 @@ SD_DAT3
 Text Label 7100 8750 0    40   ~ 0
 SD_CD
 $Comp
-L CONN_11X2 P28
+L hackrf-one-rescue:CONN_11X2 P28
 U 1 1 4F837D97
 P 7800 9150
 F 0 "P28" H 7800 9500 60  0000 C CNN
@@ -1904,7 +1874,7 @@ B1AUX13
 Text Label 6350 9650 2    40   ~ 0
 GP_CLKIN
 $Comp
-L GND #PWR0214
+L hackrf-one-rescue:GND #PWR0214
 U 1 1 4F8375EA
 P 5550 10150
 AR Path="/4F8375EA" Ref="#PWR0214"  Part="1" 
@@ -1939,7 +1909,7 @@ CPLD_TDO
 Text Label 15600 8850 0    40   ~ 0
 CPLD_TMS
 $Comp
-L CONN_2 P29
+L hackrf-one-rescue:CONN_2 P29
 U 1 1 4F82F4C0
 P 16300 8950
 F 0 "P29" V 16250 8950 60  0000 C CNN
@@ -1957,7 +1927,7 @@ GPIO3_11
 Text Label 4000 4400 0    40   ~ 0
 SGPIO13
 $Comp
-L GND #PWR0215
+L hackrf-one-rescue:GND #PWR0215
 U 1 1 4F826461
 P 12900 9050
 AR Path="/4F826461" Ref="#PWR0215"  Part="1" 
@@ -1970,7 +1940,7 @@ F 3 "" H 12900 9050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0216
+L hackrf-one-rescue:GND #PWR0216
 U 1 1 4F8263EE
 P 14000 4850
 AR Path="/4F8263EE" Ref="#PWR0216"  Part="1" 
@@ -1983,7 +1953,7 @@ F 3 "" H 14000 4850 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0217
+L hackrf-one-rescue:GND #PWR0217
 U 1 1 4F8263E6
 P 12400 4850
 AR Path="/4F8263E6" Ref="#PWR0217"  Part="1" 
@@ -1996,7 +1966,7 @@ F 3 "" H 12400 4850 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0218
+L hackrf-one-rescue:GND #PWR0218
 U 1 1 4F8263D9
 P 11500 7750
 AR Path="/4F8263D9" Ref="#PWR0218"  Part="1" 
@@ -2009,7 +1979,7 @@ F 3 "" H 11500 7750 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0219
+L hackrf-one-rescue:GND #PWR0219
 U 1 1 4F8263C5
 P 15700 7050
 AR Path="/4F8263C5" Ref="#PWR0219"  Part="1" 
@@ -2022,7 +1992,7 @@ F 3 "" H 15700 7050 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0220
+L hackrf-one-rescue:GND #PWR0220
 U 1 1 4F8263AD
 P 15700 6350
 AR Path="/4F8263AD" Ref="#PWR0220"  Part="1" 
@@ -2047,7 +2017,7 @@ SGPIO15
 Text Label 9350 10200 0    40   ~ 0
 SGPIO7
 $Comp
-L VCC #PWR0221
+L hackrf-one-rescue:VCC #PWR0221
 U 1 1 4F825E93
 P 10450 1200
 F 0 "#PWR0221" H 10450 1300 30  0001 C CNN
@@ -2058,7 +2028,7 @@ F 3 "" H 10450 1200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0222
+L hackrf-one-rescue:GND #PWR0222
 U 1 1 4F825E8A
 P 10450 2100
 AR Path="/4F825E8A" Ref="#PWR0222"  Part="1" 
@@ -2071,7 +2041,7 @@ F 3 "" H 10450 2100 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0223
+L hackrf-one-rescue:GND #PWR0223
 U 1 1 4F825E88
 P 9150 1700
 AR Path="/4F825E88" Ref="#PWR0223"  Part="1" 
@@ -2084,7 +2054,7 @@ F 3 "" H 9150 1700 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L W25Q80BV U20
+L hackrf-one-rescue:W25Q80BV U20
 U 1 1 4F825D1B
 P 9800 1450
 F 0 "U20" H 9800 1200 60  0000 C CNN
@@ -2104,7 +2074,7 @@ VREGMODE
 Text Label 12650 1600 0    40   ~ 0
 VREGMODE
 $Comp
-L GND #PWR0224
+L hackrf-one-rescue:GND #PWR0224
 U 1 1 4F825023
 P 15550 1200
 AR Path="/4F825023" Ref="#PWR0224"  Part="1" 
@@ -2117,7 +2087,7 @@ F 3 "" H 15550 1200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C127
+L hackrf-one-rescue:C C127
 U 1 1 4F82501F
 P 15550 950
 AR Path="/4F82501F" Ref="C127"  Part="1" 
@@ -2133,7 +2103,7 @@ F 6 "CAP CER 10UF 10V 10% X5R 0805" H 15550 950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0225
+L hackrf-one-rescue:GND #PWR0225
 U 1 1 4F824FE5
 P 15550 2200
 AR Path="/4F824FE5" Ref="#PWR0225"  Part="1" 
@@ -2146,7 +2116,7 @@ F 3 "" H 15550 2200 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L C C146
+L hackrf-one-rescue:C C146
 U 1 1 4F824FE4
 P 15550 2450
 AR Path="/4F824FE4" Ref="C146"  Part="1" 
@@ -2162,7 +2132,7 @@ F 6 "CAP CER 10UF 10V 10% X5R 0805" H 15550 2450 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C145
+L hackrf-one-rescue:C C145
 U 1 1 4F824FC2
 P 15250 2450
 AR Path="/4F824FC2" Ref="C145"  Part="1" 
@@ -2178,7 +2148,7 @@ F 6 "CAP CER 10UF 10V 10% X5R 0805" H 15250 2450 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C126
+L hackrf-one-rescue:C C126
 U 1 1 4F824FBD
 P 15250 950
 AR Path="/4F824FBD" Ref="C126"  Part="1" 
@@ -2198,7 +2168,7 @@ EN1V8
 Text Label 15650 1800 2    40   ~ 0
 VIN
 $Comp
-L GND #PWR0226
+L hackrf-one-rescue:GND #PWR0226
 U 1 1 4F824A0E
 P 15900 2100
 AR Path="/4F824A0E" Ref="#PWR0226"  Part="1" 
@@ -2211,7 +2181,7 @@ F 3 "" H 15900 2100 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L INDUCTOR L11
+L hackrf-one-rescue:INDUCTOR L11
 U 1 1 4F8249E7
 P 15050 2300
 F 0 "L11" V 15000 2300 40  0000 C CNN
@@ -2225,9 +2195,11 @@ F 6 "INDUCTOR 4.7UH 1.6A 20% SMD" V 15050 2300 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L 1V8 #PWR0227
+L hackrf-one-rescue:1V8 #PWR0227
 U 1 1 4F82054D
 P 16250 700
+AR Path="/4F82054D" Ref="#PWR0227"  Part="1" 
+AR Path="/5037043E/4F82054D" Ref="#PWR0227"  Part="1" 
 F 0 "#PWR0227" H 16250 840 20  0001 C CNN
 F 1 "1V8" H 16250 810 30  0000 C CNN
 F 2 "" H 16250 700 60  0001 C CNN
@@ -2236,7 +2208,7 @@ F 3 "" H 16250 700 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0228
+L hackrf-one-rescue:VCC #PWR0228
 U 1 1 4F82053F
 P 16250 2700
 F 0 "#PWR0228" H 16250 2800 30  0001 C CNN
@@ -2247,7 +2219,7 @@ F 3 "" H 16250 2700 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0229
+L hackrf-one-rescue:GND #PWR0229
 U 1 1 4F82044E
 P 15250 1200
 AR Path="/4F82044E" Ref="#PWR0229"  Part="1" 
@@ -2260,7 +2232,7 @@ F 3 "" H 15250 1200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0230
+L hackrf-one-rescue:GND #PWR0230
 U 1 1 4F820439
 P 15250 2200
 AR Path="/4F820439" Ref="#PWR0230"  Part="1" 
@@ -2273,7 +2245,7 @@ F 3 "" H 15250 2200 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0231
+L hackrf-one-rescue:GND #PWR0231
 U 1 1 4F8203E0
 P 13050 700
 AR Path="/4F8203E0" Ref="#PWR0231"  Part="1" 
@@ -2286,7 +2258,7 @@ F 3 "" H 13050 700 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0232
+L hackrf-one-rescue:GND #PWR0232
 U 1 1 4F8203DB
 P 13050 2700
 AR Path="/4F8203DB" Ref="#PWR0232"  Part="1" 
@@ -2299,7 +2271,7 @@ F 3 "" H 13050 2700 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R55
+L hackrf-one-rescue:R R55
 U 1 1 4F8203D0
 P 13300 2700
 AR Path="/4F8203D0" Ref="R55"  Part="1" 
@@ -2315,7 +2287,7 @@ F 6 "RES TF 1/16W 162K OHM 1% 0402" H 13300 2700 60  0001 C CNN "Description"
 	0    -1   1    0   
 $EndComp
 $Comp
-L R R47
+L hackrf-one-rescue:R R47
 U 1 1 4F8203AD
 P 14300 700
 AR Path="/4F8203AD" Ref="R47"  Part="1" 
@@ -2331,7 +2303,7 @@ F 6 "RES TF 1/16W 330K OHM 1% 0402" H 14300 700 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R56
+L hackrf-one-rescue:R R56
 U 1 1 4F8203A7
 P 14300 2700
 AR Path="/4F8203A7" Ref="R56"  Part="1" 
@@ -2347,7 +2319,7 @@ F 6 "RES TF 1/16W 715K OHM 1% 0402" H 14300 2700 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L INDUCTOR L10
+L hackrf-one-rescue:INDUCTOR L10
 U 1 1 4F820301
 P 15050 1100
 F 0 "L10" V 15000 1100 40  0000 C CNN
@@ -2361,7 +2333,7 @@ F 6 "INDUCTOR 4.7UH 1.6A 20% SMD" V 15050 1100 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0233
+L hackrf-one-rescue:GND #PWR0233
 U 1 1 4F8202CC
 P 15050 1700
 AR Path="/4F8202CC" Ref="#PWR0233"  Part="1" 
@@ -2374,7 +2346,7 @@ F 3 "" H 15050 1700 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0234
+L hackrf-one-rescue:GND #PWR0234
 U 1 1 4F8202C7
 P 14300 2450
 AR Path="/4F8202C7" Ref="#PWR0234"  Part="1" 
@@ -2387,7 +2359,7 @@ F 3 "" H 14300 2450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0235
+L hackrf-one-rescue:GND #PWR0235
 U 1 1 4F8202C2
 P 12500 2200
 AR Path="/4F8202C2" Ref="#PWR0235"  Part="1" 
@@ -2400,7 +2372,7 @@ F 3 "" H 12500 2200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C143
+L hackrf-one-rescue:C C143
 U 1 1 4F820298
 P 12500 1950
 AR Path="/4F820298" Ref="C143"  Part="1" 
@@ -2416,7 +2388,7 @@ F 6 "CAP CER 10UF 10V 10% X5R 0805" H 12500 1950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L TPS62410 U21
+L hackrf-one-rescue:TPS62410 U21
 U 1 1 4F8201BF
 P 14300 1700
 F 0 "U21" H 14300 1650 60  0000 C CNN
@@ -2430,7 +2402,7 @@ F 6 "IC BUCK SYNC DUAL ADJ 0.8A 10SON" H 14300 1700 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0236
+L hackrf-one-rescue:VCC #PWR0236
 U 1 1 4F81F829
 P 13650 3850
 F 0 "#PWR0236" H 13650 3950 30  0001 C CNN
@@ -2441,7 +2413,7 @@ F 3 "" H 13650 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0237
+L hackrf-one-rescue:GND #PWR0237
 U 1 1 4F81F817
 P 13650 4300
 AR Path="/4F81F817" Ref="#PWR0237"  Part="1" 
@@ -2454,7 +2426,7 @@ F 3 "" H 13650 4300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0238
+L hackrf-one-rescue:GND #PWR0238
 U 1 1 4F81F7DB
 P 15300 4300
 AR Path="/4F81F7DB" Ref="#PWR0238"  Part="1" 
@@ -2467,9 +2439,11 @@ F 3 "" H 15300 4300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 1V8 #PWR0239
+L hackrf-one-rescue:1V8 #PWR0239
 U 1 1 4F81F7CF
 P 15300 3850
+AR Path="/4F81F7CF" Ref="#PWR0239"  Part="1" 
+AR Path="/5037043E/4F81F7CF" Ref="#PWR0239"  Part="1" 
 F 0 "#PWR0239" H 15300 3990 20  0001 C CNN
 F 1 "1V8" H 15300 3960 30  0000 C CNN
 F 2 "" H 15300 3850 60  0001 C CNN
@@ -2478,7 +2452,7 @@ F 3 "" H 15300 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0240
+L hackrf-one-rescue:VCC #PWR0240
 U 1 1 4F81F785
 P 11500 6150
 F 0 "#PWR0240" H 11500 6250 30  0001 C CNN
@@ -2489,9 +2463,11 @@ F 3 "" H 11500 6150 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 1V8 #PWR0241
+L hackrf-one-rescue:1V8 #PWR0241
 U 1 1 4F81F5B6
 P 12400 9050
+AR Path="/4F81F5B6" Ref="#PWR0241"  Part="1" 
+AR Path="/5037043E/4F81F5B6" Ref="#PWR0241"  Part="1" 
 F 0 "#PWR0241" H 12400 9190 20  0001 C CNN
 F 1 "1V8" H 12400 9160 30  0000 C CNN
 F 2 "" H 12400 9050 60  0001 C CNN
@@ -2500,9 +2476,11 @@ F 3 "" H 12400 9050 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L 1V8 #PWR0242
+L hackrf-one-rescue:1V8 #PWR0242
 U 1 1 4F81F58C
 P 15700 7550
+AR Path="/4F81F58C" Ref="#PWR0242"  Part="1" 
+AR Path="/5037043E/4F81F58C" Ref="#PWR0242"  Part="1" 
 F 0 "#PWR0242" H 15700 7690 20  0001 C CNN
 F 1 "1V8" H 15700 7660 30  0000 C CNN
 F 2 "" H 15700 7550 60  0001 C CNN
@@ -2525,7 +2503,7 @@ SGPIO5
 Text Label 10750 10400 0    40   ~ 0
 SGPIO6
 $Comp
-L GSG-XC2C64A-7VQG100C U24
+L hackrf-one-rescue:GSG-XC2C64A-7VQG100C U24
 U 1 1 4F7A3924
 P 13600 6950
 F 0 "U24" H 13600 7050 60  0000 C CNN
@@ -2539,7 +2517,7 @@ F 6 "IC CR-II CPLD 64MCELL 100-VQFP" H 13600 6950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L FILTER FB1
+L hackrf-one-rescue:FILTER FB1
 U 1 1 4F766F5E
 P 1950 3750
 F 0 "FB1" H 1950 3900 60  0000 C CNN
@@ -2553,7 +2531,7 @@ F 6 "FERRITE CHIP 220 OHM 2000MA 0805" H 1950 3750 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0243
+L hackrf-one-rescue:GND #PWR0243
 U 1 1 4F766C2C
 P 2400 4200
 AR Path="/4F766C2C" Ref="#PWR0243"  Part="1" 
@@ -2566,7 +2544,7 @@ F 3 "" H 2400 4200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GSG-USB-MICRO-B-SHIELDED J1
+L hackrf-one-rescue:GSG-USB-MICRO-B-SHIELDED J1
 U 1 1 4F766BDF
 P 1050 3450
 F 0 "J1" H 1050 3750 60  0000 C CNN
@@ -2580,7 +2558,7 @@ F 6 "CONN RCPT REV MICRO USB TYPE B" H 1050 3450 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0244
+L hackrf-one-rescue:GND #PWR0244
 U 1 1 4F6357FF
 P 800 4600
 AR Path="/4F6357FF" Ref="#PWR0244"  Part="1" 
@@ -2593,7 +2571,7 @@ F 3 "" H 800 4600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0245
+L hackrf-one-rescue:VCC #PWR0245
 U 1 1 4F6357E9
 P 1500 4500
 F 0 "#PWR0245" H 1500 4600 30  0001 C CNN
@@ -2607,7 +2585,7 @@ NoConn ~ 1200 4600
 Text Label 1100 5700 1    40   ~ 0
 RESET
 $Comp
-L CONN_5X2 P26
+L hackrf-one-rescue:CONN_5X2 P26
 U 1 1 4F63572B
 P 1300 5000
 F 0 "P26" H 1300 5300 60  0000 C CNN
@@ -2626,7 +2604,7 @@ U0_RXD
 Text Label 2250 1650 0    40   ~ 0
 U0_TXD
 $Comp
-L VCC #PWR0246
+L hackrf-one-rescue:VCC #PWR0246
 U 1 1 4F62D441
 P 1700 7900
 F 0 "#PWR0246" H 1700 8000 30  0001 C CNN
@@ -2642,7 +2620,7 @@ Text Label 2250 1950 0    40   ~ 0
 ISP
 NoConn ~ 2150 1850
 $Comp
-L GND #PWR0247
+L hackrf-one-rescue:GND #PWR0247
 U 1 1 4F62D2F7
 P 2250 2150
 AR Path="/4F62D2F7" Ref="#PWR0247"  Part="1" 
@@ -2655,7 +2633,7 @@ F 3 "" H 2250 2150 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_6 P25
+L hackrf-one-rescue:CONN_6 P25
 U 1 1 4F62D2D3
 P 1800 1800
 F 0 "P25" V 1750 1800 60  0000 C CNN
@@ -2667,7 +2645,7 @@ F 4 "DNP" H 1800 1400 60  0000 C CNN "Note"
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR0248
+L hackrf-one-rescue:VCC #PWR0248
 U 1 1 4F62D238
 P 2500 5050
 F 0 "#PWR0248" H 2500 5150 30  0001 C CNN
@@ -2746,7 +2724,7 @@ P2_8
 Text Label 9950 3600 2    40   ~ 0
 P2_9
 $Comp
-L VCC #PWR0249
+L hackrf-one-rescue:VCC #PWR0249
 U 1 1 4F62BC76
 P 2300 5050
 F 0 "#PWR0249" H 2300 5150 30  0001 C CNN
@@ -2757,7 +2735,7 @@ F 3 "" H 2300 5050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0250
+L hackrf-one-rescue:VCC #PWR0250
 U 1 1 4F62BC71
 P 2100 5050
 F 0 "#PWR0250" H 2100 5150 30  0001 C CNN
@@ -2772,7 +2750,7 @@ U0_RXD
 Text Label 9950 6300 2    40   ~ 0
 U0_TXD
 $Comp
-L VCC #PWR0251
+L hackrf-one-rescue:VCC #PWR0251
 U 1 1 4F62B8DD
 P 10550 3750
 F 0 "#PWR0251" H 10550 3850 30  0001 C CNN
@@ -2788,7 +2766,7 @@ NoConn ~ 5750 2050
 NoConn ~ 5850 2050
 NoConn ~ 6050 2050
 $Comp
-L VCC #PWR0252
+L hackrf-one-rescue:VCC #PWR0252
 U 1 1 4F62B686
 P 6650 950
 F 0 "#PWR0252" H 6650 1050 30  0001 C CNN
@@ -2805,7 +2783,7 @@ TMS
 Text Label 4000 5500 0    40   ~ 0
 TDI
 $Comp
-L GND #PWR0253
+L hackrf-one-rescue:GND #PWR0253
 U 1 1 4F62B3FC
 P 3600 5300
 AR Path="/4F62B3FC" Ref="#PWR0253"  Part="1" 
@@ -2818,7 +2796,7 @@ F 3 "" H 3600 5300 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R69
+L hackrf-one-rescue:R R69
 U 1 1 4F62B3E5
 P 3850 5300
 AR Path="/4F62B3E5" Ref="R69"  Part="1" 
@@ -2842,7 +2820,7 @@ DP
 NoConn ~ 9700 4900
 NoConn ~ 9700 4800
 $Comp
-L GND #PWR0254
+L hackrf-one-rescue:GND #PWR0254
 U 1 1 4F629931
 P 700 1200
 AR Path="/4F629931" Ref="#PWR0254"  Part="1" 
@@ -2855,7 +2833,7 @@ F 3 "" H 700 1200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0255
+L hackrf-one-rescue:VCC #PWR0255
 U 1 1 4F62992D
 P 700 750
 F 0 "#PWR0255" H 700 850 30  0001 C CNN
@@ -2866,7 +2844,7 @@ F 3 "" H 700 750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0256
+L hackrf-one-rescue:VCC #PWR0256
 U 1 1 4F629520
 P 5550 1950
 F 0 "#PWR0256" H 5550 2050 30  0001 C CNN
@@ -2877,7 +2855,7 @@ F 3 "" H 5550 1950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0257
+L hackrf-one-rescue:VCC #PWR0257
 U 1 1 4F62951C
 P 5950 1950
 F 0 "#PWR0257" H 5950 2050 30  0001 C CNN
@@ -2888,7 +2866,7 @@ F 3 "" H 5950 1950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0258
+L hackrf-one-rescue:VCC #PWR0258
 U 1 1 4F62950C
 P 6550 1950
 F 0 "#PWR0258" H 6550 2050 30  0001 C CNN
@@ -2899,7 +2877,7 @@ F 3 "" H 6550 1950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0259
+L hackrf-one-rescue:VCC #PWR0259
 U 1 1 4F629507
 P 8550 1950
 F 0 "#PWR0259" H 8550 2050 30  0001 C CNN
@@ -2910,7 +2888,7 @@ F 3 "" H 8550 1950 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0260
+L hackrf-one-rescue:VCC #PWR0260
 U 1 1 4F6294FC
 P 10000 3100
 F 0 "#PWR0260" H 10000 3200 30  0001 C CNN
@@ -2921,7 +2899,7 @@ F 3 "" H 10000 3100 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0261
+L hackrf-one-rescue:VCC #PWR0261
 U 1 1 4F6294ED
 P 9800 4400
 F 0 "#PWR0261" H 9800 4500 30  0001 C CNN
@@ -2932,7 +2910,7 @@ F 3 "" H 9800 4400 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0262
+L hackrf-one-rescue:VCC #PWR0262
 U 1 1 4F6294E6
 P 9800 6100
 F 0 "#PWR0262" H 9800 6200 30  0001 C CNN
@@ -2943,7 +2921,7 @@ F 3 "" H 9800 6100 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0263
+L hackrf-one-rescue:VCC #PWR0263
 U 1 1 4F6294D6
 P 8650 7550
 F 0 "#PWR0263" H 8650 7650 30  0001 C CNN
@@ -2954,7 +2932,7 @@ F 3 "" H 8650 7550 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR0264
+L hackrf-one-rescue:VCC #PWR0264
 U 1 1 4F6294C8
 P 7450 7550
 F 0 "#PWR0264" H 7450 7650 30  0001 C CNN
@@ -2965,7 +2943,7 @@ F 3 "" H 7450 7550 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR0265
+L hackrf-one-rescue:VCC #PWR0265
 U 1 1 4F6294BE
 P 5650 7550
 F 0 "#PWR0265" H 5650 7650 30  0001 C CNN
@@ -2976,7 +2954,7 @@ F 3 "" H 5650 7550 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR0266
+L hackrf-one-rescue:VCC #PWR0266
 U 1 1 4F6294B4
 P 4200 6500
 F 0 "#PWR0266" H 4200 6600 30  0001 C CNN
@@ -2987,7 +2965,7 @@ F 3 "" H 4200 6500 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VCC #PWR0267
+L hackrf-one-rescue:VCC #PWR0267
 U 1 1 4F6294A9
 P 4200 5400
 F 0 "#PWR0267" H 4200 5500 30  0001 C CNN
@@ -2998,7 +2976,7 @@ F 3 "" H 4200 5400 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VCC #PWR0268
+L hackrf-one-rescue:VCC #PWR0268
 U 1 1 4F6294A1
 P 4200 4600
 F 0 "#PWR0268" H 4200 4700 30  0001 C CNN
@@ -3009,7 +2987,7 @@ F 3 "" H 4200 4600 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VCC #PWR0269
+L hackrf-one-rescue:VCC #PWR0269
 U 1 1 4F629489
 P 4200 4500
 F 0 "#PWR0269" H 4200 4600 30  0001 C CNN
@@ -3020,7 +2998,7 @@ F 3 "" H 4200 4500 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VCC #PWR0270
+L hackrf-one-rescue:VCC #PWR0270
 U 1 1 4F629480
 P 4200 3400
 F 0 "#PWR0270" H 4200 3500 30  0001 C CNN
@@ -3031,7 +3009,7 @@ F 3 "" H 4200 3400 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0271
+L hackrf-one-rescue:GND #PWR0271
 U 1 1 4F62944A
 P 6150 1950
 AR Path="/4F62944A" Ref="#PWR0271"  Part="1" 
@@ -3044,7 +3022,7 @@ F 3 "" H 6150 1950 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0272
+L hackrf-one-rescue:GND #PWR0272
 U 1 1 4F62943D
 P 8750 1950
 AR Path="/4F62943D" Ref="#PWR0272"  Part="1" 
@@ -3057,7 +3035,7 @@ F 3 "" H 8750 1950 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0273
+L hackrf-one-rescue:GND #PWR0273
 U 1 1 4F629430
 P 9800 6200
 AR Path="/4F629430" Ref="#PWR0273"  Part="1" 
@@ -3070,7 +3048,7 @@ F 3 "" H 9800 6200 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0274
+L hackrf-one-rescue:GND #PWR0274
 U 1 1 4F629425
 P 5550 7550
 AR Path="/4F629425" Ref="#PWR0274"  Part="1" 
@@ -3083,7 +3061,7 @@ F 3 "" H 5550 7550 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0275
+L hackrf-one-rescue:GND #PWR0275
 U 1 1 4F629416
 P 4200 5200
 AR Path="/4F629416" Ref="#PWR0275"  Part="1" 
@@ -3096,7 +3074,7 @@ F 3 "" H 4200 5200 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0276
+L hackrf-one-rescue:GND #PWR0276
 U 1 1 4F6293C1
 P 4200 4800
 AR Path="/4F6293C1" Ref="#PWR0276"  Part="1" 
@@ -3109,7 +3087,7 @@ F 3 "" H 4200 4800 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0277
+L hackrf-one-rescue:GND #PWR0277
 U 1 1 4F6293BA
 P 4200 3300
 AR Path="/4F6293BA" Ref="#PWR0277"  Part="1" 
@@ -3122,7 +3100,7 @@ F 3 "" H 4200 3300 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L SW_PUSH_SHIELDED SW1
+L hackrf-one-rescue:SW_PUSH_SHIELDED SW1
 U 1 1 5248E27D
 P 1750 8950
 F 0 "SW1" H 1750 9100 50  0000 C CNN
@@ -3136,7 +3114,7 @@ F 6 "SWITCH TACTILE SPST-NO 0.05A 12V" H 1750 8950 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L SW_PUSH_SHIELDED SW2
+L hackrf-one-rescue:SW_PUSH_SHIELDED SW2
 U 1 1 5248FF4F
 P 2100 8400
 F 0 "SW2" H 2100 8550 50  0000 C CNN
@@ -3150,7 +3128,7 @@ F 6 "SWITCH TACTILE SPST-NO 0.05A 12V" H 2100 8400 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0278
+L hackrf-one-rescue:GND #PWR0278
 U 1 1 5248FF55
 P 2500 8400
 AR Path="/5248FF55" Ref="#PWR0278"  Part="1" 
@@ -3165,7 +3143,7 @@ $EndComp
 Text Label 1100 8400 0    40   ~ 0
 RESET
 $Comp
-L VCC #PWR0279
+L hackrf-one-rescue:VCC #PWR0279
 U 1 1 524926B2
 P 13600 9050
 F 0 "#PWR0279" H 13600 9150 30  0001 C CNN
@@ -3178,7 +3156,7 @@ $EndComp
 Text Label 13350 1800 0    40   ~ 0
 REG_OUT1
 $Comp
-L CRYSTAL X3
+L hackrf-one-rescue:CRYSTAL X3
 U 1 1 52490BB4
 P 3650 1550
 F 0 "X3" H 3650 1700 60  0000 C CNN
@@ -3196,7 +3174,7 @@ RTCX2
 Text Label 7150 1700 3    40   ~ 0
 RTCX1
 $Comp
-L GND #PWR0280
+L hackrf-one-rescue:GND #PWR0280
 U 1 1 524910C9
 P 3250 2050
 AR Path="/524910C9" Ref="#PWR0280"  Part="1" 
@@ -3209,7 +3187,7 @@ F 3 "" H 3250 2050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0281
+L hackrf-one-rescue:GND #PWR0281
 U 1 1 524910CF
 P 4050 2050
 AR Path="/524910CF" Ref="#PWR0281"  Part="1" 
@@ -3230,7 +3208,7 @@ VBAT
 Text Label 6750 1700 3    40   ~ 0
 RTC_ALARM
 $Comp
-L GND #PWR0282
+L hackrf-one-rescue:GND #PWR0282
 U 1 1 526B0BAC
 P 12900 2200
 AR Path="/526B0BAC" Ref="#PWR0282"  Part="1" 
@@ -3243,7 +3221,7 @@ F 3 "" H 12900 2200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0283
+L hackrf-one-rescue:GND #PWR0283
 U 1 1 526B1EA1
 P 12800 3500
 AR Path="/526B1EA1" Ref="#PWR0283"  Part="1" 
@@ -3270,7 +3248,7 @@ I2C1_SDA
 Text Label 11100 3300 0    40   ~ 0
 I2C1_SCL
 $Comp
-L CONN_13X2 P22
+L hackrf-one-rescue:CONN_13X2 P22
 U 1 1 526B4073
 P 11950 3700
 F 0 "P22" H 11950 3950 50  0000 C CNN
@@ -3310,7 +3288,7 @@ AMP_BYPASS
 Text GLabel 10000 4700 2    40   Input ~ 0
 RX
 $Comp
-L LPC43XXFBD144 U23
+L hackrf-one-rescue:LPC43XXFBD144 U23
 U 1 1 4F6291FC
 P 7000 4750
 F 0 "U23" H 7000 4900 60  0000 C CNN
@@ -3342,7 +3320,7 @@ Text GLabel 10000 3200 2    40   Input ~ 0
 Text GLabel 10000 4100 2    40   Input ~ 0
 !TX_AMP_PWR
 $Comp
-L R R12
+L hackrf-one-rescue:R R12
 U 1 1 526BFD36
 P 1600 3000
 AR Path="/526BFD36" Ref="R12"  Part="1" 
@@ -3358,7 +3336,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 1600 3000 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0284
+L hackrf-one-rescue:VCC #PWR0284
 U 1 1 526BFD3C
 P 1600 2750
 F 0 "#PWR0284" H 1600 2850 30  0001 C CNN
@@ -3372,7 +3350,7 @@ NoConn ~ 15600 6450
 Text Label 12100 1700 0    40   ~ 0
 VIN
 $Comp
-L GND #PWR0285
+L hackrf-one-rescue:GND #PWR0285
 U 1 1 527ADD81
 P 5950 1300
 AR Path="/527ADD81" Ref="#PWR0285"  Part="1" 
@@ -3385,7 +3363,7 @@ F 3 "" H 5950 1300 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0286
+L hackrf-one-rescue:GND #PWR0286
 U 1 1 527B3523
 P 8500 8650
 AR Path="/527B3523" Ref="#PWR0286"  Part="1" 
@@ -3398,7 +3376,7 @@ F 3 "" H 8500 8650 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0287
+L hackrf-one-rescue:GND #PWR0287
 U 1 1 527B35E2
 P 9700 8350
 AR Path="/527B35E2" Ref="#PWR0287"  Part="1" 
@@ -3411,7 +3389,7 @@ F 3 "" H 9700 8350 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0288
+L hackrf-one-rescue:VCC #PWR0288
 U 1 1 527B383C
 P 11100 8350
 F 0 "#PWR0288" H 11100 8450 30  0001 C CNN
@@ -3426,7 +3404,7 @@ VBUS
 Text Label 4100 8650 2    40   ~ 0
 VIN
 $Comp
-L GND #PWR0289
+L hackrf-one-rescue:GND #PWR0289
 U 1 1 527BC94F
 P 2750 8250
 AR Path="/527BC94F" Ref="#PWR0289"  Part="1" 
@@ -3439,7 +3417,7 @@ F 3 "" H 2750 8250 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0290
+L hackrf-one-rescue:GND #PWR0290
 U 1 1 527BC955
 P 2750 8350
 AR Path="/527BC955" Ref="#PWR0290"  Part="1" 
@@ -3452,7 +3430,7 @@ F 3 "" H 2750 8350 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0291
+L hackrf-one-rescue:GND #PWR0291
 U 1 1 527BC961
 P 2750 8550
 AR Path="/527BC961" Ref="#PWR0291"  Part="1" 
@@ -3471,7 +3449,7 @@ RTC_ALARM
 Text Label 2750 7650 0    40   ~ 0
 VBAT
 $Comp
-L VCC #PWR0292
+L hackrf-one-rescue:VCC #PWR0292
 U 1 1 527BE619
 P 2750 7750
 F 0 "#PWR0292" H 2750 7850 30  0001 C CNN
@@ -3484,7 +3462,7 @@ $EndComp
 Text Label 6650 1700 3    40   ~ 0
 WAKEUP
 $Comp
-L LED D2
+L hackrf-one-rescue:LED D2
 U 1 1 527DC2E9
 P 2200 7000
 AR Path="/527DC2E9" Ref="D2"  Part="1" 
@@ -3500,7 +3478,7 @@ F 6 "LED SUPR RED CLR RT ANG 0805" H 2200 7000 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0293
+L hackrf-one-rescue:GND #PWR0293
 U 1 1 527DC2EF
 P 2200 7250
 AR Path="/527DC2EF" Ref="#PWR0293"  Part="1" 
@@ -3513,7 +3491,7 @@ F 3 "" H 2200 7250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR0294
+L hackrf-one-rescue:VAA #PWR0294
 U 1 1 527DC311
 P 2200 6300
 F 0 "#PWR0294" H 2200 6360 30  0001 C CNN
@@ -3528,7 +3506,7 @@ PCB trace jumper
 Text Notes 15800 550  0    40   ~ 0
 PCB trace jumper
 $Comp
-L R R19
+L hackrf-one-rescue:R R19
 U 1 1 527EF888
 P 1450 8400
 AR Path="/527EF888" Ref="R19"  Part="1" 
@@ -3544,7 +3522,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 1450 8400 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R30
+L hackrf-one-rescue:R R30
 U 1 1 527F0529
 P 1100 8950
 AR Path="/527F0529" Ref="R30"  Part="1" 
@@ -3560,7 +3538,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 1100 8950 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R62
+L hackrf-one-rescue:R R62
 U 1 1 527F56E9
 P 3100 4000
 AR Path="/527F56E9" Ref="R62"  Part="1" 
@@ -3576,7 +3554,7 @@ F 6 "RES 0.0 OHM 1/16W 0402 SMD" H 3100 4000 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R65
+L hackrf-one-rescue:R R65
 U 1 1 527F56F2
 P 2900 4700
 AR Path="/527F56F2" Ref="R65"  Part="1" 
@@ -3592,7 +3570,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 2900 4700 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0295
+L hackrf-one-rescue:GND #PWR0295
 U 1 1 527F6614
 P 2900 4950
 AR Path="/527F6614" Ref="#PWR0295"  Part="1" 
@@ -3609,7 +3587,7 @@ CLKOUT
 Text GLabel 12800 3100 2    40   Input ~ 0
 CLKIN
 $Comp
-L GND #PWR0296
+L hackrf-one-rescue:GND #PWR0296
 U 1 1 527F5351
 P 12800 3200
 AR Path="/527F5351" Ref="#PWR0296"  Part="1" 
@@ -3642,7 +3620,7 @@ P2_8
 Text Label 11100 4100 0    40   ~ 0
 P2_9
 $Comp
-L LXES1TBCC2-004 U15
+L hackrf-one-rescue:LXES1TBCC2-004 U15
 U 1 1 528007F8
 P 2450 3000
 F 0 "U15" H 2450 3250 60  0000 C CNN
@@ -3656,7 +3634,7 @@ F 6 "TVS DIODE 5.5V 22V LLP75-6L" H 2450 3000 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_3X2 P5
+L hackrf-one-rescue:CONN_3X2 P5
 U 1 1 528023DB
 P 7800 10200
 F 0 "P5" H 7800 10450 50  0000 C CNN
@@ -3668,7 +3646,7 @@ F 4 "DNP" H 7800 10000 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0297
+L hackrf-one-rescue:GND #PWR0297
 U 1 1 528023EA
 P 7000 10050
 AR Path="/528023EA" Ref="#PWR0297"  Part="1" 
@@ -3693,7 +3671,7 @@ GCK0
 Text Label 11100 7450 2    40   ~ 0
 GCK0
 $Comp
-L CONN_1 P72
+L hackrf-one-rescue:CONN_1 P72
 U 1 1 52808CBF
 P 6000 9400
 F 0 "P72" H 6080 9400 40  0000 L CNN
@@ -3705,7 +3683,7 @@ F 4 "DNP" H 6000 9400 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P71
+L hackrf-one-rescue:CONN_1 P71
 U 1 1 52808FE9
 P 3250 3100
 F 0 "P71" H 3330 3100 40  0000 L CNN
@@ -3717,7 +3695,7 @@ F 4 "DNP" H 3250 3100 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P68
+L hackrf-one-rescue:CONN_1 P68
 U 1 1 52809276
 P 3800 6650
 F 0 "P68" H 3880 6650 40  0000 L CNN
@@ -3729,7 +3707,7 @@ F 4 "DNP" H 3800 6650 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P69
+L hackrf-one-rescue:CONN_1 P69
 U 1 1 52809504
 P 13050 1350
 F 0 "P69" H 13130 1350 40  0000 L CNN
@@ -3741,7 +3719,7 @@ F 4 "DNP" H 13050 1350 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P70
+L hackrf-one-rescue:CONN_1 P70
 U 1 1 52809857
 P 16150 1850
 F 0 "P70" H 16230 1850 40  0000 L CNN
@@ -3753,7 +3731,7 @@ F 4 "DNP" H 16150 1850 60  0001 C CNN "Note"
 	0    1    1    0   
 $EndComp
 $Comp
-L CONN_1 P73
+L hackrf-one-rescue:CONN_1 P73
 U 1 1 52809B46
 P 900 9850
 F 0 "P73" H 980 9850 40  0000 L CNN
@@ -3765,7 +3743,7 @@ F 4 "DNP" H 900 9850 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P74
+L hackrf-one-rescue:CONN_1 P74
 U 1 1 52809BA9
 P 2050 10150
 F 0 "P74" H 2130 10150 40  0000 L CNN
@@ -3777,7 +3755,7 @@ F 4 "DNP" H 2050 10150 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P75
+L hackrf-one-rescue:CONN_1 P75
 U 1 1 5280A7B0
 P 2750 6650
 F 0 "P75" H 2830 6650 40  0000 L CNN
@@ -3791,7 +3769,7 @@ $EndComp
 Text Label 2750 7150 1    40   ~ 0
 SGPIO0
 $Comp
-L CONN_1 P76
+L hackrf-one-rescue:CONN_1 P76
 U 1 1 5280ACAD
 P 2900 6650
 F 0 "P76" H 2980 6650 40  0000 L CNN
@@ -3805,7 +3783,7 @@ $EndComp
 Text Label 2900 7150 1    40   ~ 0
 SGPIO7
 $Comp
-L CONN_1 P77
+L hackrf-one-rescue:CONN_1 P77
 U 1 1 5280ACB7
 P 3050 6650
 F 0 "P77" H 3130 6650 40  0000 L CNN
@@ -3819,7 +3797,7 @@ $EndComp
 Text Label 3050 7150 1    40   ~ 0
 SGPIO9
 $Comp
-L CONN_1 P78
+L hackrf-one-rescue:CONN_1 P78
 U 1 1 5280ACC0
 P 3200 6650
 F 0 "P78" H 3280 6650 40  0000 L CNN
@@ -3833,7 +3811,7 @@ $EndComp
 Text Label 3200 7150 1    40   ~ 0
 SGPIO10
 $Comp
-L CONN_1 P79
+L hackrf-one-rescue:CONN_1 P79
 U 1 1 5280ACCC
 P 3350 6650
 F 0 "P79" H 3430 6650 40  0000 L CNN
@@ -3847,7 +3825,7 @@ $EndComp
 Text Label 3350 7150 1    40   ~ 0
 SGPIO11
 $Comp
-L CONN_2 P80
+L hackrf-one-rescue:CONN_2 P80
 U 1 1 528064FC
 P 1250 2700
 F 0 "P80" V 1200 2700 40  0000 C CNN
@@ -3861,7 +3839,7 @@ $EndComp
 Text Label 800  2600 3    40   ~ 0
 USB_SHIELD
 $Comp
-L CONN_1 P81
+L hackrf-one-rescue:CONN_1 P81
 U 1 1 52808621
 P 3500 6650
 F 0 "P81" H 3580 6650 40  0000 L CNN
@@ -3879,7 +3857,7 @@ SPIFI_SIO3
 Text Label 3800 7150 1    40   ~ 0
 SPIFI_CS
 $Comp
-L CONN_1 P82
+L hackrf-one-rescue:CONN_1 P82
 U 1 1 52808DC0
 P 3650 6650
 F 0 "P82" H 3730 6650 40  0000 L CNN
@@ -3891,7 +3869,7 @@ F 4 "DNP" H 3650 6650 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0298
+L hackrf-one-rescue:GND #PWR0298
 U 1 1 52818F8B
 P 9700 7450
 AR Path="/52818F8B" Ref="#PWR0298"  Part="1" 
@@ -3910,7 +3888,7 @@ GCK1
 Text GLabel 7100 9250 0    40   Input ~ 0
 GCK2
 $Comp
-L VCC #PWR0299
+L hackrf-one-rescue:VCC #PWR0299
 U 1 1 5281AE00
 P 8600 10050
 F 0 "#PWR0299" H 8600 10150 30  0001 C CNN
@@ -3937,7 +3915,7 @@ BANK2F3M2
 Text Label 7000 9650 0    40   ~ 0
 BANK2F3M12
 $Comp
-L GND #PWR0300
+L hackrf-one-rescue:GND #PWR0300
 U 1 1 528FAA17
 P 1750 9300
 AR Path="/528FAA17" Ref="#PWR0300"  Part="1" 
@@ -3950,7 +3928,7 @@ F 3 "" H 1750 9300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0301
+L hackrf-one-rescue:GND #PWR0301
 U 1 1 528FAC9B
 P 2100 8750
 AR Path="/528FAC9B" Ref="#PWR0301"  Part="1" 
@@ -3963,7 +3941,7 @@ F 3 "" H 2100 8750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R34
+L hackrf-one-rescue:R R34
 U 1 1 528FF14A
 P 5550 9400
 AR Path="/528FF14A" Ref="R34"  Part="1" 
@@ -3979,7 +3957,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 5550 9400 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L C C164
+L hackrf-one-rescue:C C164
 U 1 1 529065ED
 P 4050 1800
 AR Path="/529065ED" Ref="C164"  Part="1" 
@@ -3995,7 +3973,7 @@ F 6 "CAP CER 18PF 50V 5% NP0 0402" H 4050 1800 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C118
+L hackrf-one-rescue:C C118
 U 1 1 5290661D
 P 3250 1800
 AR Path="/5290661D" Ref="C118"  Part="1" 
@@ -4011,7 +3989,7 @@ F 6 "CAP CER 18PF 50V 5% NP0 0402" H 3250 1800 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R35
+L hackrf-one-rescue:R R35
 U 1 1 5294026C
 P 1050 1900
 AR Path="/5294026C" Ref="R35"  Part="1" 
@@ -4025,7 +4003,7 @@ F 4 "DNP" V 950 1900 60  0000 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L C C155
+L hackrf-one-rescue:C C155
 U 1 1 5294027B
 P 1050 2250
 AR Path="/5294027B" Ref="C155"  Part="1" 
@@ -4039,7 +4017,7 @@ F 4 "DNP" V 900 2200 60  0000 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0302
+L hackrf-one-rescue:GND #PWR0302
 U 1 1 529402E0
 P 1300 1800
 AR Path="/529402E0" Ref="#PWR0302"  Part="1" 
@@ -4052,7 +4030,7 @@ F 3 "" H 1300 1800 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R73
+L hackrf-one-rescue:R R73
 U 1 1 5298FBA8
 P 1000 6600
 AR Path="/5298FBA8" Ref="R73"  Part="1" 
@@ -4068,7 +4046,7 @@ F 6 "RES 1K OHM 1/16W 1% 0402" H 1000 6600 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R76
+L hackrf-one-rescue:R R76
 U 1 1 5298FC35
 P 1900 6600
 AR Path="/5298FC35" Ref="R76"  Part="1" 
@@ -4084,7 +4062,7 @@ F 6 "RES 1K OHM 1/16W 1% 0402" H 1900 6600 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R74
+L hackrf-one-rescue:R R74
 U 1 1 5299055B
 P 1300 6600
 AR Path="/5299055B" Ref="R74"  Part="1" 
@@ -4100,7 +4078,7 @@ F 6 "RES TF 1.8K OHM 5% 1/16W 0402" H 1300 6600 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R18
+L hackrf-one-rescue:R R18
 U 1 1 529905C9
 P 2200 6600
 AR Path="/529905C9" Ref="R18"  Part="1" 
@@ -4116,7 +4094,7 @@ F 6 "RES TF 1.8K OHM 5% 1/16W 0402" H 2200 6600 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L FILTER FB3
+L hackrf-one-rescue:FILTER FB3
 U 1 1 52EA190B
 P 1950 4100
 F 0 "FB3" H 1950 4250 60  0000 C CNN
@@ -4130,7 +4108,7 @@ F 6 "FERRITE CHIP 220 OHM 2000MA 0805" H 1950 4100 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L MOSFET_P Q5
+L hackrf-one-rescue:MOSFET_P Q5
 U 1 1 52F14FDB
 P 12150 1100
 F 0 "Q5" H 12150 1290 60  0000 R CNN
@@ -4144,7 +4122,7 @@ F 6 "MOSFET P-CH -30V -4.3A SOT23" H 12150 1100 60  0001 C CNN "Description"
 	1    0    0    1   
 $EndComp
 $Comp
-L R R37
+L hackrf-one-rescue:R R37
 U 1 1 52F14FFA
 P 11750 1350
 AR Path="/52F14FFA" Ref="R37"  Part="1" 
@@ -4162,7 +4140,7 @@ $EndComp
 Text Label 12250 700  3    40   ~ 0
 VBUS
 $Comp
-L GND #PWR0303
+L hackrf-one-rescue:GND #PWR0303
 U 1 1 52F155D5
 P 11750 1600
 AR Path="/52F155D5" Ref="#PWR0303"  Part="1" 
@@ -5379,7 +5357,7 @@ VBUSCTRL
 Wire Wire Line
 	12100 1700 13650 1700
 $Comp
-L R R57
+L hackrf-one-rescue:R R57
 U 1 1 52F18AF9
 P 3600 4000
 AR Path="/52F18AF9" Ref="R57"  Part="1" 
@@ -5395,7 +5373,7 @@ F 6 "RES 0.0 OHM 1/16W 0402 SMD" H 3600 4000 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R58
+L hackrf-one-rescue:R R58
 U 1 1 52F18B02
 P 3400 4000
 AR Path="/52F18B02" Ref="R58"  Part="1" 

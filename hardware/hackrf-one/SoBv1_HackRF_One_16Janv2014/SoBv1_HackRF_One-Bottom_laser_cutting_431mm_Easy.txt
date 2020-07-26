@@ -1,0 +1,2 @@
+For file SoBv1_HackRF_One_Bottom.svg:
+Laser cutting size 431mm => Seeed Studio Difficulty Easy (Length of Cutting line Below 60cm)

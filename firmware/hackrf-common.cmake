@@ -27,30 +27,12 @@
 
 enable_language(C CXX ASM)
 
-SET(PATH_HACKRF_FIRMWARE ${CMAKE_CURRENT_LIST_DIR})
-if(NOT DEFINED SGPIO_DEBUG)
-	SET(PATH_HACKRF_CPLD_XSVF ${PATH_HACKRF_FIRMWARE}/cpld/sgpio_if/default.xsvf)
-else()
-	SET(PATH_HACKRF_CPLD_XSVF ${PATH_HACKRF_FIRMWARE}/cpld/sgpio_debug/default.xsvf)
-endif()
-SET(VAR_USED ${SGPIO_DEBUG})
-SET(PATH_HACKRF ${PATH_HACKRF_FIRMWARE}/..)
+SET(PATH_HACKRF ../..)
+SET(PATH_HACKRF_FIRMWARE ${PATH_HACKRF}/firmware)
 SET(PATH_HACKRF_FIRMWARE_COMMON ${PATH_HACKRF_FIRMWARE}/common)
 SET(LIBOPENCM3 ${PATH_HACKRF_FIRMWARE}/libopencm3)
-SET(PATH_DFU_PY ${PATH_HACKRF_FIRMWARE}/dfu.py)
-SET(PATH_CPLD_BITSTREAM_TOOL ${PATH_HACKRF_FIRMWARE}/tools/cpld_bitstream.py)
-set(PATH_HACKRF_CPLD_DATA_C ${CMAKE_CURRENT_BINARY_DIR}/hackrf_cpld_data.c)
 
 include(${PATH_HACKRF_FIRMWARE}/dfu-util.cmake)
-
-include(ExternalProject)
-ExternalProject_Add(libopencm3_${PROJECT_NAME}
-	SOURCE_DIR "${LIBOPENCM3}"
-	BUILD_IN_SOURCE true
-	DOWNLOAD_COMMAND ""
-	CONFIGURE_COMMAND ""
-	INSTALL_COMMAND ""
-)
 
 #set(VERSION "")
 if (NOT DEFINED VERSION)
@@ -87,7 +69,7 @@ SET(HACKRF_OPTS "-D${BOARD} -DLPC43XX -D${MCU_PARTNO} -DTX_ENABLE -D'VERSION_STR
 
 SET(LDSCRIPT_M4 "-T${PATH_HACKRF_FIRMWARE_COMMON}/${MCU_PARTNO}_M4_memory.ld -Tlibopencm3_lpc43xx_rom_to_ram.ld -T${PATH_HACKRF_FIRMWARE_COMMON}/LPC43xx_M4_M0_image_from_text.ld")
 
-SET(LDSCRIPT_M4_RAM "-T${PATH_HACKRF_FIRMWARE_COMMON}/${MCU_PARTNO}_M4_memory.ld -Tlibopencm3_lpc43xx.ld -T${PATH_HACKRF_FIRMWARE_COMMON}/LPC43xx_M4_M0_image_from_text.ld")
+SET(LDSCRIPT_M4_DFU "-T${PATH_HACKRF_FIRMWARE_COMMON}/${MCU_PARTNO}_M4_memory.ld -Tlibopencm3_lpc43xx.ld -T${PATH_HACKRF_FIRMWARE_COMMON}/LPC43xx_M4_M0_image_from_text.ld")
 
 SET(LDSCRIPT_M0 "-T${PATH_HACKRF_FIRMWARE_COMMON}/LPC43xx_M0_memory.ld -Tlibopencm3_lpc43xx_m0.ld")
 
@@ -107,38 +89,13 @@ SET(CPUFLAGS_M4 "-mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16")
 SET(CFLAGS_M4 "-std=gnu99 ${CFLAGS_COMMON} ${CPUFLAGS_M4} -DLPC43XX_M4")
 SET(CXXFLAGS_M4 "-std=gnu++0x ${CFLAGS_COMMON} ${CPUFLAGS_M4} -DLPC43XX_M4")
 SET(LDFLAGS_M4 "${LDFLAGS_COMMON} ${CPUFLAGS_M4} ${LDSCRIPT_M4} -Xlinker -Map=m4.map")
-
-SET(CFLAGS_M4_RAM "-std=gnu99 ${CFLAGS_COMMON} ${CPUFLAGS_M4} -DLPC43XX_M4")
-SET(LDFLAGS_M4_RAM "${LDFLAGS_COMMON} ${CPUFLAGS_M4} ${LDSCRIPT_M4_RAM} -Xlinker -Map=m4.map")
+SET(CFLAGS_M4_DFU "-std=gnu99 ${CFLAGS_COMMON} ${CPUFLAGS_M4} -DLPC43XX_M4 -DDFU_MODE")
+SET(LDFLAGS_M4_DFU "${LDFLAGS_COMMON} ${CPUFLAGS_M4} ${LDSCRIPT_M4_DFU} -Xlinker -Map=m4.map")
 
 set(BUILD_SHARED_LIBS OFF)
 
 include_directories("${LIBOPENCM3}/include/")
 include_directories("${PATH_HACKRF_FIRMWARE_COMMON}")
-
-macro(DeclareTarget project_name variant_suffix cflags ldflags)
-	add_library(${project_name}${variant_suffix}_objects OBJECT ${SRC_M4} m0_bin.s)
-	set_target_properties(${project_name}${variant_suffix}_objects PROPERTIES COMPILE_FLAGS "${cflags}")
-	add_dependencies(${project_name}${variant_suffix}_objects ${project_name}_m0.bin)
-	add_executable(${project_name}${variant_suffix}.elf $<TARGET_OBJECTS:${project_name}${variant_suffix}_objects>)
-	add_dependencies(${project_name}${variant_suffix}.elf libopencm3_${project_name})
-
-	target_link_libraries(
-		${project_name}${variant_suffix}.elf
-		c
-		nosys
-		opencm3_lpc43xx
-		m
-	)
-
-	set_target_properties(${project_name}${variant_suffix}.elf PROPERTIES LINK_FLAGS "${ldflags}")
-
-	add_custom_target(
-		${project_name}${variant_suffix}.bin ALL
-		DEPENDS ${project_name}${variant_suffix}.elf
-		COMMAND ${CMAKE_OBJCOPY} -Obinary ${project_name}${variant_suffix}.elf ${project_name}${variant_suffix}.bin
-	)
-endmacro()
 
 macro(DeclareTargets)
 	SET(SRC_M4
@@ -159,7 +116,6 @@ macro(DeclareTargets)
 		${PATH_HACKRF_FIRMWARE_COMMON}/spi_bus.c
 		${PATH_HACKRF_FIRMWARE_COMMON}/spi_ssp.c
 		${PATH_HACKRF_FIRMWARE_COMMON}/gpio_lpc.c
-		${PATH_HACKRF_FIRMWARE_COMMON}/hackrf_ui.c
 	)
 
 	if(BOARD STREQUAL "RAD1O")
@@ -189,7 +145,6 @@ macro(DeclareTargets)
 	)
 
 	add_executable(${PROJECT_NAME}_m0.elf ${SRC_M0})
-	add_dependencies(${PROJECT_NAME}_m0.elf libopencm3_${PROJECT_NAME})
 
 	target_link_libraries(
 		${PROJECT_NAME}_m0.elf
@@ -207,9 +162,50 @@ macro(DeclareTargets)
 		COMMAND ${CMAKE_OBJCOPY} -Obinary ${PROJECT_NAME}_m0.elf ${PROJECT_NAME}_m0.bin
 	)
 
-	DeclareTarget("${PROJECT_NAME}" "" "${CFLAGS_M4}" "${LDFLAGS_M4}")	
-	DeclareTarget("${PROJECT_NAME}" "_ram" "${CFLAGS_M4_RAM}" "${LDFLAGS_M4_RAM}")	
-	DeclareTarget("${PROJECT_NAME}" "_dfu" "${CFLAGS_M4_RAM} -DDFU_MODE" "${LDFLAGS_M4_RAM}")	
+	# Object files to be linked for SPI flash versions
+	add_library(${PROJECT_NAME}_objects OBJECT ${SRC_M4} m0_bin.s)
+	set_target_properties(${PROJECT_NAME}_objects PROPERTIES COMPILE_FLAGS "${CFLAGS_M4}")
+	add_dependencies(${PROJECT_NAME}_objects ${PROJECT_NAME}_m0.bin)
+	add_executable(${PROJECT_NAME}.elf $<TARGET_OBJECTS:${PROJECT_NAME}_objects>)
+
+	target_link_libraries(
+		${PROJECT_NAME}.elf
+		c
+		nosys
+		opencm3_lpc43xx
+		m
+	)
+
+	set_target_properties(${PROJECT_NAME}.elf PROPERTIES LINK_FLAGS "${LDFLAGS_M4}")
+
+	add_custom_target(
+		${PROJECT_NAME}.bin ALL
+		DEPENDS ${PROJECT_NAME}.elf
+		COMMAND ${CMAKE_OBJCOPY} -Obinary ${PROJECT_NAME}.elf ${PROJECT_NAME}.bin
+	)
+
+	# DFU - using a differnet LD script to run directly from RAM
+	# Object files to be linked for DFU flash versions
+	add_library(${PROJECT_NAME}_dfu_objects OBJECT ${SRC_M4} m0_bin.s)
+	set_target_properties(${PROJECT_NAME}_dfu_objects PROPERTIES COMPILE_FLAGS "${CFLAGS_M4_DFU}")
+	add_dependencies(${PROJECT_NAME}_dfu_objects ${PROJECT_NAME}_m0.bin)
+	add_executable(${PROJECT_NAME}_dfu.elf $<TARGET_OBJECTS:${PROJECT_NAME}_dfu_objects>)
+
+	target_link_libraries(
+		${PROJECT_NAME}_dfu.elf
+		c
+		nosys
+		opencm3_lpc43xx
+		m
+	)
+
+	set_target_properties(${PROJECT_NAME}_dfu.elf PROPERTIES LINK_FLAGS "${LDFLAGS_M4_DFU}")
+
+	add_custom_target(
+		${PROJECT_NAME}_dfu.bin
+		DEPENDS ${PROJECT_NAME}_dfu.elf
+		COMMAND ${CMAKE_OBJCOPY} -Obinary ${PROJECT_NAME}_dfu.elf ${PROJECT_NAME}_dfu.bin
+	)
 
 	add_custom_target(
 		${PROJECT_NAME}.dfu ${DFU_ALL}
@@ -217,16 +213,9 @@ macro(DeclareTargets)
 		COMMAND rm -f _tmp.dfu _header.bin
 		COMMAND cp ${PROJECT_NAME}_dfu.bin _tmp.dfu
 		COMMAND dfu-suffix --vid=0x1fc9 --pid=0x000c --did=0x0 -a _tmp.dfu
-		COMMAND python ${PATH_DFU_PY} ${PROJECT_NAME}
+		COMMAND python ../../dfu.py ${PROJECT_NAME}
 		COMMAND cat _header.bin _tmp.dfu >${PROJECT_NAME}.dfu
 		COMMAND rm -f _tmp.dfu _header.bin
-	)
-
-	# Program / flash targets
-	add_custom_target(
-		${PROJECT_NAME}-flash
-		DEPENDS ${PROJECT_NAME}.bin
-		COMMAND hackrf_spiflash -Rw ${PROJECT_NAME}.bin
 	)
 
 	add_custom_target(

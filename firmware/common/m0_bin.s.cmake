@@ -20,4 +20,4 @@
 	.data
 	.section	.m0_bin, "ax"
 	
-	.incbin		"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_m0.bin"
+	.incbin		"${PROJECT_NAME}_m0.bin"

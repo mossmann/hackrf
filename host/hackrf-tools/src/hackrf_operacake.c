@@ -39,8 +39,6 @@ typedef int bool;
 #define INVALID_ADDRESS 0xFF
 #define INVALID_PORT 0xFF
 
-#define GPIO_TEST_DISABLED 0xFFFF
-
 static void usage() {
 	printf("\nUsage:\n");
 	printf("\t-h, --help: this help\n");
@@ -287,10 +285,7 @@ int main(int argc, char** argv) {
 			return EXIT_FAILURE;
 		}
 		
-		if(test_result == GPIO_TEST_DISABLED) {
-			fprintf(stderr, "GPIO mode diabled.\n");
-			fprintf(stderr, "Remove additional addon boards and retry.\n");
-		}else if(test_result) {
+		if(test_result) {
 			fprintf(stderr, "GPIO test failed\n");
 			fprintf(stderr, "Pin\tHigh\tShorts\tLow\n");
 			reg = test_result & mask;

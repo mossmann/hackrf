@@ -157,7 +157,7 @@ void sgpio_configure(
 	const uint_fast8_t pos = config->slice_mode_multislice ? 0x1f : 0x03;
 	const bool single_slice = !config->slice_mode_multislice;
 	const uint_fast8_t slice_count = config->slice_mode_multislice ? 8 : 1;
-	const uint_fast8_t clk_capture_mode = (direction == SGPIO_DIRECTION_TX) ? 0 : 0;
+	const uint_fast8_t clk_capture_mode = (direction == SGPIO_DIRECTION_TX) ? 0 : 1;
 	
 	uint32_t slice_enable_mask = 0;
 	/* Configure Slice A, I, E, J, C, K, F, L (sgpio_slice_mode_multislice mode) */

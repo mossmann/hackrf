@@ -23,7 +23,6 @@
 #include "hackrf_core.h"
 #include "gpio.h"
 #include "gpio_lpc.h"
-#include "i2c_bus.h"
 #include <libopencm3/lpc43xx/scu.h>
 
 /*
@@ -72,7 +71,6 @@
 
 i2c_bus_t* const oc_bus = &i2c0;
 uint8_t operacake_boards[8] = {0,0,0,0,0,0,0,0};
-bool allow_gpio_mode = true;
 
 /* read single register */
 uint8_t operacake_read_reg(i2c_bus_t* const bus, uint8_t address, uint8_t reg) {
@@ -88,7 +86,7 @@ void operacake_write_reg(i2c_bus_t* const bus, uint8_t address, uint8_t reg, uin
 	i2c_bus_transfer(bus, address, data, 2, NULL, 0);
 }
 
-uint8_t operacake_init(bool allow_gpio) {
+uint8_t operacake_init(void) {
 	uint8_t reg, addr, i, j = 0;
 	/* Find connected operacakes */
 	for(i=0; i<8; i++) {
@@ -101,7 +99,6 @@ uint8_t operacake_init(bool allow_gpio) {
 		if(reg==OPERACAKE_CONFIG_ALL_OUTPUT)
 			operacake_boards[j++] = addr;
 	}
-	allow_gpio_mode = allow_gpio;
 	return 0;
 }
 
@@ -218,9 +215,7 @@ uint16_t gpio_test(uint8_t address)
 {
 	uint8_t i, reg, bit_mask, gpio_mask = 0x1F;
 	uint16_t result = 0;
-	if(!allow_gpio_mode)
-		return 0xFFFF;
-
+	operacake_init();
 	scu_pinmux(SCU_PINMUX_GPIO3_8, SCU_GPIO_FAST | SCU_CONF_FUNCTION0);
 	scu_pinmux(SCU_PINMUX_GPIO3_12, SCU_GPIO_FAST | SCU_CONF_FUNCTION0);
 	scu_pinmux(SCU_PINMUX_GPIO3_13, SCU_GPIO_FAST | SCU_CONF_FUNCTION0);

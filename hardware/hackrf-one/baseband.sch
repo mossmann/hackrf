@@ -1,36 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:hackrf
+EESchema Schematic File Version 4
 LIBS:hackrf-one-cache
-EELAYER 25 0
+EELAYER 29 0
 EELAYER END
 $Descr User 17000 11000
 encoding utf-8
@@ -45,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L R R28
+L hackrf-one-rescue:R R28
 U 1 1 50549522
 P 2300 7700
 F 0 "R28" V 2380 7700 50  0000 C CNN
@@ -63,7 +33,7 @@ Text Notes 6050 10400 0    40   ~ 0
 Text Notes 1000 8800 0    40   ~ 0
 3.3 V CMOS clock input at 10 MHz\n(or 10 MHz to 100 MHz with firmware modification)
 $Comp
-L GND #PWR092
+L hackrf-one-rescue:GND #PWR092
 U 1 1 5052A7F1
 P 3900 9350
 F 0 "#PWR092" H 3900 9350 30  0001 C CNN
@@ -74,7 +44,7 @@ F 3 "" H 3900 9350 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R85
+L hackrf-one-rescue:R R85
 U 1 1 5052A7D7
 P 3900 9100
 F 0 "R85" V 3980 9100 50  0000 C CNN
@@ -96,7 +66,7 @@ SSP1_MOSI
 Text GLabel 1000 5550 3    40   Input ~ 0
 SSP1_SCK
 $Comp
-L CONN_1 P40
+L hackrf-one-rescue:CONN_1 P40
 U 1 1 5052A336
 P 1150 5300
 F 0 "P40" H 1230 5300 40  0000 L CNN
@@ -108,7 +78,7 @@ F 4 "DNP" H 1150 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P41
+L hackrf-one-rescue:CONN_1 P41
 U 1 1 5052A335
 P 1300 5300
 F 0 "P41" H 1380 5300 40  0000 L CNN
@@ -120,7 +90,7 @@ F 4 "DNP" H 1300 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P39
+L hackrf-one-rescue:CONN_1 P39
 U 1 1 5052A332
 P 1000 5300
 F 0 "P39" H 1080 5300 40  0000 L CNN
@@ -132,7 +102,7 @@ F 4 "DNP" H 1000 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P38
+L hackrf-one-rescue:CONN_1 P38
 U 1 1 5052A32D
 P 850 5300
 F 0 "P38" H 930 5300 40  0000 L CNN
@@ -148,7 +118,7 @@ SDA
 Text GLabel 700  5550 3    40   Input ~ 0
 SCL
 $Comp
-L CONN_1 P37
+L hackrf-one-rescue:CONN_1 P37
 U 1 1 5052A309
 P 700 5300
 F 0 "P37" H 780 5300 40  0000 L CNN
@@ -160,7 +130,7 @@ F 4 "DNP" H 700 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_2 P36
+L hackrf-one-rescue:CONN_2 P36
 U 1 1 5048D547
 P 2500 4350
 F 0 "P36" V 2450 4350 40  0000 C CNN
@@ -172,7 +142,7 @@ F 4 "DNP" V 2650 4350 60  0000 C CNN "Note"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C72
+L hackrf-one-rescue:C C72
 U 1 1 4F5BCA4C
 P 12250 1200
 F 0 "C72" H 12300 1300 50  0000 L CNN
@@ -186,7 +156,7 @@ F 6 "CAP CER 2.2UF 10V 20% X5R 0402" H 12250 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GSG-RF-CONN P2
+L hackrf-one-rescue:GSG-RF-CONN P2
 U 1 1 50462549
 P 6100 9600
 F 0 "P2" H 6100 9750 60  0000 C CNN
@@ -200,7 +170,7 @@ F 6 "CONN SMA JACK 50 OHM EDGE MNT W/JAM NUT & LOCK WASHER" H 6100 9600 60  0001
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR093
+L hackrf-one-rescue:GND #PWR093
 U 1 1 50462548
 P 6100 10100
 F 0 "#PWR093" H 6100 10100 30  0001 C CNN
@@ -223,7 +193,7 @@ CLK5
 Text GLabel 2700 2700 2    40   Input ~ 0
 !VAA_ENABLE
 $Comp
-L VCC #PWR094
+L hackrf-one-rescue:VCC #PWR094
 U 1 1 5043CEFC
 P 4950 1000
 F 0 "#PWR094" H 4950 1100 30  0001 C CNN
@@ -234,7 +204,7 @@ F 3 "" H 4950 1000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR095
+L hackrf-one-rescue:GND #PWR095
 U 1 1 5043CEF8
 P 4950 1500
 F 0 "#PWR095" H 4950 1500 30  0001 C CNN
@@ -245,7 +215,7 @@ F 3 "" H 4950 1500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR096
+L hackrf-one-rescue:VAA #PWR096
 U 1 1 5043CD92
 P 1450 1050
 F 0 "#PWR096" H 1450 1110 30  0001 C CNN
@@ -256,7 +226,7 @@ F 3 "" H 1450 1050 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR097
+L hackrf-one-rescue:VAA #PWR097
 U 1 1 5043CD87
 P 15650 1000
 F 0 "#PWR097" H 15650 1060 30  0001 C CNN
@@ -267,7 +237,7 @@ F 3 "" H 15650 1000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR098
+L hackrf-one-rescue:VAA #PWR098
 U 1 1 5043CD6F
 P 13000 4500
 F 0 "#PWR098" H 13000 4560 30  0001 C CNN
@@ -278,7 +248,7 @@ F 3 "" H 13000 4500 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VAA #PWR099
+L hackrf-one-rescue:VAA #PWR099
 U 1 1 5043CD6E
 P 13000 5100
 F 0 "#PWR099" H 13000 5160 30  0001 C CNN
@@ -289,7 +259,7 @@ F 3 "" H 13000 5100 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VAA #PWR0100
+L hackrf-one-rescue:VAA #PWR0100
 U 1 1 5043CD69
 P 13000 5400
 F 0 "#PWR0100" H 13000 5460 30  0001 C CNN
@@ -300,7 +270,7 @@ F 3 "" H 13000 5400 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VAA #PWR0101
+L hackrf-one-rescue:VAA #PWR0101
 U 1 1 5043CD61
 P 15700 4700
 F 0 "#PWR0101" H 15700 4760 30  0001 C CNN
@@ -311,7 +281,7 @@ F 3 "" H 15700 4700 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VAA #PWR0102
+L hackrf-one-rescue:VAA #PWR0102
 U 1 1 5043CD60
 P 14000 3600
 F 0 "#PWR0102" H 14000 3660 30  0001 C CNN
@@ -322,7 +292,7 @@ F 3 "" H 14000 3600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR0103
+L hackrf-one-rescue:VAA #PWR0103
 U 1 1 5043CD5E
 P 14300 3600
 F 0 "#PWR0103" H 14300 3660 30  0001 C CNN
@@ -333,7 +303,7 @@ F 3 "" H 14300 3600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR0104
+L hackrf-one-rescue:VAA #PWR0104
 U 1 1 5043CD5C
 P 14700 3600
 F 0 "#PWR0104" H 14700 3660 30  0001 C CNN
@@ -344,7 +314,7 @@ F 3 "" H 14700 3600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0105
+L hackrf-one-rescue:VCC #PWR0105
 U 1 1 5043CCD5
 P 4300 6550
 F 0 "#PWR0105" H 4300 6650 30  0001 C CNN
@@ -355,7 +325,7 @@ F 3 "" H 4300 6550 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0106
+L hackrf-one-rescue:VCC #PWR0106
 U 1 1 5043CC6F
 P 7850 6400
 F 0 "#PWR0106" H 7850 6500 30  0001 C CNN
@@ -366,7 +336,7 @@ F 3 "" H 7850 6400 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VAA #PWR0107
+L hackrf-one-rescue:VAA #PWR0107
 U 1 1 5043CBE8
 P 6250 4400
 F 0 "#PWR0107" H 6250 4460 30  0001 C CNN
@@ -377,7 +347,7 @@ F 3 "" H 6250 4400 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VAA #PWR0108
+L hackrf-one-rescue:VAA #PWR0108
 U 1 1 5043CBDE
 P 6250 5000
 F 0 "#PWR0108" H 6250 5060 30  0001 C CNN
@@ -388,7 +358,7 @@ F 3 "" H 6250 5000 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L VAA #PWR0109
+L hackrf-one-rescue:VAA #PWR0109
 U 1 1 5043CBD9
 P 7150 6400
 F 0 "#PWR0109" H 7150 6460 30  0001 C CNN
@@ -399,7 +369,7 @@ F 3 "" H 7150 6400 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VAA #PWR0110
+L hackrf-one-rescue:VAA #PWR0110
 U 1 1 5043CBD8
 P 7750 6400
 F 0 "#PWR0110" H 7750 6460 30  0001 C CNN
@@ -410,7 +380,7 @@ F 3 "" H 7750 6400 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VAA #PWR0111
+L hackrf-one-rescue:VAA #PWR0111
 U 1 1 5043CBCA
 P 7950 6400
 F 0 "#PWR0111" H 7950 6460 30  0001 C CNN
@@ -421,7 +391,7 @@ F 3 "" H 7950 6400 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VAA #PWR0112
+L hackrf-one-rescue:VAA #PWR0112
 U 1 1 5043CBC1
 P 9150 5200
 F 0 "#PWR0112" H 9150 5260 30  0001 C CNN
@@ -432,7 +402,7 @@ F 3 "" H 9150 5200 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VAA #PWR0113
+L hackrf-one-rescue:VAA #PWR0113
 U 1 1 5043CBBF
 P 8050 3500
 F 0 "#PWR0113" H 8050 3560 30  0001 C CNN
@@ -443,7 +413,7 @@ F 3 "" H 8050 3500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR0114
+L hackrf-one-rescue:VAA #PWR0114
 U 1 1 5043CBBD
 P 7850 3500
 F 0 "#PWR0114" H 7850 3560 30  0001 C CNN
@@ -454,7 +424,7 @@ F 3 "" H 7850 3500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR0115
+L hackrf-one-rescue:VAA #PWR0115
 U 1 1 5043CBB9
 P 7350 3500
 F 0 "#PWR0115" H 7350 3560 30  0001 C CNN
@@ -465,7 +435,7 @@ F 3 "" H 7350 3500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VAA #PWR0116
+L hackrf-one-rescue:VAA #PWR0116
 U 1 1 5043CBA0
 P 2700 3900
 F 0 "#PWR0116" H 2700 3960 30  0001 C CNN
@@ -476,7 +446,7 @@ F 3 "" H 2700 3900 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0117
+L hackrf-one-rescue:GND #PWR0117
 U 1 1 5043CAAE
 P 2000 4400
 F 0 "#PWR0117" H 2000 4400 30  0001 C CNN
@@ -487,7 +457,7 @@ F 3 "" H 2000 4400 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0118
+L hackrf-one-rescue:VCC #PWR0118
 U 1 1 5043CA46
 P 2000 2200
 F 0 "#PWR0118" H 2000 2300 30  0001 C CNN
@@ -498,7 +468,7 @@ F 3 "" H 2000 2200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R23
+L hackrf-one-rescue:R R23
 U 1 1 503F9C7C
 P 10350 5300
 F 0 "R23" V 10430 5300 50  0000 C CNN
@@ -512,7 +482,7 @@ F 6 "RES 0.0 OHM 1/16W 0402 SMD" H 10350 5300 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R22
+L hackrf-one-rescue:R R22
 U 1 1 503F9C78
 P 10350 5000
 F 0 "R22" V 10430 5000 50  0000 C CNN
@@ -526,7 +496,7 @@ F 6 "RES 0.0 OHM 1/16W 0402 SMD" H 10350 5000 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R21
+L hackrf-one-rescue:R R21
 U 1 1 503F9C76
 P 10350 4700
 F 0 "R21" V 10430 4700 50  0000 C CNN
@@ -540,7 +510,7 @@ F 6 "RES 0.0 OHM 1/16W 0402 SMD" H 10350 4700 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R13
+L hackrf-one-rescue:R R13
 U 1 1 503F977D
 P 12850 3050
 F 0 "R13" V 12930 3050 50  0000 C CNN
@@ -554,7 +524,7 @@ F 6 "RES 1K OHM 1/16W 1% 0402" H 12850 3050 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R10
+L hackrf-one-rescue:R R10
 U 1 1 503F977B
 P 12850 2750
 F 0 "R10" V 12930 2750 50  0000 C CNN
@@ -568,7 +538,7 @@ F 6 "RES 1K OHM 1/16W 1% 0402" H 12850 2750 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R9
+L hackrf-one-rescue:R R9
 U 1 1 503F977A
 P 12850 2450
 F 0 "R9" V 12930 2450 50  0000 C CNN
@@ -582,7 +552,7 @@ F 6 "RES 1K OHM 1/16W 1% 0402" H 12850 2450 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C90
+L hackrf-one-rescue:C C90
 U 1 1 503F929C
 P 3150 1250
 F 0 "C90" H 3200 1350 50  0000 L CNN
@@ -596,7 +566,7 @@ F 6 "CAP CER 100PF 50V 5% NP0 0402" H 6150 2800 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C102
+L hackrf-one-rescue:C C102
 U 1 1 503F914F
 P 5650 4800
 F 0 "C102" H 5700 4900 50  0000 L CNN
@@ -610,7 +580,7 @@ F 6 "CAP CER 22PF 50V 5% NP0 0402" H 5650 4800 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C99
+L hackrf-one-rescue:C C99
 U 1 1 503F9135
 P 5650 4200
 F 0 "C99" H 5700 4300 50  0000 L CNN
@@ -624,7 +594,7 @@ F 6 "CAP CER 22PF 50V 5% NP0 0402" H 5650 4200 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C110
+L hackrf-one-rescue:C C110
 U 1 1 503F8FBB
 P 11650 5650
 F 0 "C110" H 11700 5750 50  0000 L CNN
@@ -639,7 +609,7 @@ F 7 "DNP" V 11750 5900 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C109
+L hackrf-one-rescue:C C109
 U 1 1 503F8FBA
 P 11400 5650
 F 0 "C109" H 11450 5750 50  0000 L CNN
@@ -654,7 +624,7 @@ F 7 "DNP" V 11500 5900 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C108
+L hackrf-one-rescue:C C108
 U 1 1 503F8FB8
 P 11150 5650
 F 0 "C108" H 11200 5750 50  0000 L CNN
@@ -669,7 +639,7 @@ F 7 "DNP" V 11250 5900 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C107
+L hackrf-one-rescue:C C107
 U 1 1 503F8FAB
 P 10900 5650
 F 0 "C107" H 10950 5750 50  0000 L CNN
@@ -684,7 +654,7 @@ F 7 "DNP" V 11000 5900 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C103
+L hackrf-one-rescue:C C103
 U 1 1 503F8F9C
 P 11950 5150
 F 0 "C103" H 12000 5250 50  0000 L CNN
@@ -699,7 +669,7 @@ F 7 "DNP" V 11800 5150 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C101
+L hackrf-one-rescue:C C101
 U 1 1 503F8F8C
 P 11950 4550
 F 0 "C101" H 12000 4650 50  0000 L CNN
@@ -714,7 +684,7 @@ F 7 "DNP" V 11800 4550 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C96
+L hackrf-one-rescue:C C96
 U 1 1 503F8F85
 P 11500 2900
 F 0 "C96" H 11550 3000 50  0000 L CNN
@@ -729,7 +699,7 @@ F 7 "DNP" V 11350 2900 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C95
+L hackrf-one-rescue:C C95
 U 1 1 503F8F6C
 P 11500 2300
 F 0 "C95" H 11550 2400 50  0000 L CNN
@@ -744,7 +714,7 @@ F 7 "DNP" V 11350 2300 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C94
+L hackrf-one-rescue:C C94
 U 1 1 503F8F5D
 P 4350 1250
 F 0 "C94" H 4400 1350 50  0000 L CNN
@@ -758,7 +728,7 @@ F 6 "CAP CER 22PF 50V 5% NP0 0402" H 4350 1250 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C86
+L hackrf-one-rescue:C C86
 U 1 1 503F8F4E
 P 2250 1250
 F 0 "C86" H 2300 1350 50  0000 L CNN
@@ -772,7 +742,7 @@ F 6 "CAP CER 22PF 50V 5% NP0 0402" H 2250 1250 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C85
+L hackrf-one-rescue:C C85
 U 1 1 503F8F4D
 P 1950 1250
 F 0 "C85" H 2000 1350 50  0000 L CNN
@@ -786,7 +756,7 @@ F 6 "CAP CER 22PF 50V 5% NP0 0402" H 1950 1250 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C124
+L hackrf-one-rescue:C C124
 U 1 1 503F8EA2
 P 15600 7500
 F 0 "C124" H 15650 7600 50  0000 L CNN
@@ -800,7 +770,7 @@ F 6 "CAP CER 2.2UF 10V 20% X5R 0402" H 15600 7500 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C82
+L hackrf-one-rescue:C C82
 U 1 1 503F8E6B
 P 15250 1200
 F 0 "C82" H 15300 1300 50  0000 L CNN
@@ -814,7 +784,7 @@ F 6 "CAP CER 2.2UF 10V 20% X5R 0402" H 15250 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C80
+L hackrf-one-rescue:C C80
 U 1 1 503F8E6A
 P 14650 1200
 F 0 "C80" H 14700 1300 50  0000 L CNN
@@ -828,7 +798,7 @@ F 6 "CAP CER 2.2UF 10V 20% X5R 0402" H 14650 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C78
+L hackrf-one-rescue:C C78
 U 1 1 503F8E69
 P 14050 1200
 F 0 "C78" H 14100 1300 50  0000 L CNN
@@ -842,7 +812,7 @@ F 6 "CAP CER 2.2UF 10V 20% X5R 0402" H 14050 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C76
+L hackrf-one-rescue:C C76
 U 1 1 503F8E67
 P 13450 1200
 F 0 "C76" H 13500 1300 50  0000 L CNN
@@ -856,7 +826,7 @@ F 6 "CAP CER 2.2UF 10V 20% X5R 0402" H 13450 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C74
+L hackrf-one-rescue:C C74
 U 1 1 503F8E66
 P 12850 1200
 F 0 "C74" H 12900 1300 50  0000 L CNN
@@ -870,7 +840,7 @@ F 6 "CAP CER 2.2UF 10V 20% X5R 0402" H 12850 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C105
+L hackrf-one-rescue:C C105
 U 1 1 503F888A
 P 2000 4150
 F 0 "C105" H 2050 4250 50  0000 L CNN
@@ -884,7 +854,7 @@ F 6 "CAP CER 10UF 10V 10% X5R 0805" H 2000 4150 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L FILTER FB2
+L hackrf-one-rescue:FILTER FB2
 U 1 1 503F885C
 P 2000 3350
 F 0 "FB2" H 2000 3500 60  0000 C CNN
@@ -898,7 +868,7 @@ F 6 "FERRITE CHIP 220 OHM 2000MA 0805" H 2000 3350 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C112
+L hackrf-one-rescue:C C112
 U 1 1 503C527F
 P 8400 6500
 F 0 "C112" H 8450 6600 50  0000 L CNN
@@ -912,7 +882,7 @@ F 6 "CAP CER 180PF 50V 5% NP0 0402" H 8400 6500 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R17
+L hackrf-one-rescue:R R17
 U 1 1 503C4FC8
 P 12300 3500
 F 0 "R17" V 12380 3500 50  0000 C CNN
@@ -926,7 +896,7 @@ F 6 "RES 4.7K OHM 1/16W 1% 0402" H 12300 3500 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R16
+L hackrf-one-rescue:R R16
 U 1 1 503C4FC7
 P 12100 3500
 F 0 "R16" V 12180 3500 50  0000 C CNN
@@ -940,7 +910,7 @@ F 6 "RES 4.7K OHM 1/16W 1% 0402" H 12100 3500 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R15
+L hackrf-one-rescue:R R15
 U 1 1 503C4FC6
 P 11900 3500
 F 0 "R15" V 11980 3500 50  0000 C CNN
@@ -954,7 +924,7 @@ F 6 "RES 4.7K OHM 1/16W 1% 0402" H 11900 3500 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R14
+L hackrf-one-rescue:R R14
 U 1 1 503C4FA7
 P 11700 3500
 F 0 "R14" V 11780 3500 50  0000 C CNN
@@ -968,7 +938,7 @@ F 6 "RES 4.7K OHM 1/16W 1% 0402" H 11700 3500 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C91
+L hackrf-one-rescue:C C91
 U 1 1 503C4B4A
 P 3450 1250
 F 0 "C91" H 3500 1350 50  0000 L CNN
@@ -982,7 +952,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 3450 1250 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R104
+L hackrf-one-rescue:R R104
 U 1 1 503C4AC5
 P 2500 7700
 F 0 "R104" V 2580 7700 50  0000 C CNN
@@ -996,7 +966,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 2500 7700 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R41
+L hackrf-one-rescue:R R41
 U 1 1 503C4ABC
 P 9100 5750
 F 0 "R41" V 9180 5750 50  0000 C CNN
@@ -1010,7 +980,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 9100 5750 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R105
+L hackrf-one-rescue:R R105
 U 1 1 503C4AB0
 P 4650 9900
 F 0 "R105" V 4730 9900 50  0000 C CNN
@@ -1024,7 +994,7 @@ F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 4650 9900 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C93
+L hackrf-one-rescue:C C93
 U 1 1 503C4A4B
 P 4050 1250
 F 0 "C93" H 4100 1350 50  0000 L CNN
@@ -1038,7 +1008,7 @@ F 6 "CAP CER 10000PF 16V 10% X7R 0402" H 10450 0   60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C92
+L hackrf-one-rescue:C C92
 U 1 1 503C4A4A
 P 3750 1250
 F 0 "C92" H 3800 1350 50  0000 L CNN
@@ -1052,7 +1022,7 @@ F 6 "CAP CER 10000PF 16V 10% X7R 0402" H 10150 0   60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C89
+L hackrf-one-rescue:C C89
 U 1 1 503C4A48
 P 2850 1250
 F 0 "C89" H 2900 1350 50  0000 L CNN
@@ -1066,7 +1036,7 @@ F 6 "CAP CER 10000PF 16V 10% X7R 0402" H 9250 0   60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C88
+L hackrf-one-rescue:C C88
 U 1 1 503C4A45
 P 4950 1250
 F 0 "C88" H 5000 1350 50  0000 L CNN
@@ -1080,7 +1050,7 @@ F 6 "CAP CER 10000PF 16V 10% X7R 0402" H 11350 0   60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C87
+L hackrf-one-rescue:C C87
 U 1 1 503C4A38
 P 2550 1250
 F 0 "C87" H 2600 1350 50  0000 L CNN
@@ -1094,7 +1064,7 @@ F 6 "CAP CER 10000PF 16V 10% X7R 0402" H 8950 0   60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C83
+L hackrf-one-rescue:C C83
 U 1 1 503C49FB
 P 15550 1200
 F 0 "C83" H 15600 1300 50  0000 L CNN
@@ -1108,7 +1078,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 15550 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C81
+L hackrf-one-rescue:C C81
 U 1 1 503C49FA
 P 14950 1200
 F 0 "C81" H 15000 1300 50  0000 L CNN
@@ -1122,7 +1092,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 14950 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C79
+L hackrf-one-rescue:C C79
 U 1 1 503C49F8
 P 14350 1200
 F 0 "C79" H 14400 1300 50  0000 L CNN
@@ -1136,7 +1106,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 14350 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C77
+L hackrf-one-rescue:C C77
 U 1 1 503C49F7
 P 13750 1200
 F 0 "C77" H 13800 1300 50  0000 L CNN
@@ -1150,7 +1120,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 13750 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C75
+L hackrf-one-rescue:C C75
 U 1 1 503C49F4
 P 13150 1200
 F 0 "C75" H 13200 1300 50  0000 L CNN
@@ -1164,7 +1134,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 13150 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C73
+L hackrf-one-rescue:C C73
 U 1 1 503C49F2
 P 12550 1200
 F 0 "C73" H 12600 1300 50  0000 L CNN
@@ -1178,7 +1148,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 12550 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C71
+L hackrf-one-rescue:C C71
 U 1 1 503C49DF
 P 11950 1200
 F 0 "C71" H 12000 1300 50  0000 L CNN
@@ -1192,7 +1162,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 11950 1200 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C123
+L hackrf-one-rescue:C C123
 U 1 1 503C49D3
 P 15300 7500
 F 0 "C123" H 15350 7600 50  0000 L CNN
@@ -1206,7 +1176,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 15300 7500 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C122
+L hackrf-one-rescue:C C122
 U 1 1 503C49CE
 P 2300 10000
 F 0 "C122" H 2350 10100 50  0000 L CNN
@@ -1220,7 +1190,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 2300 10000 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C121
+L hackrf-one-rescue:C C121
 U 1 1 503C49CD
 P 1900 10000
 F 0 "C121" H 1950 10100 50  0000 L CNN
@@ -1234,7 +1204,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 1900 10000 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C120
+L hackrf-one-rescue:C C120
 U 1 1 503C49CC
 P 1500 10000
 F 0 "C120" H 1550 10100 50  0000 L CNN
@@ -1248,7 +1218,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 1500 10000 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C119
+L hackrf-one-rescue:C C119
 U 1 1 503C49AF
 P 1100 10000
 F 0 "C119" H 1150 10100 50  0000 L CNN
@@ -1262,7 +1232,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 1100 10000 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C113
+L hackrf-one-rescue:C C113
 U 1 1 503C49A8
 P 3800 6850
 F 0 "C113" H 3850 6950 50  0000 L CNN
@@ -1292,7 +1262,7 @@ SCL
 Text GLabel 7550 8500 2    40   Input ~ 0
 GCK2
 $Comp
-L VCC #PWR0119
+L hackrf-one-rescue:VCC #PWR0119
 U 1 1 5037BA6B
 P 15200 7250
 F 0 "#PWR0119" H 15200 7350 30  0001 C CNN
@@ -1303,7 +1273,7 @@ F 3 "" H 15200 7250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0120
+L hackrf-one-rescue:GND #PWR0120
 U 1 1 5037BA69
 P 15200 7750
 F 0 "#PWR0120" H 15200 7750 30  0001 C CNN
@@ -1314,7 +1284,7 @@ F 3 "" H 15200 7750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0121
+L hackrf-one-rescue:GND #PWR0121
 U 1 1 5037B9FF
 P 2400 10250
 F 0 "#PWR0121" H 2400 10250 30  0001 C CNN
@@ -1325,7 +1295,7 @@ F 3 "" H 2400 10250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P15
+L hackrf-one-rescue:CONN_1 P15
 U 1 1 5037A16F
 P 1650 7950
 F 0 "P15" H 1730 7950 40  0000 L CNN
@@ -1337,7 +1307,7 @@ F 4 "DNP" H 1650 7950 60  0001 C CNN "Note"
 	-1   0    0    1   
 $EndComp
 $Comp
-L CONN_1 P18
+L hackrf-one-rescue:CONN_1 P18
 U 1 1 5037A131
 P 4400 10150
 F 0 "P18" H 4480 10150 40  0000 L CNN
@@ -1393,7 +1363,7 @@ DD8
 Text GLabel 15650 4800 2    40   Input ~ 0
 DD9
 $Comp
-L CONN_1 P14
+L hackrf-one-rescue:CONN_1 P14
 U 1 1 50371714
 P 7450 6950
 F 0 "P14" H 7530 6950 40  0000 L CNN
@@ -1414,7 +1384,7 @@ NoConn ~ 6400 4900
 NoConn ~ 6400 4600
 NoConn ~ 7250 6250
 $Comp
-L GND #PWR0122
+L hackrf-one-rescue:GND #PWR0122
 U 1 1 4FA55875
 P 3800 7100
 F 0 "#PWR0122" H 3800 7100 30  0001 C CNN
@@ -1425,7 +1395,7 @@ F 3 "" H 3800 7100 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0123
+L hackrf-one-rescue:VCC #PWR0123
 U 1 1 4FA557B9
 P 2400 9750
 F 0 "#PWR0123" H 2400 9850 30  0001 C CNN
@@ -1480,7 +1450,7 @@ TXBBQ+
 Text Label 8400 2150 0    40   ~ 0
 TXBBQ-
 $Comp
-L MAX2837 U17
+L hackrf-one-rescue:MAX2837 U17
 U 1 1 4F5BBC9D
 P 7700 4950
 F 0 "U17" H 7700 5000 60  0000 C CNN
@@ -1494,7 +1464,7 @@ F 6 "IC TXRX 2.3GHZ-2.7GHZ 48TQFN" H 7700 4950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0124
+L hackrf-one-rescue:GND #PWR0124
 U 1 1 4F5D6C22
 P 9100 6000
 F 0 "#PWR0124" H 9100 6000 30  0001 C CNN
@@ -1505,7 +1475,7 @@ F 3 "" H 9100 6000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L INDUCTOR L8
+L hackrf-one-rescue:INDUCTOR L8
 U 1 1 4F5D6AFA
 P 5400 5600
 F 0 "L8" V 5350 5600 40  0000 C CNN
@@ -1517,7 +1487,7 @@ F 4 "DNP" H 5400 5600 60  0001 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L INDUCTOR L9
+L hackrf-one-rescue:INDUCTOR L9
 U 1 1 4F5D6AD6
 P 5900 5600
 F 0 "L9" V 5850 5600 40  0000 C CNN
@@ -1529,7 +1499,7 @@ F 4 "DNP" H 5900 5600 60  0001 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L INDUCTOR L6
+L hackrf-one-rescue:INDUCTOR L6
 U 1 1 4F5D6AAA
 P 5400 4500
 F 0 "L6" V 5350 4500 40  0000 C CNN
@@ -1541,7 +1511,7 @@ F 4 "DNP" V 5600 4450 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R20
+L hackrf-one-rescue:R R20
 U 1 1 4F5D68E5
 P 10350 4400
 F 0 "R20" V 10430 4400 50  0000 C CNN
@@ -1569,7 +1539,7 @@ CLK4
 Text Label 4400 9000 1    40   ~ 0
 OEB
 $Comp
-L VCC #PWR0125
+L hackrf-one-rescue:VCC #PWR0125
 U 1 1 4F5D1968
 P 4900 9900
 F 0 "#PWR0125" H 4900 10000 30  0001 C CNN
@@ -1584,7 +1554,7 @@ CLK3
 Text Label 4600 9000 1    40   ~ 0
 CLK2
 $Comp
-L GND #PWR0126
+L hackrf-one-rescue:GND #PWR0126
 U 1 1 4F5D1728
 P 3000 9350
 F 0 "#PWR0126" H 3000 9350 30  0001 C CNN
@@ -1595,7 +1565,7 @@ F 3 "" H 3000 9350 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GSG-RF-CONN P16
+L hackrf-one-rescue:GSG-RF-CONN P16
 U 1 1 4F5D16D6
 P 3000 8850
 F 0 "P16" H 3000 9000 60  0000 C CNN
@@ -1609,7 +1579,7 @@ F 6 "CONN SMA JACK 50 OHM EDGE MNT W/JAM NUT & LOCK WASHER" H 3000 8850 60  0001
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0127
+L hackrf-one-rescue:GND #PWR0127
 U 1 1 4F5D0F3F
 P 2950 7700
 F 0 "#PWR0127" H 2950 7700 30  0001 C CNN
@@ -1620,7 +1590,7 @@ F 3 "" H 2950 7700 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0128
+L hackrf-one-rescue:GND #PWR0128
 U 1 1 4F5D0F39
 P 3150 7700
 F 0 "#PWR0128" H 3150 7700 30  0001 C CNN
@@ -1631,7 +1601,7 @@ F 3 "" H 3150 7700 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GSG-XTAL4PIN X1
+L hackrf-one-rescue:GSG-XTAL4PIN X1
 U 1 1 4F5D0B05
 P 3050 7300
 F 0 "X1" H 3050 7450 60  0000 C CNN
@@ -1645,7 +1615,7 @@ F 6 "CRYSTAL 25.0000MHZ 10PF SMD" H 3050 7300 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0129
+L hackrf-one-rescue:GND #PWR0129
 U 1 1 4F5D067A
 P 3600 7550
 F 0 "#PWR0129" H 3600 7550 30  0001 C CNN
@@ -1656,7 +1626,7 @@ F 3 "" H 3600 7550 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0130
+L hackrf-one-rescue:VCC #PWR0130
 U 1 1 4F5D062E
 P 2100 7450
 F 0 "#PWR0130" H 2100 7550 30  0001 C CNN
@@ -1667,7 +1637,7 @@ F 3 "" H 2100 7450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0131
+L hackrf-one-rescue:VCC #PWR0131
 U 1 1 4F5D062D
 P 2300 7450
 F 0 "#PWR0131" H 2300 7550 30  0001 C CNN
@@ -1678,7 +1648,7 @@ F 3 "" H 2300 7450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0132
+L hackrf-one-rescue:VCC #PWR0132
 U 1 1 4F5D062A
 P 2500 7450
 F 0 "#PWR0132" H 2500 7550 30  0001 C CNN
@@ -1689,7 +1659,7 @@ F 3 "" H 2500 7450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R27
+L hackrf-one-rescue:R R27
 U 1 1 4F5D0602
 P 2100 7700
 F 0 "R27" V 2180 7700 50  0000 C CNN
@@ -1703,7 +1673,7 @@ F 6 "RES TF 1.8K OHM 5% 1/16W 0402" H 2100 7700 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L SI5351C U19
+L hackrf-one-rescue:SI5351C U19
 U 1 1 4F5D0564
 P 4500 7950
 F 0 "U19" H 4500 8000 60  0000 C CNN
@@ -1717,7 +1687,7 @@ F 6 "IC CLK GENERATOR 160MHZ 20QFN" H 4500 7950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0133
+L hackrf-one-rescue:GND #PWR0133
 U 1 1 4F5CD4D5
 P 11650 5900
 F 0 "#PWR0133" H 11650 5900 30  0001 C CNN
@@ -1728,7 +1698,7 @@ F 3 "" H 11650 5900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0134
+L hackrf-one-rescue:GND #PWR0134
 U 1 1 4F5CD4D4
 P 11400 5900
 F 0 "#PWR0134" H 11400 5900 30  0001 C CNN
@@ -1739,7 +1709,7 @@ F 3 "" H 11400 5900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0135
+L hackrf-one-rescue:GND #PWR0135
 U 1 1 4F5CD4D2
 P 11150 5900
 F 0 "#PWR0135" H 11150 5900 30  0001 C CNN
@@ -1750,7 +1720,7 @@ F 3 "" H 11150 5900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0136
+L hackrf-one-rescue:GND #PWR0136
 U 1 1 4F5CD4D0
 P 10900 5900
 F 0 "#PWR0136" H 10900 5900 30  0001 C CNN
@@ -1763,7 +1733,7 @@ $EndComp
 Text Label 7550 6600 1    40   ~ 0
 XTAL2
 $Comp
-L GND #PWR0137
+L hackrf-one-rescue:GND #PWR0137
 U 1 1 4F5CCE80
 P 6700 7800
 F 0 "#PWR0137" H 6700 7800 30  0001 C CNN
@@ -1775,7 +1745,7 @@ F 3 "" H 6700 7800 60  0001 C CNN
 $EndComp
 NoConn ~ 7650 6250
 $Comp
-L BALUN T4
+L hackrf-one-rescue:BALUN T4
 U 1 1 4F5BDC0F
 P 4750 5600
 F 0 "T4" H 4750 5850 70  0000 C CNN
@@ -1790,7 +1760,7 @@ F 7 "Alternative part: Murata LDB182G4510G-120" H 4750 5600 60  0001 C CNN "Note
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0138
+L hackrf-one-rescue:GND #PWR0138
 U 1 1 4F5BDBA2
 P 5250 5600
 F 0 "#PWR0138" H 5250 5600 30  0001 C CNN
@@ -1801,7 +1771,7 @@ F 3 "" H 5250 5600 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0139
+L hackrf-one-rescue:GND #PWR0139
 U 1 1 4F5BDB9B
 P 5250 4500
 F 0 "#PWR0139" H 5250 4500 30  0001 C CNN
@@ -1812,7 +1782,7 @@ F 3 "" H 5250 4500 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L BALUN T3
+L hackrf-one-rescue:BALUN T3
 U 1 1 4F5BDB90
 P 4750 4500
 F 0 "T3" H 4750 4750 70  0000 C CNN
@@ -1827,7 +1797,7 @@ F 7 "Alternative part: Murata LDB182G4510G-120" H 4750 4500 60  0001 C CNN "Note
 	-1   0    0    1   
 $EndComp
 $Comp
-L C C104
+L hackrf-one-rescue:C C104
 U 1 1 4F5BD68E
 P 5650 5300
 F 0 "C104" H 5700 5400 50  0000 L CNN
@@ -1841,7 +1811,7 @@ F 6 "CAP CER 3PF 50V NP0 0402" H 5650 5300 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C111
+L hackrf-one-rescue:C C111
 U 1 1 4F5BD678
 P 5650 5900
 F 0 "C111" H 5700 6000 50  0000 L CNN
@@ -1855,7 +1825,7 @@ F 6 "CAP CER 3PF 50V NP0 0402" H 5650 5900 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C98
+L hackrf-one-rescue:C C98
 U 1 1 4F5BCCE3
 P 13250 3750
 F 0 "C98" H 13300 3850 50  0000 L CNN
@@ -1869,7 +1839,7 @@ F 6 "CAP CER 0.33UF 10V 10% X5R 0402" H 13250 3750 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0140
+L hackrf-one-rescue:GND #PWR0140
 U 1 1 4F5BCCA7
 P 14400 3600
 F 0 "#PWR0140" H 14400 3600 30  0001 C CNN
@@ -1880,7 +1850,7 @@ F 3 "" H 14400 3600 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0141
+L hackrf-one-rescue:GND #PWR0141
 U 1 1 4F5BCC9F
 P 14900 3600
 F 0 "#PWR0141" H 14900 3600 30  0001 C CNN
@@ -1891,7 +1861,7 @@ F 3 "" H 14900 3600 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0142
+L hackrf-one-rescue:GND #PWR0142
 U 1 1 4F5BCB52
 P 14200 6250
 F 0 "#PWR0142" H 14200 6250 30  0001 C CNN
@@ -1902,7 +1872,7 @@ F 3 "" H 14200 6250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0143
+L hackrf-one-rescue:GND #PWR0143
 U 1 1 4F5BCAE8
 P 13000 5500
 F 0 "#PWR0143" H 13000 5500 30  0001 C CNN
@@ -1913,7 +1883,7 @@ F 3 "" H 13000 5500 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0144
+L hackrf-one-rescue:GND #PWR0144
 U 1 1 4F5BCAE2
 P 13000 5000
 F 0 "#PWR0144" H 13000 5000 30  0001 C CNN
@@ -1924,7 +1894,7 @@ F 3 "" H 13000 5000 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0145
+L hackrf-one-rescue:GND #PWR0145
 U 1 1 4F5BCADC
 P 13000 4800
 F 0 "#PWR0145" H 13000 4800 30  0001 C CNN
@@ -1935,7 +1905,7 @@ F 3 "" H 13000 4800 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0146
+L hackrf-one-rescue:GND #PWR0146
 U 1 1 4F5BCABE
 P 15650 1450
 F 0 "#PWR0146" H 15650 1450 30  0001 C CNN
@@ -1946,7 +1916,7 @@ F 3 "" H 15650 1450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0147
+L hackrf-one-rescue:GND #PWR0147
 U 1 1 4F5BC9DD
 P 12550 4400
 F 0 "#PWR0147" H 12550 4400 30  0001 C CNN
@@ -1957,7 +1927,7 @@ F 3 "" H 12550 4400 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0148
+L hackrf-one-rescue:GND #PWR0148
 U 1 1 4F5BC9D0
 P 13000 4150
 F 0 "#PWR0148" H 13000 4150 30  0001 C CNN
@@ -1968,7 +1938,7 @@ F 3 "" H 13000 4150 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0149
+L hackrf-one-rescue:GND #PWR0149
 U 1 1 4F5BC9C9
 P 13000 3850
 F 0 "#PWR0149" H 13000 3850 30  0001 C CNN
@@ -1979,7 +1949,7 @@ F 3 "" H 13000 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C97
+L hackrf-one-rescue:C C97
 U 1 1 4F5BC9BB
 P 13250 3450
 F 0 "C97" H 13300 3550 50  0000 L CNN
@@ -1993,7 +1963,7 @@ F 6 "CAP CER 0.33UF 10V 10% X5R 0402" H 13250 3450 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C100
+L hackrf-one-rescue:C C100
 U 1 1 4F5BC9A4
 P 12550 4150
 F 0 "C100" H 12600 4250 50  0000 L CNN
@@ -2007,7 +1977,7 @@ F 6 "CAP CER 0.33UF 10V 10% X5R 0402" H 12550 4150 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0150
+L hackrf-one-rescue:GND #PWR0150
 U 1 1 4F5BC4AE
 P 12300 3750
 F 0 "#PWR0150" H 12300 3750 30  0001 C CNN
@@ -2018,7 +1988,7 @@ F 3 "" H 12300 3750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0151
+L hackrf-one-rescue:GND #PWR0151
 U 1 1 4F5BC4AD
 P 12100 3750
 F 0 "#PWR0151" H 12100 3750 30  0001 C CNN
@@ -2029,7 +1999,7 @@ F 3 "" H 12100 3750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0152
+L hackrf-one-rescue:GND #PWR0152
 U 1 1 4F5BC4AB
 P 11900 3750
 F 0 "#PWR0152" H 11900 3750 30  0001 C CNN
@@ -2040,7 +2010,7 @@ F 3 "" H 11900 3750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0153
+L hackrf-one-rescue:GND #PWR0153
 U 1 1 4F5BC4A9
 P 11700 3750
 F 0 "#PWR0153" H 11700 3750 30  0001 C CNN
@@ -2051,7 +2021,7 @@ F 3 "" H 11700 3750 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MAX5864 U18
+L hackrf-one-rescue:MAX5864 U18
 U 1 1 4F5BBCA6
 P 14350 4950
 F 0 "U18" H 14350 5000 60  0000 C CNN
@@ -2065,7 +2035,7 @@ F 6 "IC ANLG FRONT END 22MSPS 48-TQFN" H 14350 4950 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R8
+L hackrf-one-rescue:R R8
 U 1 1 4F5BC2E1
 P 12850 2150
 F 0 "R8" V 12930 2150 50  0000 C CNN
@@ -2079,7 +2049,7 @@ F 6 "RES 1K OHM 1/16W 1% 0402" H 12850 2150 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0154
+L hackrf-one-rescue:GND #PWR0154
 U 1 1 4F5BC1B0
 P 9700 5800
 F 0 "#PWR0154" H 9700 5800 30  0001 C CNN
@@ -2090,7 +2060,7 @@ F 3 "" H 9700 5800 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0155
+L hackrf-one-rescue:GND #PWR0155
 U 1 1 4F5BC191
 P 9150 5400
 F 0 "#PWR0155" H 9150 5400 30  0001 C CNN
@@ -2101,7 +2071,7 @@ F 3 "" H 9150 5400 60  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L C C106
+L hackrf-one-rescue:C C106
 U 1 1 4F5BC172
 P 9700 5550
 F 0 "C106" H 9750 5650 50  0000 L CNN
@@ -2115,7 +2085,7 @@ F 6 "CAP CER 1UF 10V 10% X5R 0402" H 9700 5550 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R26
+L hackrf-one-rescue:R R26
 U 1 1 4F5BC065
 P 8650 6750
 F 0 "R26" V 8730 6750 50  0000 C CNN
@@ -2129,7 +2099,7 @@ F 6 "RES TF 1/16W 470 OHM 5% 0402" H 8650 6750 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R25
+L hackrf-one-rescue:R R25
 U 1 1 4F5BC059
 P 8150 6750
 F 0 "R25" V 8230 6750 50  0000 C CNN
@@ -2143,7 +2113,7 @@ F 6 "RES TF 1/16W 470 OHM 5% 0402" H 8150 6750 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C114
+L hackrf-one-rescue:C C114
 U 1 1 4F5BC057
 P 8400 7000
 F 0 "C114" H 8450 7100 50  0000 L CNN
@@ -2157,7 +2127,7 @@ F 6 "CAP CER 3300PF 50V 10% X7R 0402" H 8400 7000 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0156
+L hackrf-one-rescue:GND #PWR0156
 U 1 1 4F5BC043
 P 8050 6400
 F 0 "#PWR0156" H 8050 6400 30  0001 C CNN
@@ -2170,7 +2140,7 @@ $EndComp
 Text Label 7450 6700 1    40   ~ 0
 XCVR_CLKOUT
 $Comp
-L GND #PWR0157
+L hackrf-one-rescue:GND #PWR0157
 U 1 1 4F5BBFA9
 P 1450 1500
 F 0 "#PWR0157" H 1450 1500 30  0001 C CNN
@@ -2181,7 +2151,7 @@ F 3 "" H 1450 1500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0158
+L hackrf-one-rescue:GND #PWR0158
 U 1 1 4F5BBEDE
 P 4250 5900
 F 0 "#PWR0158" H 4250 5900 30  0001 C CNN
@@ -2192,7 +2162,7 @@ F 3 "" H 4250 5900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0159
+L hackrf-one-rescue:GND #PWR0159
 U 1 1 4F5BBDE7
 P 4250 4800
 F 0 "#PWR0159" H 4250 4800 30  0001 C CNN
@@ -2203,7 +2173,7 @@ F 3 "" H 4250 4800 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L INDUCTOR L7
+L hackrf-one-rescue:INDUCTOR L7
 U 1 1 4F5BBD57
 P 5900 4500
 F 0 "L7" V 5850 4500 40  0000 C CNN
@@ -2217,7 +2187,7 @@ F 6 "INDUCTOR HIFREQ 6.2+/-0.3NH 0402" H 5900 4500 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C84
+L hackrf-one-rescue:C C84
 U 1 1 4F5BBD0A
 P 1650 1250
 F 0 "C84" H 1700 1350 50  0000 L CNN
@@ -2231,7 +2201,7 @@ F 6 "CAP CER 22PF 50V 5% NP0 0402" H 1650 1250 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0160
+L hackrf-one-rescue:GND #PWR0160
 U 1 1 4F5BBCFD
 P 6250 4500
 F 0 "#PWR0160" H 6250 4500 30  0001 C CNN
@@ -2242,7 +2212,7 @@ F 3 "" H 6250 4500 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0161
+L hackrf-one-rescue:GND #PWR0161
 U 1 1 4F5BBCE6
 P 6250 4050
 F 0 "#PWR0161" H 6250 4050 30  0001 C CNN
@@ -2253,7 +2223,7 @@ F 3 "" H 6250 4050 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R94
+L hackrf-one-rescue:R R94
 U 1 1 50C136DB
 P 6450 9100
 F 0 "R94" V 6530 9100 50  0000 C CNN
@@ -2267,7 +2237,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 6450 9100 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0162
+L hackrf-one-rescue:VCC #PWR0162
 U 1 1 524931D7
 P 14300 6250
 F 0 "#PWR0162" H 14300 6350 30  0001 C CNN
@@ -2288,7 +2258,7 @@ SSP1_MOSI
 Text GLabel 9100 5100 2    40   Input ~ 0
 SSP1_MISO
 $Comp
-L VCC #PWR0163
+L hackrf-one-rescue:VCC #PWR0163
 U 1 1 52699FA2
 P 4500 6900
 F 0 "#PWR0163" H 4500 7000 30  0001 C CNN
@@ -2299,7 +2269,7 @@ F 3 "" H 4500 6900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR0164
+L hackrf-one-rescue:VCC #PWR0164
 U 1 1 52699FA8
 P 4700 8850
 F 0 "#PWR0164" H 4700 8950 30  0001 C CNN
@@ -2310,7 +2280,7 @@ F 3 "" H 4700 8850 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR0165
+L hackrf-one-rescue:VCC #PWR0165
 U 1 1 52699FAE
 P 5550 7850
 F 0 "#PWR0165" H 5550 7950 30  0001 C CNN
@@ -2321,7 +2291,7 @@ F 3 "" H 5550 7850 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L VCC #PWR0166
+L hackrf-one-rescue:VCC #PWR0166
 U 1 1 52699FB4
 P 5550 8150
 F 0 "#PWR0166" H 5550 8250 30  0001 C CNN
@@ -2332,7 +2302,7 @@ F 3 "" H 5550 8150 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L MOSFET_P Q3
+L hackrf-one-rescue:MOSFET_P Q3
 U 1 1 526AF6D0
 P 2100 2700
 F 0 "Q3" H 2100 2890 60  0000 R CNN
@@ -2346,7 +2316,7 @@ F 6 "MOSFET P-CH 20V 4.2A SOT-23" H 2100 2700 60  0001 C CNN "Description"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R11
+L hackrf-one-rescue:R R11
 U 1 1 526AF8E4
 P 2250 2400
 F 0 "R11" V 2330 2400 50  0000 C CNN
@@ -2362,7 +2332,7 @@ $EndComp
 Text Notes 2250 3750 0    40   ~ 0
 PCB trace jumper
 $Comp
-L C C68
+L hackrf-one-rescue:C C68
 U 1 1 527F1CB9
 P 8150 8350
 F 0 "C68" H 8200 8450 50  0000 L CNN
@@ -2377,7 +2347,7 @@ F 7 "DNP" H 8000 8200 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C69
+L hackrf-one-rescue:C C69
 U 1 1 527F1D24
 P 7450 8750
 F 0 "C69" H 7500 8850 50  0000 L CNN
@@ -2392,7 +2362,7 @@ F 7 "DNP" H 7300 8600 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0167
+L hackrf-one-rescue:GND #PWR0167
 U 1 1 527F276A
 P 7450 9000
 F 0 "#PWR0167" H 7450 9000 30  0001 C CNN
@@ -2403,7 +2373,7 @@ F 3 "" H 7450 9000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0168
+L hackrf-one-rescue:GND #PWR0168
 U 1 1 527F2777
 P 8150 8600
 F 0 "#PWR0168" H 8150 8600 30  0001 C CNN
@@ -2414,7 +2384,7 @@ F 3 "" H 8150 8600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C159
+L hackrf-one-rescue:C C159
 U 1 1 527F2F05
 P 6700 9350
 F 0 "C159" H 6750 9450 50  0000 L CNN
@@ -2429,7 +2399,7 @@ F 7 "DNP" H 6550 9200 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0169
+L hackrf-one-rescue:GND #PWR0169
 U 1 1 527F2F0F
 P 6700 9600
 F 0 "#PWR0169" H 6700 9600 30  0001 C CNN
@@ -2440,7 +2410,7 @@ F 3 "" H 6700 9600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R33
+L hackrf-one-rescue:R R33
 U 1 1 527F334B
 P 5000 9600
 F 0 "R33" V 5080 9600 50  0000 C CNN
@@ -2454,7 +2424,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 5000 9600 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C165
+L hackrf-one-rescue:C C165
 U 1 1 527F3355
 P 5250 9850
 F 0 "C165" H 5300 9950 50  0000 L CNN
@@ -2469,7 +2439,7 @@ F 7 "DNP" H 5100 9700 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0170
+L hackrf-one-rescue:GND #PWR0170
 U 1 1 527F335F
 P 5250 10100
 F 0 "#PWR0170" H 5250 10100 30  0001 C CNN
@@ -2492,7 +2462,7 @@ TXENABLE
 Text GLabel 1900 5550 3    40   Input ~ 0
 RXENABLE
 $Comp
-L CONN_1 P55
+L hackrf-one-rescue:CONN_1 P55
 U 1 1 52806F80
 P 1750 5300
 F 0 "P55" H 1830 5300 40  0000 L CNN
@@ -2504,7 +2474,7 @@ F 4 "DNP" H 1750 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P56
+L hackrf-one-rescue:CONN_1 P56
 U 1 1 52806F87
 P 1900 5300
 F 0 "P56" H 1980 5300 40  0000 L CNN
@@ -2518,7 +2488,7 @@ $EndComp
 Text GLabel 1450 5550 3    40   Input ~ 0
 CS_XCVR
 $Comp
-L CONN_1 P53
+L hackrf-one-rescue:CONN_1 P53
 U 1 1 52806F99
 P 1450 5300
 F 0 "P53" H 1530 5300 40  0000 L CNN
@@ -2530,7 +2500,7 @@ F 4 "DNP" H 1450 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P57
+L hackrf-one-rescue:CONN_1 P57
 U 1 1 52807566
 P 2050 5300
 F 0 "P57" H 2130 5300 40  0000 L CNN
@@ -2552,7 +2522,7 @@ SGPIO_CLK
 Text GLabel 1600 5550 3    40   Input ~ 0
 CS_AD
 $Comp
-L CONN_1 P54
+L hackrf-one-rescue:CONN_1 P54
 U 1 1 528076FC
 P 1600 5300
 F 0 "P54" H 1680 5300 40  0000 L CNN
@@ -2564,7 +2534,7 @@ F 4 "DNP" H 1600 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P59
+L hackrf-one-rescue:CONN_1 P59
 U 1 1 52807889
 P 2350 5300
 F 0 "P59" H 2430 5300 40  0000 L CNN
@@ -2576,7 +2546,7 @@ F 4 "DNP" H 2350 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P60
+L hackrf-one-rescue:CONN_1 P60
 U 1 1 52807890
 P 2500 5300
 F 0 "P60" H 2580 5300 40  0000 L CNN
@@ -2588,7 +2558,7 @@ F 4 "DNP" H 2500 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P58
+L hackrf-one-rescue:CONN_1 P58
 U 1 1 52807897
 P 2200 5300
 F 0 "P58" H 2280 5300 40  0000 L CNN
@@ -2608,7 +2578,7 @@ DD0
 Text GLabel 3400 5550 3    40   Input ~ 0
 DD9
 $Comp
-L CONN_1 P63
+L hackrf-one-rescue:CONN_1 P63
 U 1 1 528078A7
 P 3100 5300
 F 0 "P63" H 3180 5300 40  0000 L CNN
@@ -2620,7 +2590,7 @@ F 4 "DNP" H 3100 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P64
+L hackrf-one-rescue:CONN_1 P64
 U 1 1 528078AE
 P 3400 5300
 F 0 "P64" H 3480 5300 40  0000 L CNN
@@ -2632,7 +2602,7 @@ F 4 "DNP" H 3400 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P61
+L hackrf-one-rescue:CONN_1 P61
 U 1 1 528078B5
 P 2650 5300
 F 0 "P61" H 2730 5300 40  0000 L CNN
@@ -2644,7 +2614,7 @@ F 4 "DNP" H 2650 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P62
+L hackrf-one-rescue:CONN_1 P62
 U 1 1 528078BD
 P 2950 5300
 F 0 "P62" H 3030 5300 40  0000 L CNN
@@ -2660,7 +2630,7 @@ DD5
 Text GLabel 2800 5550 3    40   Input ~ 0
 DA4
 $Comp
-L CONN_1 P66
+L hackrf-one-rescue:CONN_1 P66
 U 1 1 52807A95
 P 3250 5300
 F 0 "P66" H 3330 5300 40  0000 L CNN
@@ -2672,7 +2642,7 @@ F 4 "DNP" H 3250 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 P65
+L hackrf-one-rescue:CONN_1 P65
 U 1 1 52807C28
 P 2800 5300
 F 0 "P65" H 2880 5300 40  0000 L CNN
@@ -2686,7 +2656,7 @@ $EndComp
 Text GLabel 3550 5550 3    40   Input ~ 0
 RSSI
 $Comp
-L CONN_1 P67
+L hackrf-one-rescue:CONN_1 P67
 U 1 1 5280A12A
 P 3550 5300
 F 0 "P67" H 3630 5300 40  0000 L CNN
@@ -2698,7 +2668,7 @@ F 4 "DNP" H 3550 5300 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GSG-DIODE-TVS-BI D9
+L hackrf-one-rescue:GSG-DIODE-TVS-BI D9
 U 1 1 52807806
 P 5700 9950
 F 0 "D9" H 5700 10050 50  0000 C CNN
@@ -2712,7 +2682,7 @@ F 6 "TVS DIODE ESD .05PF 15KV 0402" H 5700 9950 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0171
+L hackrf-one-rescue:GND #PWR0171
 U 1 1 5280780C
 P 5700 10300
 F 0 "#PWR0171" H 5700 10300 30  0001 C CNN
@@ -2723,7 +2693,7 @@ F 3 "" H 5700 10300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GSG-DIODE-TVS-BI D3
+L hackrf-one-rescue:GSG-DIODE-TVS-BI D3
 U 1 1 52807816
 P 3400 9200
 F 0 "D3" H 3400 9300 50  0000 C CNN
@@ -2737,7 +2707,7 @@ F 6 "TVS DIODE ESD .05PF 15KV 0402" H 3400 9200 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0172
+L hackrf-one-rescue:GND #PWR0172
 U 1 1 5280781C
 P 3400 9550
 F 0 "#PWR0172" H 3400 9550 30  0001 C CNN
@@ -2748,7 +2718,7 @@ F 3 "" H 3400 9550 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C167
+L hackrf-one-rescue:C C167
 U 1 1 5281B72F
 P 1600 2550
 F 0 "C167" H 1650 2650 50  0000 L CNN
@@ -2762,7 +2732,7 @@ F 6 "CAP CER 0.1UF 10V 10% X5R 0402" H 1600 2550 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0173
+L hackrf-one-rescue:GND #PWR0173
 U 1 1 5281B737
 P 1600 2800
 F 0 "#PWR0173" H 1600 2800 30  0001 C CNN
@@ -2773,7 +2743,7 @@ F 3 "" H 1600 2800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P83
+L hackrf-one-rescue:CONN_1 P83
 U 1 1 5281C7E9
 P 700 6250
 F 0 "P83" H 780 6250 40  0000 L CNN
@@ -2785,7 +2755,7 @@ F 4 "DNP" H 700 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0174
+L hackrf-one-rescue:GND #PWR0174
 U 1 1 5281C7F1
 P 700 6500
 F 0 "#PWR0174" H 700 6500 30  0001 C CNN
@@ -2796,7 +2766,7 @@ F 3 "" H 700 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P84
+L hackrf-one-rescue:CONN_1 P84
 U 1 1 5281C9AD
 P 850 6250
 F 0 "P84" H 930 6250 40  0000 L CNN
@@ -2808,7 +2778,7 @@ F 4 "DNP" H 850 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0175
+L hackrf-one-rescue:GND #PWR0175
 U 1 1 5281C9B3
 P 850 6500
 F 0 "#PWR0175" H 850 6500 30  0001 C CNN
@@ -2819,7 +2789,7 @@ F 3 "" H 850 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P85
+L hackrf-one-rescue:CONN_1 P85
 U 1 1 5281C9BB
 P 1000 6250
 F 0 "P85" H 1080 6250 40  0000 L CNN
@@ -2831,7 +2801,7 @@ F 4 "DNP" H 1000 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0176
+L hackrf-one-rescue:GND #PWR0176
 U 1 1 5281C9C1
 P 1000 6500
 F 0 "#PWR0176" H 1000 6500 30  0001 C CNN
@@ -2842,7 +2812,7 @@ F 3 "" H 1000 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P86
+L hackrf-one-rescue:CONN_1 P86
 U 1 1 5281C9C9
 P 1150 6250
 F 0 "P86" H 1230 6250 40  0000 L CNN
@@ -2854,7 +2824,7 @@ F 4 "DNP" H 1150 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0177
+L hackrf-one-rescue:GND #PWR0177
 U 1 1 5281C9CF
 P 1150 6500
 F 0 "#PWR0177" H 1150 6500 30  0001 C CNN
@@ -2865,7 +2835,7 @@ F 3 "" H 1150 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P87
+L hackrf-one-rescue:CONN_1 P87
 U 1 1 5281C9D7
 P 1300 6250
 F 0 "P87" H 1380 6250 40  0000 L CNN
@@ -2877,7 +2847,7 @@ F 4 "DNP" H 1300 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0178
+L hackrf-one-rescue:GND #PWR0178
 U 1 1 5281C9DD
 P 1300 6500
 F 0 "#PWR0178" H 1300 6500 30  0001 C CNN
@@ -2888,7 +2858,7 @@ F 3 "" H 1300 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P88
+L hackrf-one-rescue:CONN_1 P88
 U 1 1 5281C9E5
 P 1450 6250
 F 0 "P88" H 1530 6250 40  0000 L CNN
@@ -2900,7 +2870,7 @@ F 4 "DNP" H 1450 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0179
+L hackrf-one-rescue:GND #PWR0179
 U 1 1 5281C9EB
 P 1450 6500
 F 0 "#PWR0179" H 1450 6500 30  0001 C CNN
@@ -2911,7 +2881,7 @@ F 3 "" H 1450 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P89
+L hackrf-one-rescue:CONN_1 P89
 U 1 1 5281C9F3
 P 1600 6250
 F 0 "P89" H 1680 6250 40  0000 L CNN
@@ -2923,7 +2893,7 @@ F 4 "DNP" H 1600 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0180
+L hackrf-one-rescue:GND #PWR0180
 U 1 1 5281C9F9
 P 1600 6500
 F 0 "#PWR0180" H 1600 6500 30  0001 C CNN
@@ -2934,7 +2904,7 @@ F 3 "" H 1600 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P90
+L hackrf-one-rescue:CONN_1 P90
 U 1 1 5281CA01
 P 1750 6250
 F 0 "P90" H 1830 6250 40  0000 L CNN
@@ -2946,7 +2916,7 @@ F 4 "DNP" H 1750 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0181
+L hackrf-one-rescue:GND #PWR0181
 U 1 1 5281CA07
 P 1750 6500
 F 0 "#PWR0181" H 1750 6500 30  0001 C CNN
@@ -2957,7 +2927,7 @@ F 3 "" H 1750 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P91
+L hackrf-one-rescue:CONN_1 P91
 U 1 1 5281CEEC
 P 1900 6250
 F 0 "P91" H 1980 6250 40  0000 L CNN
@@ -2969,7 +2939,7 @@ F 4 "DNP" H 1900 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0182
+L hackrf-one-rescue:GND #PWR0182
 U 1 1 5281CEF2
 P 1900 6500
 F 0 "#PWR0182" H 1900 6500 30  0001 C CNN
@@ -2980,7 +2950,7 @@ F 3 "" H 1900 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_1 P92
+L hackrf-one-rescue:CONN_1 P92
 U 1 1 5281CEFA
 P 2050 6250
 F 0 "P92" H 2130 6250 40  0000 L CNN
@@ -2992,7 +2962,7 @@ F 4 "DNP" H 2050 6250 60  0001 C CNN "Note"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0183
+L hackrf-one-rescue:GND #PWR0183
 U 1 1 5281CF00
 P 2050 6500
 F 0 "#PWR0183" H 2050 6500 30  0001 C CNN
@@ -3003,7 +2973,7 @@ F 3 "" H 2050 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R32
+L hackrf-one-rescue:R R32
 U 1 1 528ED034
 P 7200 8500
 F 0 "R32" V 7280 8500 50  0000 C CNN
@@ -3017,7 +2987,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 7200 8500 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L R R31
+L hackrf-one-rescue:R R31
 U 1 1 528ED054
 P 7900 8100
 F 0 "R31" V 7980 8100 50  0000 C CNN
@@ -3031,7 +3001,7 @@ F 6 "RES 39 OHM 1/16W 5% 0402 SMD" H 7900 8100 60  0001 C CNN "Description"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C115
+L hackrf-one-rescue:C C115
 U 1 1 5290226B
 P 6700 7050
 F 0 "C115" H 6750 7150 50  0000 L CNN
@@ -3045,7 +3015,7 @@ F 6 "CAP CER 33PF 50V 5% NP0 0402" H 18050 9300 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C116
+L hackrf-one-rescue:C C116
 U 1 1 52902274
 P 6700 7550
 F 0 "C116" H 6750 7650 50  0000 L CNN
@@ -3059,7 +3029,7 @@ F 6 "CAP CER 47PF 50V 5% NP0 0402" H 6700 9250 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_8X2 P9
+L hackrf-one-rescue:CONN_8X2 P9
 U 1 1 5294060F
 P 11800 7950
 F 0 "P9" H 11800 8400 60  0000 C CNN
@@ -3074,7 +3044,7 @@ F 6 "CONN HEADER FMAL 16PS.1\" DL GOLD" H 11800 7950 60  0001 C CNN "Description
 $EndComp
 Connection ~ 2600 2700
 Wire Wire Line
-	2300 2700 2700 2700
+	2300 2700 2600 2700
 Wire Wire Line
 	2600 2400 2600 2700
 Wire Wire Line
@@ -3083,32 +3053,32 @@ Connection ~ 2000 2400
 Wire Wire Line
 	2000 2400 2100 2400
 Wire Wire Line
-	2000 2200 2000 2500
+	2000 2200 2000 2300
 Wire Wire Line
-	2000 3700 2000 4000
+	2000 3700 2000 3900
 Connection ~ 2300 10150
 Wire Wire Line
 	2400 10150 2400 10250
 Connection ~ 1900 10150
 Connection ~ 1500 10150
 Wire Wire Line
-	1100 10150 2400 10150
+	1100 10150 1500 10150
 Connection ~ 1500 9850
 Connection ~ 1900 9850
 Connection ~ 2300 9850
 Wire Wire Line
-	1100 9850 2400 9850
+	1100 9850 1500 9850
 Wire Wire Line
 	2400 9850 2400 9750
 Connection ~ 3900 8850
 Connection ~ 15300 7350
 Wire Wire Line
-	15200 7350 15600 7350
+	15200 7350 15300 7350
 Wire Wire Line
 	15200 7250 15200 7350
 Connection ~ 15300 7650
 Wire Wire Line
-	15200 7650 15600 7650
+	15200 7650 15300 7650
 Wire Wire Line
 	15200 7750 15200 7650
 Wire Wire Line
@@ -3126,9 +3096,9 @@ Wire Wire Line
 Wire Wire Line
 	2400 3900 2400 4000
 Wire Wire Line
-	11950 1350 15650 1350
+	11950 1350 12250 1350
 Wire Wire Line
-	11950 1050 15650 1050
+	11950 1050 12250 1050
 Wire Wire Line
 	5650 7750 5300 7750
 Wire Wire Line
@@ -3163,18 +3133,18 @@ Wire Wire Line
 	3800 6700 3800 6600
 Connection ~ 4400 9900
 Wire Wire Line
-	4400 8750 4400 10000
+	4400 8750 4400 9900
 Connection ~ 2300 8050
 Wire Wire Line
-	1900 8050 3700 8050
+	1900 8050 2300 8050
 Wire Wire Line
-	9000 5500 9200 5500
+	9000 5500 9100 5500
 Connection ~ 11400 4700
 Wire Wire Line
 	11400 4700 11400 5500
 Connection ~ 11950 4700
 Wire Wire Line
-	10500 4700 13150 4700
+	10500 4700 11400 4700
 Wire Wire Line
 	8150 3450 10100 3450
 Wire Wire Line
@@ -3192,18 +3162,18 @@ Wire Wire Line
 	9900 5000 10200 5000
 Connection ~ 11950 5000
 Wire Wire Line
-	10500 5000 12200 5000
+	10500 5000 11150 5000
 Wire Wire Line
-	7750 3050 12700 3050
+	7750 3050 11500 3050
 Connection ~ 11500 2150
 Wire Wire Line
 	7450 2150 7450 3650
 Wire Wire Line
-	7450 2150 12700 2150
+	7450 2150 11500 2150
 Connection ~ 11500 2450
 Connection ~ 11500 2750
 Wire Wire Line
-	7650 2750 12700 2750
+	7650 2750 11500 2750
 Connection ~ 11500 3050
 Wire Wire Line
 	14600 2150 13000 2150
@@ -3224,15 +3194,15 @@ Connection ~ 5400 4200
 Wire Wire Line
 	5150 4200 5150 4300
 Wire Wire Line
-	5150 4200 5500 4200
+	5150 4200 5400 4200
 Connection ~ 5400 5900
 Wire Wire Line
-	5150 5900 5500 5900
+	5150 5900 5400 5900
 Wire Wire Line
 	5150 5800 5150 5900
 Connection ~ 5900 5300
 Wire Wire Line
-	5800 5300 6400 5300
+	5800 5300 5900 5300
 Wire Wire Line
 	6100 5900 6100 5400
 Wire Wire Line
@@ -3242,7 +3212,7 @@ Wire Wire Line
 Wire Wire Line
 	2750 7850 3700 7850
 Wire Wire Line
-	2750 7200 2750 7850
+	2750 7200 2750 7300
 Wire Wire Line
 	5550 8150 5300 8150
 Wire Wire Line
@@ -3368,13 +3338,13 @@ Wire Wire Line
 Wire Wire Line
 	8150 7000 8250 7000
 Wire Wire Line
-	8150 6250 8150 6600
+	8150 6250 8150 6500
 Wire Wire Line
 	4250 5800 4250 5900
 Wire Wire Line
 	4350 5800 4250 5800
 Wire Wire Line
-	5800 4800 6400 4800
+	5800 4800 5900 4800
 Wire Wire Line
 	4250 4700 4350 4700
 Wire Wire Line
@@ -3386,7 +3356,7 @@ Wire Wire Line
 Wire Wire Line
 	6100 4200 6100 4700
 Wire Wire Line
-	5800 4200 6100 4200
+	5800 4200 5900 4200
 Wire Wire Line
 	6100 5400 6400 5400
 Wire Wire Line
@@ -3400,7 +3370,7 @@ Wire Wire Line
 Wire Wire Line
 	8650 6350 8250 6350
 Wire Wire Line
-	8650 6350 8650 6600
+	8650 6350 8650 6500
 Wire Wire Line
 	8550 7000 8650 7000
 Wire Wire Line
@@ -3448,7 +3418,7 @@ Connection ~ 2250 1400
 Connection ~ 3150 1400
 Connection ~ 3750 1400
 Wire Wire Line
-	13000 3450 13000 3850
+	13000 3450 13000 3750
 Wire Wire Line
 	13100 3450 13000 3450
 Wire Wire Line
@@ -3457,12 +3427,10 @@ Wire Wire Line
 	13000 4500 13150 4500
 Wire Wire Line
 	13000 5100 13150 5100
-Connection ~ 11950 1350
 Connection ~ 12550 1350
 Connection ~ 13150 1350
 Connection ~ 13150 1050
 Connection ~ 12550 1050
-Connection ~ 11950 1050
 Wire Wire Line
 	13000 5000 13150 5000
 Wire Wire Line
@@ -3504,7 +3472,7 @@ Wire Wire Line
 Wire Wire Line
 	13900 3750 13900 3450
 Wire Wire Line
-	1450 1100 4350 1100
+	1450 1100 1650 1100
 Connection ~ 4050 1100
 Wire Wire Line
 	10900 5800 10900 5900
@@ -3528,7 +3496,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 7750 3700 7750
 Wire Wire Line
-	3350 7200 3350 7750
+	3350 7200 3350 7300
 Wire Wire Line
 	2950 7700 2950 7600
 Wire Wire Line
@@ -3536,15 +3504,15 @@ Wire Wire Line
 Wire Wire Line
 	5250 4500 5150 4500
 Wire Wire Line
-	5800 5900 6100 5900
+	5800 5900 5900 5900
 Connection ~ 5900 5900
 Wire Wire Line
-	5150 5300 5500 5300
+	5150 5300 5400 5300
 Wire Wire Line
 	5150 5400 5150 5300
 Connection ~ 5400 5300
 Wire Wire Line
-	5150 4800 5500 4800
+	5150 4800 5400 4800
 Wire Wire Line
 	5150 4700 5150 4800
 Connection ~ 5400 4800
@@ -3558,7 +3526,7 @@ Wire Wire Line
 Wire Wire Line
 	4500 6900 4500 7150
 Wire Wire Line
-	4300 6550 4300 7150
+	4300 6550 4300 6600
 Wire Wire Line
 	14100 3050 13000 3050
 Wire Wire Line
@@ -3566,7 +3534,7 @@ Wire Wire Line
 Wire Wire Line
 	7750 3650 7750 3050
 Wire Wire Line
-	7550 2450 12700 2450
+	7550 2450 11500 2450
 Wire Wire Line
 	7550 3650 7550 2450
 Wire Wire Line
@@ -3577,7 +3545,7 @@ Wire Wire Line
 Wire Wire Line
 	12200 5000 12200 5200
 Wire Wire Line
-	10500 5300 13150 5300
+	10500 5300 10900 5300
 Wire Wire Line
 	9000 4500 9800 4500
 Wire Wire Line
@@ -3598,30 +3566,30 @@ Wire Wire Line
 Wire Wire Line
 	10000 4700 10200 4700
 Wire Wire Line
-	10500 4400 12200 4400
+	10500 4400 11650 4400
 Connection ~ 11950 4400
 Wire Wire Line
 	11650 5500 11650 4400
 Connection ~ 11650 4400
 Connection ~ 2500 7950
 Wire Wire Line
-	1900 8150 3700 8150
+	1900 8150 2100 8150
 Connection ~ 2100 8150
 Wire Wire Line
 	3800 7100 3800 7000
 Connection ~ 9100 5500
 Wire Wire Line
-	1800 7950 3700 7950
+	1800 7950 2500 7950
 Wire Wire Line
 	2000 4400 2000 4300
 Wire Wire Line
 	4950 1000 4950 1100
 Wire Wire Line
-	1450 1400 4350 1400
+	1450 1400 1650 1400
 Connection ~ 2850 1400
 Connection ~ 6700 7300
 Wire Wire Line
-	6700 7200 6700 7400
+	6700 7200 6700 7300
 Wire Wire Line
 	4600 9100 4600 8750
 Wire Wire Line
@@ -3635,7 +3603,7 @@ Wire Wire Line
 Wire Wire Line
 	3900 9250 3900 9350
 Wire Wire Line
-	3300 8850 4300 8850
+	3300 8850 3400 8850
 Wire Wire Line
 	14500 2450 14500 3750
 Wire Wire Line
@@ -3657,12 +3625,12 @@ Wire Wire Line
 Wire Wire Line
 	5950 8100 7750 8100
 Wire Wire Line
-	7350 8500 7550 8500
+	7350 8500 7450 8500
 Wire Wire Line
 	7450 8500 7450 8600
 Connection ~ 7450 8500
 Wire Wire Line
-	8050 8100 8250 8100
+	8050 8100 8150 8100
 Wire Wire Line
 	8150 8100 8150 8200
 Connection ~ 8150 8100
@@ -3671,14 +3639,14 @@ Wire Wire Line
 Wire Wire Line
 	7450 8900 7450 9000
 Wire Wire Line
-	6600 9100 6800 9100
+	6600 9100 6700 9100
 Wire Wire Line
 	6700 9100 6700 9200
 Connection ~ 6700 9100
 Wire Wire Line
 	6700 9500 6700 9600
 Wire Wire Line
-	5150 9600 5800 9600
+	5150 9600 5250 9600
 Wire Wire Line
 	5250 9600 5250 9700
 Connection ~ 5250 9600
@@ -3796,9 +3764,9 @@ RXBBQ-
 Wire Wire Line
 	12200 7600 12300 7600
 Wire Wire Line
-	12300 7600 12300 8400
+	12300 7600 12300 7900
 $Comp
-L GND #PWR0184
+L hackrf-one-rescue:GND #PWR0184
 U 1 1 5294232D
 P 12300 8400
 F 0 "#PWR0184" H 12300 8400 30  0001 C CNN
@@ -3818,7 +3786,7 @@ Wire Wire Line
 	12200 7900 12300 7900
 Connection ~ 12300 7900
 $Comp
-L GND #PWR0185
+L hackrf-one-rescue:GND #PWR0185
 U 1 1 5294283B
 P 11300 8400
 F 0 "#PWR0185" H 11300 8400 30  0001 C CNN
@@ -3831,7 +3799,7 @@ $EndComp
 Wire Wire Line
 	11400 7600 11300 7600
 Wire Wire Line
-	11300 7600 11300 8400
+	11300 7600 11300 7700
 Wire Wire Line
 	11400 7700 11300 7700
 Connection ~ 11300 7700
@@ -3844,7 +3812,7 @@ Connection ~ 11300 8300
 Text GLabel 9800 7450 1    40   Input ~ 0
 SSP1_MISO
 $Comp
-L C C168
+L hackrf-one-rescue:C C168
 U 1 1 52963CCA
 P 9800 7700
 F 0 "C168" H 9850 7800 50  0000 L CNN
@@ -3859,7 +3827,7 @@ F 7 "DNP" H 9650 7550 60  0000 C CNN "Note"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0186
+L hackrf-one-rescue:GND #PWR0186
 U 1 1 52963CD7
 P 9800 7950
 F 0 "#PWR0186" H 9800 7950 30  0001 C CNN
@@ -3890,7 +3858,7 @@ Text Notes 12000 3350 0    40   ~ 0
 Text Notes 12200 3350 0    40   ~ 0
 1%
 $Comp
-L C C169
+L hackrf-one-rescue:C C169
 U 1 1 52AA5602
 P 2750 7050
 F 0 "C169" H 2800 7150 50  0000 L CNN
@@ -3904,7 +3872,7 @@ F 6 "CAP CER 1.8PF 25V C0G/NP0 0402" H 2750 7050 60  0001 C CNN "Description"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L C C170
+L hackrf-one-rescue:C C170
 U 1 1 52AA5635
 P 3350 7050
 F 0 "C170" H 3400 7150 50  0000 L CNN
@@ -3918,7 +3886,7 @@ F 6 "CAP CER 1.8PF 25V C0G/NP0 0402" H 3350 7050 60  0001 C CNN "Description"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0187
+L hackrf-one-rescue:GND #PWR0187
 U 1 1 52AA563D
 P 2750 6800
 F 0 "#PWR0187" H 2750 6800 30  0001 C CNN
@@ -3929,7 +3897,7 @@ F 3 "" H 2750 6800 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0188
+L hackrf-one-rescue:GND #PWR0188
 U 1 1 52AA564A
 P 3350 6800
 F 0 "#PWR0188" H 3350 6800 30  0001 C CNN
@@ -3957,4 +3925,214 @@ Connection ~ 8650 6500
 Connection ~ 8150 6500
 Wire Wire Line
 	8150 6900 8150 7000
+Wire Wire Line
+	2600 2700 2700 2700
+Wire Wire Line
+	2000 2400 2000 2500
+Wire Wire Line
+	2300 10150 2400 10150
+Wire Wire Line
+	1900 10150 2300 10150
+Wire Wire Line
+	1500 10150 1900 10150
+Wire Wire Line
+	1500 9850 1900 9850
+Wire Wire Line
+	1900 9850 2300 9850
+Wire Wire Line
+	2300 9850 2400 9850
+Wire Wire Line
+	3900 8850 4300 8850
+Wire Wire Line
+	15300 7350 15600 7350
+Wire Wire Line
+	15300 7650 15600 7650
+Wire Wire Line
+	2000 3900 2000 4000
+Wire Wire Line
+	4300 6600 4300 7150
+Wire Wire Line
+	4400 9900 4400 10000
+Wire Wire Line
+	2300 8050 3700 8050
+Wire Wire Line
+	11400 4700 11950 4700
+Wire Wire Line
+	11950 4700 13150 4700
+Wire Wire Line
+	11150 5000 11950 5000
+Wire Wire Line
+	11950 5000 12200 5000
+Wire Wire Line
+	11500 2150 12300 2150
+Wire Wire Line
+	11500 2450 12100 2450
+Wire Wire Line
+	11500 2750 11900 2750
+Wire Wire Line
+	11500 3050 11700 3050
+Wire Wire Line
+	15550 1350 15650 1350
+Wire Wire Line
+	5400 4200 5500 4200
+Wire Wire Line
+	5400 5900 5500 5900
+Wire Wire Line
+	5900 5300 6400 5300
+Wire Wire Line
+	15250 1050 15550 1050
+Wire Wire Line
+	13750 1050 14050 1050
+Wire Wire Line
+	14350 1050 14650 1050
+Wire Wire Line
+	14950 1050 15250 1050
+Wire Wire Line
+	14950 1350 15250 1350
+Wire Wire Line
+	14350 1350 14650 1350
+Wire Wire Line
+	13750 1350 14050 1350
+Wire Wire Line
+	14050 1350 14350 1350
+Wire Wire Line
+	14650 1350 14950 1350
+Wire Wire Line
+	14650 1050 14950 1050
+Wire Wire Line
+	14050 1050 14350 1050
+Wire Wire Line
+	15250 1350 15550 1350
+Wire Wire Line
+	4050 1400 4350 1400
+Wire Wire Line
+	13450 1350 13750 1350
+Wire Wire Line
+	12250 1050 12550 1050
+Wire Wire Line
+	12850 1050 13150 1050
+Wire Wire Line
+	12850 1350 13150 1350
+Wire Wire Line
+	12250 1350 12550 1350
+Wire Wire Line
+	3450 1400 3750 1400
+Wire Wire Line
+	2550 1400 2850 1400
+Wire Wire Line
+	1950 1400 2250 1400
+Wire Wire Line
+	1950 1100 2250 1100
+Wire Wire Line
+	2550 1100 2850 1100
+Wire Wire Line
+	2850 1100 3150 1100
+Wire Wire Line
+	3450 1100 3750 1100
+Wire Wire Line
+	12100 2450 12700 2450
+Wire Wire Line
+	5900 4800 6400 4800
+Wire Wire Line
+	5900 4200 6100 4200
+Wire Wire Line
+	12300 2150 12700 2150
+Wire Wire Line
+	11900 2750 12700 2750
+Wire Wire Line
+	3750 1100 4050 1100
+Wire Wire Line
+	3150 1100 3450 1100
+Wire Wire Line
+	2250 1100 2550 1100
+Wire Wire Line
+	1650 1100 1950 1100
+Wire Wire Line
+	1650 1400 1950 1400
+Wire Wire Line
+	2250 1400 2550 1400
+Wire Wire Line
+	3150 1400 3450 1400
+Wire Wire Line
+	3750 1400 4050 1400
+Wire Wire Line
+	12550 1350 12850 1350
+Wire Wire Line
+	13150 1350 13450 1350
+Wire Wire Line
+	13150 1050 13450 1050
+Wire Wire Line
+	12550 1050 12850 1050
+Wire Wire Line
+	13450 1050 13750 1050
+Wire Wire Line
+	13000 3750 13000 3850
+Wire Wire Line
+	4050 1100 4350 1100
+Wire Wire Line
+	11950 5300 13150 5300
+Wire Wire Line
+	5900 5900 6100 5900
+Wire Wire Line
+	5400 5300 5500 5300
+Wire Wire Line
+	5400 4800 5500 4800
+Wire Wire Line
+	15550 1050 15650 1050
+Wire Wire Line
+	11700 3050 12700 3050
+Wire Wire Line
+	10900 5300 11950 5300
+Wire Wire Line
+	11950 4400 12200 4400
+Wire Wire Line
+	11650 4400 11950 4400
+Wire Wire Line
+	2500 7950 3700 7950
+Wire Wire Line
+	2100 8150 3700 8150
+Wire Wire Line
+	9100 5500 9200 5500
+Wire Wire Line
+	2850 1400 3150 1400
+Wire Wire Line
+	6700 7300 6700 7400
+Wire Wire Line
+	7450 8500 7550 8500
+Wire Wire Line
+	8150 8100 8250 8100
+Wire Wire Line
+	6700 9100 6800 9100
+Wire Wire Line
+	5250 9600 5350 9600
+Wire Wire Line
+	5350 9600 5700 9600
+Wire Wire Line
+	3800 8850 3900 8850
+Wire Wire Line
+	3400 8850 3800 8850
+Wire Wire Line
+	5700 9600 5800 9600
+Wire Wire Line
+	2000 2300 2000 2400
+Wire Wire Line
+	12300 8300 12300 8400
+Wire Wire Line
+	12300 8200 12300 8300
+Wire Wire Line
+	12300 7900 12300 8200
+Wire Wire Line
+	11300 7700 11300 8000
+Wire Wire Line
+	11300 8000 11300 8300
+Wire Wire Line
+	11300 8300 11300 8400
+Wire Wire Line
+	2750 7300 2750 7850
+Wire Wire Line
+	3350 7300 3350 7750
+Wire Wire Line
+	8650 6500 8650 6600
+Wire Wire Line
+	8150 6500 8150 6600
 $EndSCHEMATC

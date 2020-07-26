@@ -25,14 +25,8 @@
 
 #include <stdbool.h>
 
-#include <usb_type.h>
-#include <usb_request.h>
-
 extern volatile bool start_cpld_update;
 
 void cpld_update(void);
-
-usb_request_status_t usb_vendor_request_cpld_checksum(
-	usb_endpoint_t* const endpoint, const usb_transfer_stage_t stage);
 
 #endif /* end of include guard: __USB_API_CPLD_H__ */

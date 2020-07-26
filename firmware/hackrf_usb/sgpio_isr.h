@@ -1,5 +1,6 @@
 /*
- * Copyright 2020 Mike Walters
+ * Copyright 2012 Jared Boone
+ * Copyright 2013 Benjamin Vernoux
  *
  * This file is part of HackRF.
  *
@@ -19,15 +20,10 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef __USB_API_UI_H__
-#define __USB_API_UI_H__
+#ifndef __SGPIO_ISR_H__
+#define __SGPIO_ISR_H__
 
-#include <usb_type.h>
-#include <usb_request.h>
+void sgpio_isr_rx();
+void sgpio_isr_tx();
 
-usb_request_status_t usb_vendor_request_set_ui_enable(
-	usb_endpoint_t* const endpoint,
-	const usb_transfer_stage_t stage
-);
-
-#endif /* end of include guard: __USB_API_UI_H__ */
+#endif/*__SGPIO_ISR_H__*/

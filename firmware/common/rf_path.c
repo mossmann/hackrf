@@ -26,7 +26,7 @@
 
 #include <hackrf_core.h>
 
-#include "hackrf_ui.h"
+#include "hackrf-ui.h"
 
 #include <mixer.h>
 #include <max2837.h>
@@ -391,7 +391,7 @@ void rf_path_set_direction(rf_path_t* const rf_path, const rf_path_direction_t d
 
 	switchctrl_set(rf_path, rf_path->switchctrl);
 
-	hackrf_ui()->set_direction(direction);
+	hackrf_ui_setDirection(direction);
 }
 
 void rf_path_set_filter(rf_path_t* const rf_path, const rf_path_filter_t filter) {
@@ -415,8 +415,6 @@ void rf_path_set_filter(rf_path_t* const rf_path, const rf_path_filter_t filter)
 	}
 
 	switchctrl_set(rf_path, rf_path->switchctrl);
-
-	hackrf_ui()->set_filter(filter);
 }
 
 void rf_path_set_lna(rf_path_t* const rf_path, const uint_fast8_t enable) {
@@ -437,7 +435,7 @@ void rf_path_set_lna(rf_path_t* const rf_path, const uint_fast8_t enable) {
 	
 	switchctrl_set(rf_path, rf_path->switchctrl);
 
-	hackrf_ui()->set_lna_power(enable);
+	hackrf_ui_setLNAPower(enable);
 }
 
 /* antenna port power control */
@@ -449,6 +447,4 @@ void rf_path_set_antenna(rf_path_t* const rf_path, const uint_fast8_t enable) {
 	}
 
 	switchctrl_set(rf_path, rf_path->switchctrl);
-
-	hackrf_ui()->set_antenna_bias(enable);
 }

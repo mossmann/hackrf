@@ -66,14 +66,3 @@ void i2c_lpc_transfer(i2c_bus_t* const bus,
 
 	i2c_stop(port);
 }
-
-bool i2c_probe(i2c_bus_t* const bus, const uint_fast8_t device_address) {
-	const uint32_t port = (uint32_t)bus->obj;
-
-	i2c_tx_start(port);
-	i2c_tx_byte(port, (device_address << 1) | I2C_WRITE);
-	const bool detected = (I2C_STAT(port) == 0x18);
-	i2c_stop(port);
-
-	return detected;
-}

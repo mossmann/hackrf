@@ -29,7 +29,6 @@ extern "C"
 #endif
 
 #include <stdint.h>
-#include <stdbool.h>
 
 #include "i2c_bus.h"
 
@@ -60,7 +59,6 @@ extern "C"
 #define SI5351C_LOS (1<<4)
 
 enum pll_sources {
-	PLL_SOURCE_UNINITIALIZED = -1,
 	PLL_SOURCE_XTAL = 0,
 	PLL_SOURCE_CLKIN = 1,
 };
@@ -86,7 +84,7 @@ void si5351c_configure_clock_control(si5351c_driver_t* const drv, const enum pll
 void si5351c_enable_clock_outputs(si5351c_driver_t* const drv);
 void si5351c_set_int_mode(si5351c_driver_t* const drv, const uint_fast8_t ms_number, const uint_fast8_t on);
 void si5351c_set_clock_source(si5351c_driver_t* const drv, const enum pll_sources source);
-bool si5351c_clkin_signal_valid(si5351c_driver_t* const drv);
+void si5351c_activate_best_clock_source(si5351c_driver_t* const drv);
 
 void si5351c_write_single(si5351c_driver_t* const drv, uint8_t reg, uint8_t val);
 uint8_t si5351c_read_single(si5351c_driver_t* const drv, uint8_t reg);

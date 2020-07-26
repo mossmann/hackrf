@@ -18,6 +18,9 @@ submodule:
 $ cd ..
 $ git submodule init
 $ git submodule update
+$ cd firmware/libopencm3
+$ make
+
 
 To build and install a standard firmware image for HackRF One:
 
@@ -30,6 +33,7 @@ $ hackrf_spiflash -w hackrf_usb.bin
 
 If you have a Jawbreaker, add -DBOARD=JAWBREAKER to the cmake command.
 If you have a rad1o, use -DBOARD=RAD1O instead.
+
 
 It is possible to use a USB Device Firmware Upgrade (DFU) method to load
 firmware into RAM.  This is normally only required to recover a device that has

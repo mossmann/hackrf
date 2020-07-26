@@ -1,0 +1,3 @@
+For file SoBv1_HackRF_One_Top.svg:
+Laser cutting size 800 mm => Seeed Studio Difficulty Normal (Length of Cutting line Between 60cm and 180cm)
+

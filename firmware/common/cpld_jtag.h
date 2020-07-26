@@ -31,10 +31,6 @@ typedef struct jtag_gpio_t {
 	gpio_t gpio_tck;
 	gpio_t gpio_tdi;
 	gpio_t gpio_tdo;
-#ifdef HACKRF_ONE
-	gpio_t gpio_pp_tms;
-	gpio_t gpio_pp_tdo;
-#endif
 } jtag_gpio_t;
 
 typedef struct jtag_t {
@@ -43,7 +39,6 @@ typedef struct jtag_t {
 
 typedef void (*refill_buffer_cb)(void);
 
-void cpld_jtag_take(jtag_t* const jtag);
 void cpld_jtag_release(jtag_t* const jtag);
 
 /* Return 0 if success else return error code see xsvfExecute() see micro.h.

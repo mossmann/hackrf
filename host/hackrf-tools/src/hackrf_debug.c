@@ -388,7 +388,6 @@ static void usage() {
 	printf("\t-m, --max2837: target MAX2837\n");
 	printf("\t-s, --si5351c: target SI5351C\n");
 	printf("\t-f, --rffc5072: target RFFC5072\n");
-	printf("\t-u, --ui <1/0>: enable/disable UI\n");
 	printf("\nExamples:\n");
 	printf("\thackrf_debug --si5351c -n 0 -r     # reads from si5351c register 0\n");
 	printf("\thackrf_debug --si5351c -c          # displays si5351c multisynth configuration\n");
@@ -406,7 +405,6 @@ static struct option long_options[] = {
 	{ "max2837", no_argument, 0, 'm' },
 	{ "si5351c", no_argument, 0, 's' },
 	{ "rffc5072", no_argument, 0, 'f' },
-	{ "ui", required_argument, 0, 'u' },
 	{ 0, 0, 0, 0 },
 };
 
@@ -421,8 +419,6 @@ int main(int argc, char** argv) {
 	bool dump_config = false;
 	uint8_t part = PART_NONE;
 	const char* serial_number = NULL;
-	bool set_ui = false;
-	uint16_t ui_enable;
 
 	int result = hackrf_init();
 	if(result) {
@@ -430,7 +426,7 @@ int main(int argc, char** argv) {
 		return EXIT_FAILURE;
 	}
 
-	while( (opt = getopt_long(argc, argv, "n:rw:d:cmsfh?u:", long_options, &option_index)) != EOF ) {
+	while( (opt = getopt_long(argc, argv, "n:rw:d:cmsfh?", long_options, &option_index)) != EOF ) {
 		switch( opt ) {
 		case 'n':
 			result = parse_int(optarg, &register_number);
@@ -477,11 +473,6 @@ int main(int argc, char** argv) {
 			part = PART_RFFC5072;
 			break;
 
-		case 'u':
-			set_ui = true;
-			result = parse_int(optarg, &ui_enable);
-			break;
-
 		case 'h':
 		case '?':
 			usage();
@@ -517,13 +508,13 @@ int main(int argc, char** argv) {
 		return EXIT_FAILURE;
 	}
 
-	if(!(write || read || dump_config || set_ui)) {
+	if(!(write || read || dump_config)) {
 		fprintf(stderr, "Specify read, write, or config option.\n");
 		usage();
 		return EXIT_FAILURE;
 	}
 
-	if(part == PART_NONE && !set_ui) {
+	if(part == PART_NONE) {
 		fprintf(stderr, "Specify a part to read, write, or print config from.\n");
 		usage();
 		return EXIT_FAILURE;
@@ -549,10 +540,6 @@ int main(int argc, char** argv) {
 
 	if(dump_config) {
 		si5351c_read_configuration(device);
-	}
-
-	if(set_ui) {
-		result = hackrf_set_ui_enable(device, ui_enable);
 	}
 
 	result = hackrf_close(device);

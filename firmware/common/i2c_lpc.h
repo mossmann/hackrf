@@ -24,7 +24,6 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <stdbool.h>
 
 #include "i2c_bus.h"
 
@@ -39,6 +38,5 @@ void i2c_lpc_transfer(i2c_bus_t* const bus,
 	const uint8_t* const data_tx, const size_t count_tx,
 	uint8_t* const data_rx, const size_t count_rx
 );
-bool i2c_probe(i2c_bus_t* const bus, const uint_fast8_t device_address);
 
 #endif/*__I2C_LPC_H__*/

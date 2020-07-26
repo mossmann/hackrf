@@ -1,7 +1,0 @@
-setMode -bscan
-setCable -port xsvf -file default.xsvf
-addDevice -p 1 -file top.jed
-Erase -p 1 
-Program -p 1 -e -v 
-Verify -p 1 
-quit

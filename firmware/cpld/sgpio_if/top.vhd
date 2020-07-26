@@ -47,8 +47,7 @@ entity top is
 end top;
 
 architecture Behavioral of top is
-    signal codec_clk_rx_i : std_logic;
-    signal codec_clk_tx_i : std_logic;
+    signal codec_clk_i : std_logic;
     signal adc_data_i : std_logic_vector(7 downto 0);
     signal dac_data_o : std_logic_vector(9 downto 0);
 
@@ -76,10 +75,13 @@ begin
     ------------------------------------------------
     -- Codec interface
     
+    adc_data_i <= DA(7 downto 0);    
     DD(9 downto 0) <= dac_data_o;
     
     ------------------------------------------------
     -- Clocks
+    
+    codec_clk_i <= CODEC_CLK;
     
     BUFG_host : BUFG
     port map (
@@ -92,6 +94,7 @@ begin
     
     HOST_DATA <= data_to_host_o when transfer_direction_i = from_adc
                                 else (others => 'Z');
+    data_from_host_i <= HOST_DATA;
 
     HOST_CAPTURE <= host_data_capture_o;
 	 host_sync_enable <= HOST_SYNC_EN;
@@ -106,32 +109,26 @@ begin
         
     q_invert <= HOST_Q_INVERT;
     rx_q_invert_mask <= X"80" when q_invert = '1' else X"7f";
-    tx_q_invert_mask <= X"7f" when q_invert = '1' else X"80";
-    
+    tx_q_invert_mask <= X"7F" when q_invert = '1' else X"80";
+     
     process(host_clk_i)
     begin
         if rising_edge(host_clk_i) then
-            codec_clk_rx_i <= CODEC_CLK;
-            adc_data_i <= DA(7 downto 0);
-            if (transfer_direction_i = from_adc) then
-                if codec_clk_rx_i = '1' then
-                    -- I: non-inverted between MAX2837 and MAX5864
-                    data_to_host_o <= adc_data_i xor X"80";
-                else
-                    -- Q: inverted between MAX2837 and MAX5864
-                    data_to_host_o <= adc_data_i xor rx_q_invert_mask;
-                end if;
+            if codec_clk_i = '1' then
+                -- I: non-inverted between MAX2837 and MAX5864
+                data_to_host_o <= adc_data_i xor X"80";
+            else
+                -- Q: inverted between MAX2837 and MAX5864
+                data_to_host_o <= adc_data_i xor rx_q_invert_mask;
             end if;
         end if;
     end process;
     
     process(host_clk_i)
     begin
-        if falling_edge(host_clk_i) then
-            codec_clk_tx_i <= CODEC_CLK;
-            data_from_host_i <= HOST_DATA;
+        if rising_edge(host_clk_i) then
             if transfer_direction_i = to_dac then
-                if codec_clk_tx_i = '1' then
+                if codec_clk_i = '1' then
                     dac_data_o <= (data_from_host_i xor tx_q_invert_mask) & tx_q_invert_mask(0) & tx_q_invert_mask(0);
                 else
                     dac_data_o <= (data_from_host_i xor X"80") & "00";
@@ -158,11 +155,11 @@ begin
     begin
         if rising_edge(host_clk_i) then
             if transfer_direction_i = to_dac then
-                if codec_clk_tx_i = '1' then
+                if codec_clk_i = '1' then
                     host_data_capture_o <= host_data_enable_i and (host_sync_latched or not host_sync_enable);
                 end if;
             else
-                if codec_clk_rx_i = '1' then
+                if codec_clk_i = '0' then
                     host_data_capture_o <= host_data_enable_i and (host_sync_latched or not host_sync_enable);
                 end if; 
             end if;
