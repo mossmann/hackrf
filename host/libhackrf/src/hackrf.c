@@ -178,6 +178,7 @@ static int cancel_transfers(hackrf_device* device)
 				libusb_cancel_transfer(device->transfers[transfer_index]);
 			}
 		}
+		device->streaming = false;
 		return HACKRF_SUCCESS;
 	} else {
 		return HACKRF_ERROR_OTHER;
